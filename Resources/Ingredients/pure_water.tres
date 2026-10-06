@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://cf3xhttyu84"]
+
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://Scripts/model/ingredient_data.gd" id="1_b61re"]
+
+[resource]
+script = ExtResource("1_b61re")
+ingredient_name = "Pure water"
+water_energy = 3.0
+metadata/_custom_type_script = "uid://cidyaaakimrfs"

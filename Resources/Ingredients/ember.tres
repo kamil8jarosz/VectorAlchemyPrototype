@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://lhcs8ya01suv"]
+
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://Scripts/model/ingredient_data.gd" id="1_uyryf"]
+
+[resource]
+script = ExtResource("1_uyryf")
+ingredient_name = "Ember"
+fire_energy = 2.0
+water_energy = 1.0
+metadata/_custom_type_script = "uid://cidyaaakimrfs"

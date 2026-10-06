@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="NoProcessing" format=3 uid="uid://bm3uhs44p5hc5"]
+
+[ext_resource type="Script" uid="uid://cj5gg7qmkjha0" path="res://Scripts/model/processing_stations/no_processing.gd" id="1_cyox2"]
+
+[resource]
+script = ExtResource("1_cyox2")
+metadata/_custom_type_script = "uid://cj5gg7qmkjha0"

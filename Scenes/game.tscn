@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://hrbfgb62tg22"]
+
+[ext_resource type="PackedScene" uid="uid://7s51ofo0cdos" path="res://Scenes/header.tscn" id="1_3dryh"]
+[ext_resource type="Script" uid="uid://chdi70oemb0ba" path="res://Scripts/game.gd" id="1_wowpa"]
+[ext_resource type="PackedScene" uid="uid://bp1qctya331lv" path="res://Scenes/inventory.tscn" id="2_wowpa"]
+[ext_resource type="PackedScene" uid="uid://dfawn0a675ijn" path="res://Scenes/experiment.tscn" id="3_i6g32"]
+[ext_resource type="PackedScene" uid="uid://c3ppwxtqa5fkd" path="res://Scenes/action_bar.tscn" id="4_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://xmsgnv7sjg2s" path="res://Scenes/discovery_result.tscn" id="6_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://cvtmblww8xecy" path="res://Scenes/discovery_journal.tscn" id="7_1l0tm"]
+
+[sub_resource type="Theme" id="Theme_uxtvc"]
+
+[sub_resource type="Theme" id="Theme_51fkv"]
+
+[node name="Game" type="Node" unique_id=48143345]
+script = ExtResource("1_wowpa")
+
+[node name="UI" type="Control" parent="." unique_id=794535388]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="UI" unique_id=1443066980]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 600.0
+offset_bottom = 318.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_uxtvc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer" unique_id=1914303167]
+layout_mode = 2
+theme = SubResource("Theme_51fkv")
+
+[node name="Header" parent="UI/MarginContainer/VBoxContainer" unique_id=91400311 instance=ExtResource("1_3dryh")]
+layout_mode = 2
+
+[node name="MainArea" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer" unique_id=215741813]
+custom_minimum_size = Vector2(0, 270)
+layout_mode = 2
+
+[node name="Inventory" parent="UI/MarginContainer/VBoxContainer/MainArea" unique_id=954051571 instance=ExtResource("2_wowpa")]
+layout_mode = 2
+
+[node name="Experiment" parent="UI/MarginContainer/VBoxContainer/MainArea" unique_id=154858185 instance=ExtResource("3_i6g32")]
+layout_mode = 2
+
+[node name="ActionBar" parent="UI/MarginContainer/VBoxContainer" unique_id=833468317 instance=ExtResource("4_1l0tm")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DiscoveryResult" parent="." unique_id=14670541 instance=ExtResource("6_1l0tm")]
+visible = false
+
+[node name="DiscoveryJournal" parent="." unique_id=2066464238 instance=ExtResource("7_1l0tm")]
+visible = false

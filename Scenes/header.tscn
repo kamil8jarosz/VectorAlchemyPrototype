@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://7s51ofo0cdos"]
+
+[ext_resource type="Script" uid="uid://sdiq8y6kun0" path="res://Scripts/header.gd" id="1_n8ka5"]
+[ext_resource type="FontFile" uid="uid://bqocabvt1emib" path="res://Assets/W95F.otf" id="1_uk1ny"]
+[ext_resource type="Theme" uid="uid://c60agimh0yhha" path="res://Themes/theme.tres" id="3_qdf8y"]
+
+[sub_resource type="Theme" id="Theme_jjpey"]
+
+[sub_resource type="Theme" id="Theme_mxjp1"]
+default_font = ExtResource("1_uk1ny")
+default_font_size = 18
+
+[sub_resource type="Theme" id="Theme_txpl5"]
+default_font = ExtResource("1_uk1ny")
+default_font_size = 18
+
+[node name="Header" type="PanelContainer" unique_id=91400311]
+custom_minimum_size = Vector2(640, 32)
+theme = SubResource("Theme_jjpey")
+script = ExtResource("1_n8ka5")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1160037406]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1644095303]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="MarginContainer/HBoxContainer" unique_id=269208747]
+layout_mode = 2
+theme = SubResource("Theme_mxjp1")
+text = "ALCHEMY PROTOTYPE - 0.1.0"
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer" unique_id=193461556]
+layout_mode = 2
+theme_override_constants/separation = 27
+
+[node name="MixtureLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=359369564]
+layout_mode = 2
+theme = SubResource("Theme_txpl5")
+text = "Mixture "
+horizontal_alignment = 2
+
+[node name="MixtureCounter" type="Label" parent="MarginContainer/HBoxContainer" unique_id=578126952]
+layout_mode = 2
+theme = SubResource("Theme_txpl5")
+text = "0/5"
+horizontal_alignment = 2
+
+[node name="VSeparator2" type="VSeparator" parent="MarginContainer/HBoxContainer" unique_id=779652295]
+layout_mode = 2
+theme_override_constants/separation = 27
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer" unique_id=1250346085]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("3_qdf8y")
+text = "DISCOVERIES"

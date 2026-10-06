@@ -1,0 +1,14 @@
+[gd_resource type="Theme" format=3 uid="uid://c60agimh0yhha"]
+
+[ext_resource type="FontFile" uid="uid://bqocabvt1emib" path="res://Assets/W95F.otf" id="1_wi0rm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhunq"]
+bg_color = Color(0.03529412, 0.105882354, 0.15686275, 1)
+
+[resource]
+default_font = ExtResource("1_wi0rm")
+MarginContainer/constants/margin_bottom = 4
+MarginContainer/constants/margin_left = 4
+MarginContainer/constants/margin_right = 4
+MarginContainer/constants/margin_top = 4
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_bhunq")

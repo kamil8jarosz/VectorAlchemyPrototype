@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bb0244062umtd"]
+
+[ext_resource type="Theme" uid="uid://c60agimh0yhha" path="res://Themes/theme.tres" id="1_fs8v0"]
+
+[node name="RewardLabel" type="Label" unique_id=954393926]
+theme = ExtResource("1_fs8v0")
+text = "Reward label"
+horizontal_alignment = 1

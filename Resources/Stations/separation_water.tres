@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="SeparationWStation" format=3 uid="uid://u5ibd62c0xyr"]
+
+[ext_resource type="Script" uid="uid://ccsexjhyj737k" path="res://Scripts/model/processing_stations/separation_w_station.gd" id="1_o6jr5"]
+
+[resource]
+script = ExtResource("1_o6jr5")
+metadata/_custom_type_script = "uid://ccsexjhyj737k"

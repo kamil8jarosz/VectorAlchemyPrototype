@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cvtmblww8xecy"]
+
+[ext_resource type="StyleBox" uid="uid://ds8uy3w0wmqee" path="res://Themes/panel_style_box_flat.tres" id="1_n5vuq"]
+[ext_resource type="Script" uid="uid://bvatqbpa3gpxv" path="res://Scripts/discovery_journal.gd" id="1_t5ewu"]
+[ext_resource type="Theme" uid="uid://c60agimh0yhha" path="res://Themes/theme.tres" id="2_0ve0n"]
+
+[node name="DiscoveryJournal" type="Control" unique_id=2066464238]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t5ewu")
+
+[node name="Dimmer" type="ColorRect" parent="." unique_id=2112435175]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=106582327]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -150.0
+offset_right = 140.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = ExtResource("1_n5vuq")
+
+[node name="Margin" type="MarginContainer" parent="Panel" unique_id=206498836]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="Content" type="VBoxContainer" parent="Panel/Margin" unique_id=611286693]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="Panel/Margin/Content" unique_id=842837963]
+layout_mode = 2
+theme = ExtResource("2_0ve0n")
+theme_override_font_sizes/font_size = 20
+text = "DISCOVERIES"
+horizontal_alignment = 1
+
+[node name="Separator" type="HSeparator" parent="Panel/Margin/Content" unique_id=119474632]
+layout_mode = 2
+
+[node name="DiscoveryScroll" type="ScrollContainer" parent="Panel/Margin/Content" unique_id=2767218]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="DiscoveryList" type="VBoxContainer" parent="Panel/Margin/Content/DiscoveryScroll" unique_id=130826236]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="CloseButton" type="Button" parent="Panel/Margin/Content" unique_id=2099224145]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 24)
+custom_maximum_size = Vector2(60, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_0ve0n")
+text = "CLOSE"

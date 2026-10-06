@@ -1,0 +1,153 @@
+[gd_scene format=3 uid="uid://c3ppwxtqa5fkd"]
+
+[ext_resource type="Theme" uid="uid://c60agimh0yhha" path="res://Themes/theme.tres" id="1_72tl5"]
+[ext_resource type="Script" uid="uid://w1g3by3py3vv" path="res://Scripts/action_bar.gd" id="1_244ca"]
+[ext_resource type="Texture2D" uid="uid://nc0adob41ca5" path="res://Assets/water_icon.png" id="3_q6bf1"]
+[ext_resource type="Texture2D" uid="uid://d2bxfsitm3o8s" path="res://Assets/fire_icon.png" id="4_ybyky"]
+
+[node name="ActionBar" type="PanelContainer" unique_id=833468317]
+custom_minimum_size = Vector2(640, 44)
+size_flags_horizontal = 3
+script = ExtResource("1_244ca")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1516162246]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=625036948]
+layout_mode = 2
+alignment = 1
+
+[node name="SelectionInfo" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1594192482]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="IngredientInfo" type="HBoxContainer" parent="MarginContainer/HBoxContainer/SelectionInfo" unique_id=736930922]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="IngredientHeader" type="Label" parent="MarginContainer/HBoxContainer/SelectionInfo/IngredientInfo" unique_id=39719269]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("1_72tl5")
+text = "INGREDIENT:"
+vertical_alignment = 1
+
+[node name="IngredientName" type="Label" parent="MarginContainer/HBoxContainer/SelectionInfo/IngredientInfo" unique_id=997624525]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("1_72tl5")
+text = "Ash"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer/SelectionInfo/IngredientInfo" unique_id=1135038181]
+custom_minimum_size = Vector2(10, 0)
+clip_contents = true
+layout_mode = 2
+
+[node name="WaterIcon" type="TextureRect" parent="MarginContainer/HBoxContainer/SelectionInfo/IngredientInfo" unique_id=161330934]
+layout_mode = 2
+texture = ExtResource("3_q6bf1")
+
+[node name="IngredientWaterLabel" type="Label" parent="MarginContainer/HBoxContainer/SelectionInfo/IngredientInfo" unique_id=53868262]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme = ExtResource("1_72tl5")
+text = "1.0"
+horizontal_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="MarginContainer/HBoxContainer/SelectionInfo/IngredientInfo" unique_id=2076396206]
+custom_minimum_size = Vector2(10, 0)
+clip_contents = true
+layout_mode = 2
+
+[node name="FireIcon" type="TextureRect" parent="MarginContainer/HBoxContainer/SelectionInfo/IngredientInfo" unique_id=2120606159]
+layout_mode = 2
+texture = ExtResource("4_ybyky")
+
+[node name="IngredientFireLabel" type="Label" parent="MarginContainer/HBoxContainer/SelectionInfo/IngredientInfo" unique_id=1100514011]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme = ExtResource("1_72tl5")
+text = "1.0"
+horizontal_alignment = 1
+
+[node name="StationInfo" type="HBoxContainer" parent="MarginContainer/HBoxContainer/SelectionInfo" unique_id=1150346323]
+layout_mode = 2
+
+[node name="StationHeader" type="Label" parent="MarginContainer/HBoxContainer/SelectionInfo/StationInfo" unique_id=1468390537]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme = ExtResource("1_72tl5")
+text = "STATION:"
+vertical_alignment = 1
+
+[node name="StationName" type="Label" parent="MarginContainer/HBoxContainer/SelectionInfo/StationInfo" unique_id=1153203528]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("1_72tl5")
+text = "NONE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer/SelectionInfo/StationInfo" unique_id=1175126753]
+custom_minimum_size = Vector2(10, 0)
+clip_contents = true
+layout_mode = 2
+
+[node name="WaterIcon2" type="TextureRect" parent="MarginContainer/HBoxContainer/SelectionInfo/StationInfo" unique_id=1789098363]
+layout_mode = 2
+texture = ExtResource("3_q6bf1")
+
+[node name="StationWaterLabel" type="Label" parent="MarginContainer/HBoxContainer/SelectionInfo/StationInfo" unique_id=1628345707]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme = ExtResource("1_72tl5")
+text = "1.0"
+horizontal_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="MarginContainer/HBoxContainer/SelectionInfo/StationInfo" unique_id=1601516092]
+custom_minimum_size = Vector2(10, 0)
+clip_contents = true
+layout_mode = 2
+
+[node name="FireIcon2" type="TextureRect" parent="MarginContainer/HBoxContainer/SelectionInfo/StationInfo" unique_id=1712525741]
+layout_mode = 2
+texture = ExtResource("4_ybyky")
+
+[node name="StationFireLabel" type="Label" parent="MarginContainer/HBoxContainer/SelectionInfo/StationInfo" unique_id=1311169691]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme = ExtResource("1_72tl5")
+text = "1.0"
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1260490559]
+layout_mode = 2
+
+[node name="UndoButton" type="Button" parent="MarginContainer/HBoxContainer/Buttons" unique_id=2137030340]
+layout_mode = 2
+theme = ExtResource("1_72tl5")
+text = "UNDO"
+
+[node name="AddButton" type="Button" parent="MarginContainer/HBoxContainer/Buttons" unique_id=1554534573]
+layout_mode = 2
+theme = ExtResource("1_72tl5")
+text = "ADD"
+
+[node name="DiscoverButton" type="Button" parent="MarginContainer/HBoxContainer/Buttons" unique_id=108561136]
+layout_mode = 2
+theme = ExtResource("1_72tl5")
+text = "DISCOVER"

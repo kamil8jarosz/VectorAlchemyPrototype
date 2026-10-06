@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://bswp8od4rsyxp"]
+
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://Scripts/model/ingredient_data.gd" id="1_73dwe"]
+
+[resource]
+script = ExtResource("1_73dwe")
+ingredient_name = "Rainwater"
+water_energy = 1.0
+metadata/_custom_type_script = "uid://cidyaaakimrfs"

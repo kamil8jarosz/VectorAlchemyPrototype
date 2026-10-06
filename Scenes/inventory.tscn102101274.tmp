@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://bp1qctya331lv"]
+
+[ext_resource type="FontFile" uid="uid://bqocabvt1emib" path="res://Assets/W95F.otf" id="1_k5gp2"]
+[ext_resource type="Script" uid="uid://cll46m3vstiv3" path="res://Scripts/inventory.gd" id="1_yxepq"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://Scripts/model/ingredient_data.gd" id="2_sd8fj"]
+[ext_resource type="FontFile" uid="uid://dacgsxjstr5vt" path="res://Assets/rainyhearts.ttf" id="2_yxepq"]
+[ext_resource type="Resource" uid="uid://bswp8od4rsyxp" path="res://Resources/Ingredients/rainwater.tres" id="3_c5ffv"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://Scripts/model/processing_stations/processing_station.gd" id="4_sd8fj"]
+[ext_resource type="Resource" uid="uid://bm3uhs44p5hc5" path="res://Resources/Stations/no_processing.tres" id="5_sd8fj"]
+
+[sub_resource type="Theme" id="Theme_q2fyk"]
+default_font = ExtResource("1_k5gp2")
+default_font_size = 18
+
+[sub_resource type="Theme" id="Theme_rrscn"]
+default_font = ExtResource("2_yxepq")
+
+[sub_resource type="Theme" id="Theme_1rxpj"]
+default_font = ExtResource("1_k5gp2")
+default_font_size = 18
+
+[node name="Inventory" type="PanelContainer" unique_id=954051571]
+custom_minimum_size = Vector2(160, 0)
+script = ExtResource("1_yxepq")
+ingredients = Array[ExtResource("2_sd8fj")]([ExtResource("3_c5ffv")])
+processing_stations = Array[ExtResource("4_sd8fj")]([ExtResource("5_sd8fj")])
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2004276003]
+layout_mode = 2
+
+[node name="Ingredients" type="Label" parent="VBoxContainer" unique_id=1330076346]
+layout_mode = 2
+theme = SubResource("Theme_q2fyk")
+text = "INGREDIENTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IngredientScroll" type="ScrollContainer" parent="VBoxContainer" unique_id=670474603]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_rrscn")
+
+[node name="IngredientList" type="VBoxContainer" parent="VBoxContainer/IngredientScroll" unique_id=1912351525]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=524983969]
+layout_mode = 2
+
+[node name="Stations" type="Label" parent="VBoxContainer" unique_id=1697560493]
+layout_mode = 2
+theme = SubResource("Theme_1rxpj")
+text = "PROCESSING"
+horizontal_alignment = 1
+
+[node name="StationScroll" type="ScrollContainer" parent="VBoxContainer" unique_id=1627570142]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StationList" type="VBoxContainer" parent="VBoxContainer/StationScroll" unique_id=1812255067]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

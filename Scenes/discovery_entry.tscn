@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bufdo4gxrxkvb"]
+
+[ext_resource type="Script" uid="uid://cl4p16ldqrmce" path="res://Scripts/discovery_entry.gd" id="1_mntmx"]
+[ext_resource type="Theme" uid="uid://c60agimh0yhha" path="res://Themes/theme.tres" id="2_edy5p"]
+
+[node name="DiscoveryEntry" type="PanelContainer" unique_id=1736342705]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_mntmx")
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1373137645]
+layout_mode = 2
+
+[node name="Content" type="VBoxContainer" parent="Margin" unique_id=1201661496]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Margin/Content" unique_id=1323749624]
+layout_mode = 2
+theme = ExtResource("2_edy5p")
+text = "X Use Rainwater"
+
+[node name="Text" type="Label" parent="Margin/Content" unique_id=196120022]
+layout_mode = 2
+theme = ExtResource("2_edy5p")
+theme_override_font_sizes/font_size = 12
+text = "One ingredient is not enough"

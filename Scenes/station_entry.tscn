@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cvctwupwa0pqj"]
+
+[ext_resource type="Script" uid="uid://bkley0h2lfh65" path="res://Scripts/station_entry.gd" id="1_i20dx"]
+[ext_resource type="Theme" uid="uid://c60agimh0yhha" path="res://Themes/theme.tres" id="2_36yyh"]
+
+[node name="StationEntry" type="Button" unique_id=629063290]
+custom_minimum_size = Vector2(20, 20)
+offset_right = 64.0
+offset_bottom = 20.0
+script = ExtResource("1_i20dx")
+
+[node name="NameLabel" type="Label" parent="." unique_id=829620582]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_36yyh")
+text = "Station"
+horizontal_alignment = 1
+vertical_alignment = 1
