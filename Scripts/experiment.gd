@@ -1,20 +1,22 @@
 class_name Experiment
 extends PanelContainer
 
-@onready var number_line: NumberLine = $ExperimentArea/MarginContainer/NumberLine
+@onready var alchemy_line: AlchemyLine = %AlchemyLine
 
 func clear():
-	number_line.set_current_position(0.0)
-	number_line.set_preview_position(0.0)
+	alchemy_line.set_current_position(0.0)
+	alchemy_line.set_preview_position(0.0)
 
 
 func set_current_position(new_position: float):
-	number_line.set_current_position(new_position)
+	alchemy_line.set_current_position(new_position)
 
 
 func set_preview_position(new_position: float):
-	number_line.set_preview_position(new_position)
+	alchemy_line.set_preview_position(new_position)
 
+func play_discovery_animation(discovery: Discovery):
+	alchemy_line.play_discovery_animation(discovery)
 
 func set_discoveries(discoveries: Array[Discovery]):
-	number_line.set_discoveries(discoveries)
+	alchemy_line.set_discoveries(discoveries)

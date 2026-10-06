@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bp1qctya331lv" path="res://Scenes/inventory.tscn" id="2_wowpa"]
 [ext_resource type="PackedScene" uid="uid://dfawn0a675ijn" path="res://Scenes/experiment.tscn" id="3_i6g32"]
 [ext_resource type="PackedScene" uid="uid://c3ppwxtqa5fkd" path="res://Scenes/action_bar.tscn" id="4_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://xmsgnv7sjg2s" path="res://Scenes/discovery_result.tscn" id="6_1l0tm"]
+[ext_resource type="PackedScene" uid="uid://cvtmblww8xecy" path="res://Scenes/discovery_journal.tscn" id="7_1l0tm"]
 
 [sub_resource type="Theme" id="Theme_uxtvc"]
 
@@ -50,3 +52,9 @@ layout_mode = 2
 [node name="ActionBar" parent="UI/MarginContainer/VBoxContainer" unique_id=833468317 instance=ExtResource("4_1l0tm")]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="DiscoveryResult" parent="." unique_id=14670541 instance=ExtResource("6_1l0tm")]
+visible = false
+
+[node name="DiscoveryJournal" parent="." unique_id=2066464238 instance=ExtResource("7_1l0tm")]
+visible = false

@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bu20yevj4ra63"]
+
+[ext_resource type="Theme" uid="uid://c60agimh0yhha" path="res://Themes/theme.tres" id="1_5oaaj"]
+[ext_resource type="Script" uid="uid://bwxujwhhqtdu7" path="res://Scripts/alchemy_line.gd" id="2_va4a8"]
+
+[node name="AlchemyLine" type="Control" unique_id=2139464113]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 450.0
+offset_bottom = 270.0
+theme = ExtResource("1_5oaaj")
+script = ExtResource("2_va4a8")
+
+[node name="FireLabel" type="Label" parent="." unique_id=1900383502]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 8.0
+offset_right = 64.0
+offset_bottom = 24.0
+pivot_offset = Vector2(24, 8)
+theme = ExtResource("1_5oaaj")
+theme_override_colors/font_color = Color(1, 0.49803922, 0.3137255, 1)
+text = "FIRE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WaterLabel" type="Label" parent="." unique_id=1767461611]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 136.0
+offset_top = 8.0
+offset_right = 188.0
+offset_bottom = 24.0
+pivot_offset = Vector2(28, 8)
+size_flags_horizontal = 4
+theme = ExtResource("1_5oaaj")
+theme_override_colors/font_color = Color(0, 0.7490196, 1, 1)
+text = "WATER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BalanceLabel" type="Label" parent="." unique_id=884975603]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(400, 100)
+layout_mode = 0
+offset_left = 64.0
+offset_top = 8.0
+offset_right = 128.0
+offset_bottom = 24.0
+pivot_offset = Vector2(32, 8)
+size_flags_horizontal = 4
+theme = ExtResource("1_5oaaj")
+text = "BALANCE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=21337069]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dfawn0a675ijn"]
 
-[ext_resource type="PackedScene" uid="uid://bu20yevj4ra63" path="res://Scenes/number_line.tscn" id="1_6ecj1"]
+[ext_resource type="PackedScene" uid="uid://bu20yevj4ra63" path="res://Scenes/alchemy_line.tscn" id="1_6ecj1"]
 [ext_resource type="Theme" uid="uid://c60agimh0yhha" path="res://Themes/theme.tres" id="1_61qej"]
 [ext_resource type="Script" uid="uid://ck34rf1bl6pa4" path="res://Scripts/experiment.gd" id="2_72sry"]
 
@@ -25,5 +25,6 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="NumberLine" parent="ExperimentArea/MarginContainer" unique_id=36207362 instance=ExtResource("1_6ecj1")]
+[node name="AlchemyLine" parent="ExperimentArea/MarginContainer" unique_id=36207362 instance=ExtResource("1_6ecj1")]
+unique_name_in_owner = true
 layout_mode = 2

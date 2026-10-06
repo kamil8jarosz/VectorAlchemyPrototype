@@ -8,8 +8,8 @@
 [resource]
 script = ExtResource("1_at1o1")
 discovery_name = "The making of steam"
-description = "Created steam"
-hint = "This will require a lot of water."
+description = "Steam combines powerful water and fire energy. Perfect for separation!"
+hint = "This will require a lot of water. Rainwater will not suffice."
 min_position = 5.75
 max_position = 9.25
 unlocked_ingredients = Array[ExtResource("2_6c67q")]([ExtResource("3_gqsy5")])

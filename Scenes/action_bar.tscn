@@ -35,6 +35,7 @@ custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 theme = ExtResource("1_72tl5")
 text = "INGREDIENT:"
+horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="IngredientName" type="Label" parent="MarginContainer/HBoxContainer/SelectionInfo/IngredientInfo" unique_id=997624525]
@@ -48,7 +49,6 @@ vertical_alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer/SelectionInfo/IngredientInfo" unique_id=1135038181]
 custom_minimum_size = Vector2(10, 0)
-clip_contents = true
 layout_mode = 2
 
 [node name="WaterIcon" type="TextureRect" parent="MarginContainer/HBoxContainer/SelectionInfo/IngredientInfo" unique_id=161330934]
@@ -65,7 +65,6 @@ horizontal_alignment = 1
 
 [node name="VSeparator2" type="VSeparator" parent="MarginContainer/HBoxContainer/SelectionInfo/IngredientInfo" unique_id=2076396206]
 custom_minimum_size = Vector2(10, 0)
-clip_contents = true
 layout_mode = 2
 
 [node name="FireIcon" type="TextureRect" parent="MarginContainer/HBoxContainer/SelectionInfo/IngredientInfo" unique_id=2120606159]
@@ -89,6 +88,7 @@ layout_mode = 2
 size_flags_vertical = 1
 theme = ExtResource("1_72tl5")
 text = "STATION:"
+horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="StationName" type="Label" parent="MarginContainer/HBoxContainer/SelectionInfo/StationInfo" unique_id=1153203528]
@@ -102,7 +102,6 @@ vertical_alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer/SelectionInfo/StationInfo" unique_id=1175126753]
 custom_minimum_size = Vector2(10, 0)
-clip_contents = true
 layout_mode = 2
 
 [node name="WaterIcon2" type="TextureRect" parent="MarginContainer/HBoxContainer/SelectionInfo/StationInfo" unique_id=1789098363]
@@ -119,7 +118,6 @@ horizontal_alignment = 1
 
 [node name="VSeparator2" type="VSeparator" parent="MarginContainer/HBoxContainer/SelectionInfo/StationInfo" unique_id=1601516092]
 custom_minimum_size = Vector2(10, 0)
-clip_contents = true
 layout_mode = 2
 
 [node name="FireIcon2" type="TextureRect" parent="MarginContainer/HBoxContainer/SelectionInfo/StationInfo" unique_id=1712525741]

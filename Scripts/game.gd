@@ -17,15 +17,17 @@ const NO_PROCESSING = preload("uid://bm3uhs44p5hc5")
 const USE_RAINWATER = preload("uid://6p1ymdovdi3k")
 const MAKING_OF_STEAM = preload("uid://d3686w003xq12")
 const PERFECTLY_BALANCED = preload("uid://yaijimw35ppg")
-const GREATER_VESSEL = preload("uid://mjt5ie4e40ck")
+const FIRE_SEPARATION = preload("uid://mjt5ie4e40ck")
 const EXPLORING_FIRE = preload("uid://ciktus83u2ri3")
+const DEBUG_BIG = preload("uid://bh02jyfl6vblo")
+
 
 
 var discoveries: Array[Discovery] = [
 	USE_RAINWATER,
 	MAKING_OF_STEAM,
 	PERFECTLY_BALANCED,
-	GREATER_VESSEL,
+	FIRE_SEPARATION,
 	EXPLORING_FIRE
 ]
 
@@ -39,8 +41,8 @@ func _ready():
 	header.update_mixture_counter(0, mixture.max_ingredients)
 	
 	# DEBUG
-	for discovery in discoveries:
-		complete_discovery(discovery)
+	#for discovery in discoveries:
+		#complete_discovery(discovery)
 	
 	
 	inventory.ingredient_selected.connect(_on_ingredient_selected)
@@ -106,9 +108,9 @@ func _on_discover_pressed():
 	if mixture.ingredients.is_empty():
 		return
 	
-	await get_tree().create_timer(0.5).timeout
-	
 	var discovery := find_discovery()
+	experiment.play_discovery_animation(discovery)
+	await get_tree().create_timer(1.5).timeout
 	
 	if discovery:
 		complete_discovery(discovery)
@@ -133,7 +135,7 @@ func find_discovery() -> Discovery:
 			continue
 		if discovery.contains_position(position):
 			return discovery
-			
+	
 	return null
 
 func _on_discoveries_pressed():

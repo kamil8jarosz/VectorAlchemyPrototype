@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://bh02jyfl6vblo"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://Scripts/model/discovery.gd" id="1_7jh1c"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://Scripts/model/ingredient_data.gd" id="2_4eyck"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://Scripts/model/processing_stations/processing_station.gd" id="3_j2t35"]
+
+[resource]
+script = ExtResource("1_7jh1c")
+description = "Debug"
+hint = "Debug"
+min_position = -10.0
+max_position = 10.0
+max_mixture_capacity = 5
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

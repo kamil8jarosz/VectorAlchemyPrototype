@@ -1,20 +1,20 @@
 extends Control
-class_name NumberLine
+class_name AlchemyLine
 
 @export var maximum_value: float = 21.0
 
-@onready var fire_label: Label = $FireLabel
-@onready var water_label: Label = $WaterLabel
-@onready var balance_label: Label = $BalanceLabel
+@onready var fire_label: Label = %FireLabel
+@onready var water_label: Label = %WaterLabel
+@onready var balance_label: Label = %BalanceLabel
 
+var animation_tween: Tween
 var current_position: float = 0.0
 var preview_position: float = 0.0
-var current_position_height: float = 0.0
-var movement_tween: Tween
-
+var current_height: float = 0.0
 
 var discoveries: Array[Discovery] = []
-
+var expanding_discovery: Discovery
+var discovery_expansion:= 1.0
 
 const FIRE_COLOR := Color.CORAL
 const WATER_COLOR := Color.DEEP_SKY_BLUE
@@ -23,6 +23,36 @@ const BALANCE_COLOR := Color.WHITE
 var y := size.y / 2.0
 var left := 20.0
 var right := size.x - left
+
+
+func set_preview_position(new_position):
+	preview_position = new_position
+	queue_redraw()
+
+
+func set_current_position(new_position):
+	create_setup_tween()
+	animation_tween.tween_method(
+		_set_current_position,
+		current_position,
+		new_position,
+		0.25
+	)
+
+
+func _set_current_height(new_height: float):
+	current_height = new_height
+	queue_redraw()
+
+
+func _set_current_position(new_position: float):
+	current_position = new_position
+	queue_redraw()
+
+
+func set_discoveries(_discoveries: Array[Discovery]):
+	discoveries = _discoveries
+	queue_redraw()
 
 
 func _ready():
@@ -35,34 +65,44 @@ func clear():
 	preview_position = 0.0
 	queue_redraw()
 
-func set_preview_position(new_position):
-	preview_position = new_position
-	queue_redraw()
 
-
-func set_current_position(new_position):
-	if movement_tween:
-		movement_tween.kill()
+func create_setup_tween() -> Tween:
+	if animation_tween:
+		animation_tween.kill()
+		
+	animation_tween = create_tween()
+	animation_tween.set_trans(Tween.TRANS_QUAD)
+	animation_tween.set_ease(Tween.EASE_IN_OUT)
 	
-	movement_tween = create_tween()
-	movement_tween.set_trans(Tween.TRANS_QUAD)
-	movement_tween.set_ease(Tween.EASE_OUT)
-	movement_tween.tween_method(
-		_set_current_position,
-		current_position,
-		new_position,
-		0.25
+	return animation_tween
+
+
+func play_discovery_animation(_discovery: Discovery):
+	play_jump_animation(12, 0.2)
+	await animation_tween.finished
+	play_jump_animation(8, 0.2)
+	await animation_tween.finished
+	play_jump_animation(4, 0.2)
+	await animation_tween.finished
+	
+	
+
+func play_jump_animation(height: float, duration: float):
+	create_setup_tween()
+	animation_tween.set_ease(Tween.EASE_OUT)
+	animation_tween.tween_method(
+		_set_current_height,
+		0.0,
+		-height,
+		duration
 	)
-
-
-func _set_current_position(new_position: float):
-	current_position = new_position
-	queue_redraw()
-
-
-func set_discoveries(_discoveries: Array[Discovery]):
-	discoveries = _discoveries
-	queue_redraw()
+	animation_tween.set_ease(Tween.EASE_IN)
+	animation_tween.tween_method(
+		_set_current_height,
+		-height,
+		0.0,
+		duration
+	)
 
 
 func _draw():
@@ -150,7 +190,7 @@ func draw_discovery_zones():
 			12
 		)
 		
-		draw_rect(rect, Color(1.0,0.0,1.0,0.25))
+		draw_rect(rect, Color(1.0,0.0,1.0,0.35))
 		
 		draw_line(
 			Vector2(x1, y-4),
@@ -171,13 +211,13 @@ func draw_current_position():
 	var x = value_to_x(current_position)
 	
 	draw_circle(
-		Vector2(x,y+current_position_height),
+		Vector2(x,y+current_height),
 		5.0,
-		Color.BLACK
+		Color.DIM_GRAY
 	)
 	
 	draw_circle(
-		Vector2(x,y+current_position_height),
+		Vector2(x,y+current_height),
 		4.0,
 		get_gradient_color(x/(right-left))
 	)
