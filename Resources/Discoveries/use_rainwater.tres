@@ -1,6 +1,7 @@
 [gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://6p1ymdovdi3k"]
 
 [ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://Scripts/model/discovery.gd" id="1_db2lc"]
+[ext_resource type="Resource" uid="uid://d3686w003xq12" path="res://Resources/Discoveries/making_of_steam.tres" id="2_dc11x"]
 [ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://Scripts/model/ingredient_data.gd" id="2_jpjln"]
 [ext_resource type="Resource" uid="uid://cf3xhttyu84" path="res://Resources/Ingredients/pure_water.tres" id="3_dc11x"]
 [ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://Scripts/model/processing_stations/processing_station.gd" id="4_ruaps"]
@@ -9,8 +10,9 @@
 script = ExtResource("1_db2lc")
 discovery_name = "Use rainwater"
 description = "Created your first mixture using rainwater. Pure water unlocked! It's stronger than rainwater."
-hint = "I'm afraid one ingredient won't be enough."
+hint = "One ingredient is not enough for this mixture. But three might be too much. "
 min_position = 1.75
-max_position = 3.25
+max_position = 2.25
 unlocked_ingredients = Array[ExtResource("2_jpjln")]([ExtResource("3_dc11x")])
+unlocked_discoveries = Array[ExtResource("1_db2lc")]([ExtResource("2_dc11x")])
 metadata/_custom_type_script = "uid://ddqogcgstrcqa"

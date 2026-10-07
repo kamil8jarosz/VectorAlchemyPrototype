@@ -9,7 +9,7 @@
 script = ExtResource("1_gdji3")
 discovery_name = "Exploring fire territory"
 description = "Ember unlocked. This is the first ingredient with fire energy higher than water energy!"
-hint = "This is just to the left of starting point. How can you get there without fire ingredients?"
+hint = "Just a tiny bit of fire energy. Steam has a lot, but you need to remove its water energy. Have you already tried Separate F?"
 min_position = -2.25
 max_position = -0.75
 unlocked_ingredients = Array[ExtResource("2_gmms2")]([ExtResource("3_gmms2")])

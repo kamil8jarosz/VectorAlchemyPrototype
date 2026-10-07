@@ -50,6 +50,9 @@ func _add_rewards(discovery: Discovery):
 	for station in discovery.unlocked_stations:
 		_add_reward("New station: %s" % station.station_name)
 		
+	for new_discovery in discovery.unlocked_discoveries:
+		_add_reward("New discovery: %s" % new_discovery.discovery_name)
+		
 	if discovery.max_mixture_capacity > 0:
 		_add_reward(
 			"Mixture capacity: %d" % discovery.max_mixture_capacity

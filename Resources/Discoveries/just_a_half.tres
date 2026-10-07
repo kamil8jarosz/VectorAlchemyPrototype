@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://cjhbju7brx24w"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://Scripts/model/discovery.gd" id="1_ocx4u"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://Scripts/model/ingredient_data.gd" id="2_cerfj"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://Scripts/model/processing_stations/processing_station.gd" id="3_djaev"]
+
+[resource]
+script = ExtResource("1_ocx4u")
+discovery_name = "Just a half"
+description = "Congratulations! You have completed the prototype!"
+hint = "Land exactly on a half. You will definitely need mist to achieve that."
+min_position = 0.25
+max_position = 0.75
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

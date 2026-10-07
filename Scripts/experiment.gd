@@ -15,8 +15,9 @@ func set_current_position(new_position: float):
 func set_preview_position(new_position: float):
 	alchemy_line.set_preview_position(new_position)
 
-func play_discovery_animation(discovery: Discovery):
-	alchemy_line.play_discovery_animation(discovery)
+
+func play_discovery_animation():
+	alchemy_line.play_discovery_animation()
 
 func set_discoveries(discoveries: Array[Discovery]):
 	alchemy_line.set_discoveries(discoveries)

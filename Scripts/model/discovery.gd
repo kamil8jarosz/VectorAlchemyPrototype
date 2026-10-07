@@ -10,6 +10,7 @@ extends Resource
 
 @export var unlocked_ingredients: Array[IngredientData] = []
 @export var unlocked_stations: Array[ProcessingStation] = []
+@export var unlocked_discoveries: Array[Discovery]
 @export var max_mixture_capacity: int = 0
 
 

@@ -7,14 +7,13 @@ class_name AlchemyLine
 @onready var water_label: Label = %WaterLabel
 @onready var balance_label: Label = %BalanceLabel
 
+
 var animation_tween: Tween
 var current_position: float = 0.0
 var preview_position: float = 0.0
 var current_height: float = 0.0
 
 var discoveries: Array[Discovery] = []
-var expanding_discovery: Discovery
-var discovery_expansion:= 1.0
 
 const FIRE_COLOR := Color.CORAL
 const WATER_COLOR := Color.DEEP_SKY_BLUE
@@ -25,19 +24,14 @@ var left := 20.0
 var right := size.x - left
 
 
+func _ready():
+	queue_redraw()
+	position_labels()
+
+
 func set_preview_position(new_position):
 	preview_position = new_position
 	queue_redraw()
-
-
-func set_current_position(new_position):
-	create_setup_tween()
-	animation_tween.tween_method(
-		_set_current_position,
-		current_position,
-		new_position,
-		0.25
-	)
 
 
 func _set_current_height(new_height: float):
@@ -55,9 +49,35 @@ func set_discoveries(_discoveries: Array[Discovery]):
 	queue_redraw()
 
 
-func _ready():
-	queue_redraw()
-	position_labels()
+func set_current_position(new_position):
+	create_setup_tween().set_parallel(true)
+	animation_tween.set_ease(Tween.EASE_IN)
+	animation_tween.tween_method(
+		_set_current_position,
+		current_position,
+		(current_position+new_position)/2,
+		0.12
+	)
+	animation_tween.tween_method(
+		_set_current_height,
+		0,
+		-12,
+		0.12
+	)
+	animation_tween.set_ease(Tween.EASE_OUT)
+	animation_tween.chain().tween_method(
+		_set_current_height,
+		-12,
+		0,
+		0.12
+	)
+	animation_tween.tween_method(
+		_set_current_position,
+		(current_position+new_position)/2,
+		new_position,
+		0.12
+	)
+	
 
 
 func clear():
@@ -77,15 +97,14 @@ func create_setup_tween() -> Tween:
 	return animation_tween
 
 
-func play_discovery_animation(_discovery: Discovery):
+func play_discovery_animation():
 	play_jump_animation(12, 0.2)
 	await animation_tween.finished
 	play_jump_animation(8, 0.2)
 	await animation_tween.finished
 	play_jump_animation(4, 0.2)
 	await animation_tween.finished
-	
-	
+
 
 func play_jump_animation(height: float, duration: float):
 	create_setup_tween()
@@ -178,6 +197,7 @@ func draw_zero_marker():
 		2.0
 	)
 
+
 func draw_discovery_zones():
 	for discovery in discoveries:
 		var x1 := value_to_x(discovery.min_position)
@@ -190,7 +210,7 @@ func draw_discovery_zones():
 			12
 		)
 		
-		draw_rect(rect, Color(1.0,0.0,1.0,0.35))
+		draw_rect(rect, Color(1.0,0.0,1.0,0.5))
 		
 		draw_line(
 			Vector2(x1, y-4),
@@ -228,8 +248,8 @@ func draw_preview_position():
 	
 	draw_circle(
 		Vector2(x,y),
-		3.0,
-		Color.DIM_GRAY
+		5.0,
+		Color("00000050")
 	)
 
 

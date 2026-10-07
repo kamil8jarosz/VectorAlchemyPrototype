@@ -29,7 +29,7 @@ func setup_ingredients(ingredients: Array[IngredientData]):
 		ingredient_list.add_child(entry)
 		
 		entry.setup(ingredient)
-		entry.pressed.connect(_on_ingredient_selected.bind(ingredient))
+		entry.pressed.connect(_on_ingredient_selected.bind(entry, ingredient))
 
 
 func setup_stations(stations: Array[ProcessingStation]):
@@ -41,13 +41,49 @@ func setup_stations(stations: Array[ProcessingStation]):
 		station_list.add_child(entry)
 		
 		entry.setup(station)
-		entry.pressed.connect(_on_station_selected.bind(station))
+		entry.pressed.connect(_on_station_selected.bind(entry, station))
 
 
-func _on_ingredient_selected(ingredient: IngredientData):
-	ingredient_selected.emit(ingredient)
+func set_selection(ingredient: IngredientData, station: ProcessingStation):
+	enable_ingredients()
+	enable_stations()
 	
-func _on_station_selected(station):
+	for entry in ingredient_list.get_children():
+		if entry.ingredient == ingredient:
+			entry.disabled = true
+			
+	for entry in station_list.get_children():
+		if entry.station == station:
+			entry.disabled = true
+
+
+func enable_ingredients():
+	for entry in ingredient_list.get_children():
+		entry.disabled = false
+
+
+func disable_ingredients():
+	for entry in ingredient_list.get_children():
+		entry.disabled = true
+
+func enable_stations():
+	for entry in station_list.get_children():
+		entry.disabled = false
+
+
+func disable_stations():
+	for entry in station_list.get_children():
+		entry.disabled = true
+
+func _on_ingredient_selected(entry, ingredient: IngredientData):
+	enable_ingredients()
+	entry.disabled = true
+	ingredient_selected.emit(ingredient)
+
+
+func _on_station_selected(entry, station: ProcessingStation):
+	enable_stations()
+	entry.disabled = true
 	station_selected.emit(station)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

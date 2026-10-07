@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://Scripts/model/discovery.gd" id="1_uea54"]
 [ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://Scripts/model/ingredient_data.gd" id="2_es4j4"]
+[ext_resource type="Resource" uid="uid://mjt5ie4e40ck" path="res://Resources/Discoveries/fire_separation.tres" id="2_fnluk"]
 [ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://Scripts/model/processing_stations/processing_station.gd" id="3_fnluk"]
 [ext_resource type="Resource" uid="uid://u5ibd62c0xyr" path="res://Resources/Stations/separation_water.tres" id="5_qr8ng"]
 
@@ -13,4 +14,5 @@ hint = "Crafting a mixture of perfect balance might unlock options for processin
 min_position = -0.25
 max_position = 0.25
 unlocked_stations = Array[ExtResource("3_fnluk")]([ExtResource("5_qr8ng")])
+unlocked_discoveries = Array[ExtResource("1_uea54")]([ExtResource("2_fnluk")])
 metadata/_custom_type_script = "uid://ddqogcgstrcqa"

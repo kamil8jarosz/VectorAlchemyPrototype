@@ -14,8 +14,6 @@ func reset():
 
 func set_ingredient(ingredient: IngredientData):
 	selected_ingredient = ingredient
-	clear_station()
-
 
 func set_station(station: ProcessingStation):
 	selected_station = station
@@ -51,7 +49,6 @@ func add_ingredient() -> bool:
 	
 	var mixture_entry = MixtureEntry.new(selected_ingredient, selected_station)
 	ingredients.append(mixture_entry)
-	clear_ingredient()
 	
 	return true
 
@@ -60,8 +57,9 @@ func remove_last_ingredient() -> bool:
 	if ingredients.is_empty():
 		return false
 	
-	ingredients.pop_back()
-	clear_ingredient()
+	var last_entry = ingredients.pop_back()
+	selected_ingredient = last_entry.ingredient
+	selected_station = last_entry.station
 	return true
 
 

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://ddu3jjjp1oywo"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://Scripts/model/discovery.gd" id="1_e1ofm"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://Scripts/model/ingredient_data.gd" id="2_2k6re"]
+[ext_resource type="Resource" uid="uid://cjhbju7brx24w" path="res://Resources/Discoveries/just_a_half.tres" id="2_ex2t2"]
+[ext_resource type="Resource" uid="uid://cs08gysx324fr" path="res://Resources/Ingredients/ash.tres" id="3_2k6re"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://Scripts/model/processing_stations/processing_station.gd" id="3_ex2t2"]
+
+[resource]
+script = ExtResource("1_e1ofm")
+discovery_name = "It's getting hot!"
+description = "Unlocked Ash!"
+hint = "You need a LOT of hot steam. Like, all you can get."
+min_position = -16.25
+max_position = -15.75
+unlocked_ingredients = Array[ExtResource("2_2k6re")]([ExtResource("3_2k6re")])
+unlocked_discoveries = Array[ExtResource("1_e1ofm")]([ExtResource("2_ex2t2")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

@@ -43,6 +43,7 @@ text = "Mixture "
 horizontal_alignment = 2
 
 [node name="MixtureCounter" type="Label" parent="MarginContainer/HBoxContainer" unique_id=578126952]
+unique_name_in_owner = true
 layout_mode = 2
 theme = SubResource("Theme_txpl5")
 text = "0/5"

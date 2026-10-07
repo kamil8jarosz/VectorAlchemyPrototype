@@ -7,9 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c3ppwxtqa5fkd" path="res://Scenes/action_bar.tscn" id="4_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://xmsgnv7sjg2s" path="res://Scenes/discovery_result.tscn" id="6_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://cvtmblww8xecy" path="res://Scenes/discovery_journal.tscn" id="7_1l0tm"]
-[ext_resource type="PackedScene" uid="uid://vxqfc1cwqmk0" path="res://Scenes/WelcomePopups/welcome_popup1.tscn" id="8_v158k"]
-[ext_resource type="PackedScene" uid="uid://bsrfeal42y8oe" path="res://Scenes/WelcomePopups/welcome_popup2.tscn" id="9_ldgsr"]
-[ext_resource type="PackedScene" uid="uid://cu1ed3n6chnsd" path="res://Scenes/WelcomePopups/welcome_popup3.tscn" id="10_o5yvi"]
+[ext_resource type="PackedScene" uid="uid://vxqfc1cwqmk0" path="res://Scenes/welcome_popup.tscn" id="8_v158k"]
 
 [sub_resource type="Theme" id="Theme_uxtvc"]
 
@@ -62,10 +60,4 @@ visible = false
 [node name="DiscoveryJournal" parent="." unique_id=2066464238 instance=ExtResource("7_1l0tm")]
 visible = false
 
-[node name="Popups" type="Node" parent="." unique_id=1096191087]
-
-[node name="WelcomePopup3" parent="Popups" unique_id=1731693657 instance=ExtResource("10_o5yvi")]
-
-[node name="WelcomePopup2" parent="Popups" unique_id=1959738060 instance=ExtResource("9_ldgsr")]
-
-[node name="WelcomePopup" parent="Popups" unique_id=1273256342 instance=ExtResource("8_v158k")]
+[node name="WelcomePopup" parent="." unique_id=93077036 instance=ExtResource("8_v158k")]

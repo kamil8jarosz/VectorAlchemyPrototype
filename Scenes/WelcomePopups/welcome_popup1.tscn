@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://vxqfc1cwqmk0"]
+
+[ext_resource type="Script" uid="uid://bofiwd3ybib6r" path="res://Scripts/welcome_popup.gd" id="1_nuvo7"]
+[ext_resource type="StyleBox" uid="uid://ds8uy3w0wmqee" path="res://Themes/panel_style_box_flat.tres" id="2_32fm7"]
+[ext_resource type="Theme" uid="uid://c60agimh0yhha" path="res://Themes/theme.tres" id="3_2ewl8"]
+
+[sub_resource type="Theme" id="Theme_bhunq"]
+
+[node name="WelcomePopup" type="Control" unique_id=14670541]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nuvo7")
+
+[node name="Dimmer" type="ColorRect" parent="." unique_id=2034835818]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1887503168]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.5
+offset_top = -110.0
+offset_right = 145.5
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_bhunq")
+theme_override_styles/panel = ExtResource("2_32fm7")
+
+[node name="Margin" type="MarginContainer" parent="Panel" unique_id=656341516]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 11
+theme_override_constants/margin_bottom = 10
+
+[node name="Content" type="VBoxContainer" parent="Panel/Margin" unique_id=1422875768]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Title" type="Label" parent="Panel/Margin/Content" unique_id=462269580]
+layout_mode = 2
+theme = ExtResource("3_2ewl8")
+theme_override_font_sizes/font_size = 20
+text = "BEGIN EXPERIMENT"
+horizontal_alignment = 1
+
+[node name="DiscoveryName" type="Label" parent="Panel/Margin/Content" unique_id=1413163156]
+layout_mode = 2
+theme = ExtResource("3_2ewl8")
+text = "Alchemy is not about following recipes.
+Observe.  Experiment.  Discover."
+horizontal_alignment = 1
+
+[node name="Separator" type="HSeparator" parent="Panel/Margin/Content" unique_id=1182963300]
+layout_mode = 2
+
+[node name="Description" type="Label" parent="Panel/Margin/Content" unique_id=1362104667]
+custom_minimum_size = Vector2(400, 50)
+custom_maximum_size = Vector2(400, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_2ewl8")
+theme_override_font_sizes/font_size = 12
+text = "Hey Player! Check DISCOVERIES for mysteries awaiting their reveal (top right). You might get a hint to nudge you in the right direction. Each discovery unlocks something new. Don't be afraid to experiment."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Separator2" type="HSeparator" parent="Panel/Margin/Content" unique_id=927892832]
+layout_mode = 2
+
+[node name="Footnote" type="Label" parent="Panel/Margin/Content" unique_id=339132902]
+layout_mode = 2
+theme = ExtResource("3_2ewl8")
+theme_override_font_sizes/font_size = 20
+text = "There is no wrong experiment."
+horizontal_alignment = 1
+
+[node name="ConfirmButton" type="Button" parent="Panel/Margin/Content" unique_id=1049239303]
+custom_minimum_size = Vector2(60, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_2ewl8")
+text = "Next"

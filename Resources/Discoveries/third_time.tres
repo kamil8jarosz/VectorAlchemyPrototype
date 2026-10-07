@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://be5p65721wwyt"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://Scripts/model/discovery.gd" id="1_awxq7"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://Scripts/model/ingredient_data.gd" id="2_lb0d1"]
+[ext_resource type="Resource" uid="uid://bvt3ep8alioip" path="res://Resources/Ingredients/mist.tres" id="3_lb0d1"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://Scripts/model/processing_stations/processing_station.gd" id="3_w244s"]
+
+[resource]
+script = ExtResource("1_awxq7")
+discovery_name = "Third time's the charm"
+description = "Mist unlocked. Its energy is a bit peculiar, you might want to take a look"
+hint = "Another one of the first failed attempts. 
+Imagine you're just starting and all you have is plain rainwater and mixture capacity of 3. What would you do?"
+min_position = 2.75
+max_position = 3.25
+unlocked_ingredients = Array[ExtResource("2_lb0d1")]([ExtResource("3_lb0d1")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

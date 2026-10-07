@@ -17,12 +17,18 @@ signal discover_pressed
 
 
 func show_ingredient(ingredient: IngredientData):
+	if not ingredient:
+		return
+	
 	ingredient_name.text = ingredient.ingredient_name
 	ingredient_fire_label.text = "%s" % ingredient.fire_energy
 	ingredient_water_label.text = "%s" % ingredient.water_energy
 
 
 func show_station(station: ProcessingStation, energy: Energy):
+	if not station:
+		return
+	
 	station_name.text = station.station_name
 	station_fire_label.text = "%s" % energy.fire
 	station_water_label.text = "%s" % energy.water
@@ -41,3 +47,21 @@ func _ready() -> void:
 	undo_button.pressed.connect(func(): undo_pressed.emit())
 	add_button.pressed.connect(func(): add_pressed.emit())
 	discover_button.pressed.connect(func(): discover_pressed.emit())
+
+func enable_undo_button():
+	undo_button.disabled = false
+	
+func disable_undo_button():
+	undo_button.disabled = true
+	
+func disable_add_button():
+	add_button.disabled = true
+	
+func enable_add_button():
+	add_button.disabled = false
+
+func disable_discover_button():
+	discover_button.disabled = true
+
+func enable_discover_button():
+	discover_button.disabled = false

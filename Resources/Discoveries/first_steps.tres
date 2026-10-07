@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://bt07x3oobeev"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://Scripts/model/discovery.gd" id="1_o68kg"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://Scripts/model/ingredient_data.gd" id="2_ng21w"]
+[ext_resource type="Resource" uid="uid://be5p65721wwyt" path="res://Resources/Discoveries/third_time.tres" id="2_wjdnl"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://Scripts/model/processing_stations/processing_station.gd" id="3_wjdnl"]
+
+[resource]
+script = ExtResource("1_o68kg")
+discovery_name = "Rainwater's time"
+description = "You unlocked a new cosmetic! Probably hand creme."
+hint = "This is probably what you tried doing as your first experiment. It won't fail this time, I promies"
+min_position = 0.75
+max_position = 1.25
+unlocked_discoveries = Array[ExtResource("1_o68kg")]([ExtResource("2_wjdnl")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"
