@@ -10,6 +10,10 @@ script = ExtResource("1_mntmx")
 
 [node name="Margin" type="MarginContainer" parent="." unique_id=1373137645]
 layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
 
 [node name="Content" type="VBoxContainer" parent="Margin" unique_id=1201661496]
 layout_mode = 2
@@ -18,9 +22,13 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("2_edy5p")
 text = "X Use Rainwater"
+horizontal_alignment = 1
 
 [node name="Text" type="Label" parent="Margin/Content" unique_id=196120022]
+custom_minimum_size = Vector2(200, 0)
+custom_maximum_size = Vector2(200, -1)
 layout_mode = 2
 theme = ExtResource("2_edy5p")
 theme_override_font_sizes/font_size = 12
 text = "One ingredient is not enough"
+autowrap_mode = 3

@@ -10,29 +10,17 @@ var discovery_system: AlchemyDiscovery
 @onready var header: Header = $UI/MarginContainer/VBoxContainer/Header
 @onready var discovery_result: DiscoveryResult = $DiscoveryResult
 @onready var discovery_journal: DiscoveryJournal = $DiscoveryJournal
+@onready var tutorial: Tutorial = $Tutorial
 
-
+# initialization
 const RAINWATER = preload("uid://bswp8od4rsyxp")
 const NO_PROCESSING = preload("uid://bm3uhs44p5hc5")
 
 const USE_RAINWATER = preload("uid://6p1ymdovdi3k")
-const MAKING_OF_STEAM = preload("uid://d3686w003xq12")
 const PERFECTLY_BALANCED = preload("uid://yaijimw35ppg")
 const FIRE_SEPARATION = preload("uid://mjt5ie4e40ck")
 const EXPLORING_FIRE = preload("uid://ciktus83u2ri3")
-const DEBUG_BIG = preload("uid://bh02jyfl6vblo")
 const GREATER_VESSEL = preload("uid://c43egs132gklb")
-
-
-
-var discoveries: Array[Discovery] = [
-	USE_RAINWATER,
-	#MAKING_OF_STEAM,
-	#PERFECTLY_BALANCED,
-	#FIRE_SEPARATION,
-	#EXPLORING_FIRE,
-	#GREATER_VESSEL
-]
 
 
 func _ready():
@@ -41,7 +29,7 @@ func _ready():
 		[NO_PROCESSING]
 	)
 	discovery_system = AlchemyDiscovery.new(
-		discoveries,
+		[USE_RAINWATER],
 		progress
 	)
 	
@@ -49,7 +37,7 @@ func _ready():
 	#refresh_discoveries()
 	
 	inventory.update_unlocks(progress)
-	header.update_mixture_counter(0, mixture.max_ingredients)
+	header.update_mixture_counter(mixture)
 	refresh_action_bar()
 	
 	inventory.ingredient_selected.connect(_on_ingredient_selected)
@@ -59,19 +47,35 @@ func _ready():
 	action_bar.discover_pressed.connect(_on_discover_pressed)
 	header.discoveries_pressed.connect(_on_discoveries_pressed)
 	
-	
+	tutorial.setup(
+		header,
+		experiment,
+		inventory,
+		action_bar,
+		discovery_result,
+		discovery_journal
+	)
+	tutorial.start()
+	tutorial.tutorial_completed.connect(finish_tutorial)
+
+
+func finish_tutorial():
+	refresh_inventory()
+	refresh_action_bar()
+	header.enable_discoveries()
+
 
 func reset_experiment():
 	mixture.reset()
 	action_bar.clear()
 	experiment.clear()
-	header.update_mixture_counter(mixture.ingredients.size(), mixture.max_ingredients)
+	header.update_mixture_counter(mixture)
 
 
 func refresh_action_bar():
-	action_bar.show_ingredient(mixture.selected_ingredient)
-	action_bar.show_station(mixture.selected_station, mixture.get_preview_energy())
-	if mixture.selected_ingredient:
+	action_bar.show_entry(mixture.entry)
+		
+	if mixture.entry.ingredient:
 		action_bar.enable_add_button()
 	else:
 		action_bar.disable_add_button()
@@ -86,18 +90,21 @@ func refresh_action_bar():
 
 func refresh_inventory():
 	inventory.set_selection(
-		mixture.selected_ingredient,
-		mixture.selected_station
+		mixture.entry.ingredient,
+		mixture.entry.station
 	)
+
 
 func _on_ingredient_selected(ingredient: IngredientData):
 	mixture.set_ingredient(ingredient)
 	experiment.set_preview_position(mixture.get_balance_with_preview())
+	
 	refresh_action_bar()
 	refresh_inventory()
 
+
 func _on_station_selected(station: ProcessingStation):
-	if mixture.selected_ingredient == null:
+	if mixture.entry.ingredient == null:
 		return
 	
 	mixture.set_station(station)
@@ -114,25 +121,32 @@ func _on_undo_pressed():
 	experiment.set_preview_position(mixture.get_balance_with_preview())
 	refresh_action_bar()
 	refresh_inventory()
-	header.update_mixture_counter(mixture.ingredients.size(), mixture.max_ingredients)
+	header.update_mixture_counter(mixture)
+
 
 func _on_add_pressed():
-	if mixture.selected_ingredient == null:
+	if mixture.entry.ingredient == null:
 		return
 	
 	if not mixture.add_ingredient():
 		return
 	
-	header.update_mixture_counter(mixture.ingredients.size(), mixture.max_ingredients)
+	header.update_mixture_counter(mixture)
 	experiment.set_current_position(mixture.get_balance())
 	experiment.set_preview_position(mixture.get_balance_with_preview())
+	
+	if mixture.get_size() == mixture.max_ingredients:
+		experiment.set_draw_preview(false)
+	
 	refresh_action_bar()
 	refresh_inventory()
-	
+
 
 func _on_discover_pressed():
 	if mixture.ingredients.is_empty():
 		return
+		
+	experiment.set_draw_preview(false)
 	
 	var position := mixture.get_balance()
 	var discovery := discovery_system.discover(position)
@@ -142,6 +156,7 @@ func _on_discover_pressed():
 	
 	if discovery:
 		discovery_result.show_discovery(discovery)
+		tutorial.something_discovered.emit()
 	else:
 		discovery_result.show_failure(mixture.get_balance())
 	

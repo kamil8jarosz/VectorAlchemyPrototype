@@ -14,39 +14,22 @@
 
 [sub_resource type="Theme" id="Theme_51fkv"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhunq"]
-bg_color = Color(1, 1, 1, 0.15686275)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(1, 1, 1, 1)
-corner_detail = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edy5p"]
-bg_color = Color(0.5647059, 0.36078432, 0.92941177, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-
 [node name="Game" type="Node" unique_id=48143345]
 script = ExtResource("1_wowpa")
 
 [node name="UI" type="Control" parent="." unique_id=794535388]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="MarginContainer" type="MarginContainer" parent="UI" unique_id=1443066980]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 600.0
+offset_bottom = 318.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_uxtvc")
@@ -59,9 +42,8 @@ theme = SubResource("Theme_51fkv")
 layout_mode = 2
 
 [node name="MainArea" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer" unique_id=215741813]
-custom_minimum_size = Vector2(500, 270)
+custom_minimum_size = Vector2(0, 270)
 layout_mode = 2
-size_flags_vertical = 3
 
 [node name="Inventory" parent="UI/MarginContainer/VBoxContainer/MainArea" unique_id=954051571 instance=ExtResource("2_wowpa")]
 layout_mode = 2
@@ -70,7 +52,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ActionBar" parent="UI/MarginContainer/VBoxContainer" unique_id=833468317 instance=ExtResource("4_1l0tm")]
-custom_minimum_size = Vector2(640, 40)
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -87,16 +68,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
 script = ExtResource("8_h4fw4")
 
-[node name="Highlight" type="Panel" parent="Tutorial" unique_id=280671531]
-visible = false
+[node name="Dimmer" type="ColorRect" parent="Tutorial" unique_id=484425484]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="Highlight" type="ColorRect" parent="Tutorial" unique_id=800628746]
 layout_mode = 0
 offset_right = 100.0
 offset_bottom = 40.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_bhunq")
+
+[node name="Arrow" type="TextureRect" parent="Tutorial" unique_id=891775753]
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
 
 [node name="Message" type="PanelContainer" parent="Tutorial" unique_id=1838489095]
 layout_mode = 1
@@ -105,19 +96,15 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -256.0
-offset_top = -128.0
-offset_right = 256.0
-offset_bottom = -58.0
+offset_left = -150.0
+offset_top = -138.0
+offset_right = 150.0
+offset_bottom = -68.0
 grow_horizontal = 2
 grow_vertical = 0
-mouse_filter = 2
-theme = ExtResource("9_ldgsr")
-theme_override_styles/panel = SubResource("StyleBoxFlat_edy5p")
 
 [node name="Margin" type="MarginContainer" parent="Tutorial/Message" unique_id=1533574485]
 layout_mode = 2
-mouse_filter = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
@@ -125,29 +112,15 @@ theme_override_constants/margin_bottom = 8
 
 [node name="Container" type="VBoxContainer" parent="Tutorial/Message/Margin" unique_id=2002291183]
 layout_mode = 2
-mouse_filter = 2
 
 [node name="Text" type="Label" parent="Tutorial/Message/Margin/Container" unique_id=1616266995]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("9_ldgsr")
-text = "Tutorial text"
 horizontal_alignment = 1
 autowrap_mode = 3
 
-[node name="Buttons" type="HBoxContainer" parent="Tutorial/Message/Margin/Container" unique_id=1044163640]
-layout_mode = 2
-alignment = 1
-
-[node name="NextButton" type="Button" parent="Tutorial/Message/Margin/Container/Buttons" unique_id=861938232]
-custom_minimum_size = Vector2(50, 0)
+[node name="NextButton" type="Button" parent="Tutorial/Message/Margin/Container" unique_id=861938232]
 layout_mode = 2
 theme = ExtResource("9_ldgsr")
 text = "Next
 "
-
-[node name="SkipButton" type="Button" parent="Tutorial/Message/Margin/Container/Buttons" unique_id=136002249]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-theme = ExtResource("9_ldgsr")
-text = "Skip"

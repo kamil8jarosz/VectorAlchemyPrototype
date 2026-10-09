@@ -5,10 +5,15 @@
 [ext_resource type="Script" uid="uid://ba08eprit10ty" path="res://Scripts/alchemy_line_effects.gd" id="3_va4a8"]
 
 [node name="AlchemyLine" type="Control" unique_id=2139464113]
+custom_minimum_size = Vector2(460, 260)
 layout_mode = 3
-anchors_preset = 0
-offset_right = 450.0
-offset_bottom = 270.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("1_5oaaj")
 script = ExtResource("2_va4a8")
 

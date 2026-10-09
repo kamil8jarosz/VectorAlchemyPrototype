@@ -1,6 +1,9 @@
 class_name DiscoveryResult
 extends Control
 
+signal discovery_result_closed
+signal discovery_result_shown
+
 @onready var title: Label = $Panel/Margin/Content/Title
 @onready var discovery_name: Label = $Panel/Margin/Content/DiscoveryName
 @onready var description: Label = $Panel/Margin/Content/Description
@@ -25,6 +28,7 @@ func show_discovery(discovery: Discovery):
 	_add_rewards(discovery)
 	
 	show()
+	discovery_result_shown.emit()
 
 
 func show_failure(_position: float):
@@ -41,6 +45,7 @@ func show_failure(_position: float):
 	rewards_label.text = ""
 	
 	show()
+	discovery_result_shown.emit()
 
 
 func _add_rewards(discovery: Discovery):
@@ -72,3 +77,4 @@ func _clear_rewards():
 
 func _on_ok_pressed():
 	hide()
+	discovery_result_closed.emit()

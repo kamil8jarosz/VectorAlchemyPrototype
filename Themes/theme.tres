@@ -2,11 +2,44 @@
 
 [ext_resource type="FontFile" uid="uid://bqocabvt1emib" path="res://Assets/W95F.otf" id="1_wi0rm"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4fw4"]
+bg_color = Color(0.18339702, 0.09254869, 0.2069462, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldgsr"]
+bg_color = Color(0.36078432, 0.20392157, 0.4, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wi0rm"]
+bg_color = Color(0.22352941, 0.11764706, 0.2509804, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_updfr"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhunq"]
 bg_color = Color(0.03529412, 0.105882354, 0.15686275, 1)
 
 [resource]
 default_font = ExtResource("1_wi0rm")
+Button/styles/disabled = SubResource("StyleBoxFlat_h4fw4")
+Button/styles/hover = SubResource("StyleBoxFlat_ldgsr")
+Button/styles/normal = SubResource("StyleBoxFlat_wi0rm")
+Button/styles/pressed = SubResource("StyleBoxFlat_updfr")
 MarginContainer/constants/margin_bottom = 4
 MarginContainer/constants/margin_left = 4
 MarginContainer/constants/margin_right = 4

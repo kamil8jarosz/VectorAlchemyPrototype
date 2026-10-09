@@ -4,28 +4,33 @@ extends RefCounted
 var ingredients: Array[MixtureEntry] = []
 var max_ingredients := 3
 
-var selected_ingredient: IngredientData
-var selected_station: ProcessingStation
+var entry := MixtureEntry.new() 
+
 
 func reset():
 	ingredients = []
-	selected_ingredient = null
-	selected_station = null
+	entry = MixtureEntry.new()
+
 
 func set_ingredient(ingredient: IngredientData):
-	selected_ingredient = ingredient
+	entry.ingredient = ingredient
+
 
 func set_station(station: ProcessingStation):
-	selected_station = station
+	entry.station = station
 
 
 func clear_ingredient():
-	selected_ingredient = null
+	entry.ingredient = null
 	clear_station()
 
 
 func clear_station():
-	selected_station = NoProcessing.new()
+	entry.station = NoProcessing.new()
+
+
+func get_size() -> int:
+	return ingredients.size()
 
 
 func can_add() -> bool:
@@ -34,21 +39,24 @@ func can_add() -> bool:
 
 func get_mixture_energy() -> Energy:
 	var energy = Energy.new()
-	for entry in ingredients:
-		energy.add(entry.get_energy())
+	for ingredient in ingredients:
+		energy.add(ingredient.get_energy())
 	
 	return energy
 
 
 func add_ingredient() -> bool:
-	if selected_ingredient == null:
+	if entry.ingredient == null:
 		return false
 	
 	if not can_add():
 		return false
 	
-	var mixture_entry = MixtureEntry.new(selected_ingredient, selected_station)
-	ingredients.append(mixture_entry)
+	ingredients.append(entry)
+	var new_entry = MixtureEntry.new()
+	new_entry.ingredient = entry.ingredient
+	new_entry.station = entry.station
+	entry = new_entry
 	
 	return true
 
@@ -57,14 +65,11 @@ func remove_last_ingredient() -> bool:
 	if ingredients.is_empty():
 		return false
 	
-	var last_entry = ingredients.pop_back()
-	selected_ingredient = last_entry.ingredient
-	selected_station = last_entry.station
+	entry = ingredients.pop_back()
 	return true
 
 
 func get_preview_energy() -> Energy:
-	var entry = MixtureEntry.new(selected_ingredient, selected_station)
 	return entry.get_energy()
 	
 func get_mixture_energy_with_preview() -> Energy:
@@ -73,5 +78,5 @@ func get_mixture_energy_with_preview() -> Energy:
 func get_balance() -> float:
 	return get_mixture_energy().get_balance()
 
-func get_balance_with_preview() -> float:
+func get_balance_with_preview() -> float:	
 	return get_mixture_energy_with_preview().get_balance()

@@ -1,6 +1,8 @@
 class_name DiscoveryJournal
 extends Control
 
+signal discovery_journal_closed
+
 const DISCOVERY_ENTRY = preload("uid://bufdo4gxrxkvb")
 
 @onready var discovery_list: VBoxContainer = %DiscoveryList
@@ -33,5 +35,21 @@ func _clear_entries():
 		child.queue_free()
 
 
+func get_first_entry() -> Node:
+	var children = discovery_list.get_children()
+	if not children:
+		return null
+	return children[0]
+
+
+func disable_close_button():
+	close_button.disabled = true
+
+
+func enable_close_button():
+	close_button.disabled = false
+
+
 func _on_close_pressed():
+	discovery_journal_closed.emit()
 	hide()

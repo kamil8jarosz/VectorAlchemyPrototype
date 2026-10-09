@@ -11,20 +11,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("1_61qej")
 script = ExtResource("2_72sry")
 
-[node name="ExperimentArea" type="VBoxContainer" parent="." unique_id=878844901]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=365290100]
+propagate_maximum_size = false
 layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="ExperimentArea" unique_id=365290100]
-layout_mode = 2
-size_flags_vertical = 3
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="AlchemyLine" parent="ExperimentArea/MarginContainer" unique_id=36207362 instance=ExtResource("1_6ecj1")]
+[node name="AlchemyLine" parent="MarginContainer" unique_id=36207362 instance=ExtResource("1_6ecj1")]
 unique_name_in_owner = true
 layout_mode = 2

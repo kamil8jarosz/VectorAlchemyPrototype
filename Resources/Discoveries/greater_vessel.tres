@@ -1,7 +1,6 @@
 [gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://c43egs132gklb"]
 
 [ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://Scripts/model/discovery.gd" id="1_t7xws"]
-[ext_resource type="Resource" uid="uid://ddu3jjjp1oywo" path="res://Resources/Discoveries/getting_hot.tres" id="2_4hxwm"]
 [ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://Scripts/model/ingredient_data.gd" id="2_yamuq"]
 [ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://Scripts/model/processing_stations/processing_station.gd" id="3_4hxwm"]
 
@@ -12,6 +11,5 @@ description = "The Greater Vessel upgrades max capacity for mixture to 4."
 hint = "Charge steam with fire energy and use one plain ember to create a vessel that increases your mixture capacity."
 min_position = -5.25
 max_position = -4.75
-unlocked_discoveries = Array[ExtResource("1_t7xws")]([ExtResource("2_4hxwm")])
 max_mixture_capacity = 4
 metadata/_custom_type_script = "uid://ddqogcgstrcqa"

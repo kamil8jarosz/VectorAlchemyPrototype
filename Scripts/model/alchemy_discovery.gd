@@ -13,6 +13,7 @@ func _init(
 	progress = _progress
 
 
+
 func discover(position: float) -> Discovery:
 	var discovery := find_at_position(position)
 	
@@ -35,6 +36,7 @@ func find_at_position(position: float) -> Discovery:
 			return discovery
 		
 	return null
+
 
 # DEBUG FUNCTION
 func unlock_all():

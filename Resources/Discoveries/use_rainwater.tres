@@ -14,5 +14,5 @@ hint = "One ingredient is not enough for this mixture. But three might be too mu
 min_position = 1.75
 max_position = 2.25
 unlocked_ingredients = Array[ExtResource("2_jpjln")]([ExtResource("3_dc11x")])
-unlocked_discoveries = Array[ExtResource("1_db2lc")]([ExtResource("2_dc11x")])
+unlocked_discoveries = Array[Resource]([ExtResource("2_dc11x")])
 metadata/_custom_type_script = "uid://ddqogcgstrcqa"

@@ -10,8 +10,9 @@ class_name AlchemyLine
 
 var animation_tween: Tween
 var current_position: float = 0.0
-var preview_position: float = 0.0
 var current_height: float = 0.0
+var preview_position: float = 0.0
+var draw_preview: bool = false
 
 var discoveries: Array[Discovery] = []
 
@@ -28,6 +29,10 @@ func _ready():
 	queue_redraw()
 	position_labels()
 
+
+func set_draw_preview(value: bool):
+	draw_preview = value
+	
 
 func set_preview_position(new_position):
 	preview_position = new_position
@@ -211,20 +216,6 @@ func draw_discovery_zones():
 		)
 		
 		draw_rect(rect, Color(1.0,0.0,1.0,0.5))
-		
-		draw_line(
-			Vector2(x1, y-4),
-			Vector2(x1, y+4),
-			Color(1.0,1.0,1.0,0.35),
-			1.0
-		)
-		
-		draw_line(
-			Vector2(x2, y-4),
-			Vector2(x2, y+4),
-			Color(1.0,1.0,1.0,0.35),
-			1.0
-		)
 
 
 func draw_current_position():
@@ -232,24 +223,35 @@ func draw_current_position():
 	
 	draw_circle(
 		Vector2(x,y+current_height),
-		5.0,
-		Color.DIM_GRAY
+		6.0,
+		Color("000000")
 	)
 	
 	draw_circle(
 		Vector2(x,y+current_height),
-		4.0,
+		5.0,
 		get_gradient_color(x/(right-left))
 	)
 
 
 func draw_preview_position():
+	if not draw_preview:
+		return
+	
 	var x = value_to_x(preview_position)
 	
 	draw_circle(
 		Vector2(x,y),
-		5.0,
-		Color("00000050")
+		6.0,
+		Color("00000080"),
+		false,
+		2.0
+	)
+	
+	draw_circle(
+		Vector2(x,y),
+		4.0,
+		Color("FFFFFF80"),
 	)
 
 

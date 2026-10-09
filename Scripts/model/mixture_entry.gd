@@ -5,7 +5,7 @@ var ingredient: IngredientData
 var station: ProcessingStation
 
 
-func _init(_ingredient: IngredientData, _station: ProcessingStation):
+func _init(_ingredient:IngredientData = null, _station:ProcessingStation = null):
 	self.ingredient = _ingredient
 	self.station = _station
 

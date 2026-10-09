@@ -136,16 +136,21 @@ horizontal_alignment = 1
 layout_mode = 2
 
 [node name="UndoButton" type="Button" parent="MarginContainer/HBoxContainer/Buttons" unique_id=2137030340]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme = ExtResource("1_72tl5")
+disabled = true
 text = "UNDO"
 
 [node name="AddButton" type="Button" parent="MarginContainer/HBoxContainer/Buttons" unique_id=1554534573]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme = ExtResource("1_72tl5")
 text = "ADD"
 
 [node name="DiscoverButton" type="Button" parent="MarginContainer/HBoxContainer/Buttons" unique_id=108561136]
+custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
 theme = ExtResource("1_72tl5")
+disabled = true
 text = "DISCOVER"

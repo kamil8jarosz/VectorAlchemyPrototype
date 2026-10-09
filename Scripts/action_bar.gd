@@ -10,28 +10,29 @@ signal discover_pressed
 @onready var station_name: Label = %StationName
 @onready var station_fire_label: Label = %StationFireLabel
 @onready var station_water_label: Label = %StationWaterLabel
+@onready var selection_info: VBoxContainer = $MarginContainer/HBoxContainer/SelectionInfo
 
 @onready var undo_button: Button = $MarginContainer/HBoxContainer/Buttons/UndoButton
 @onready var add_button: Button = $MarginContainer/HBoxContainer/Buttons/AddButton
 @onready var discover_button: Button = $MarginContainer/HBoxContainer/Buttons/DiscoverButton
 
 
-func show_ingredient(ingredient: IngredientData):
-	if not ingredient:
+func show_entry(entry: MixtureEntry):
+	if not entry.ingredient:
+		clear()
 		return
 	
-	ingredient_name.text = ingredient.ingredient_name
-	ingredient_fire_label.text = "%s" % ingredient.fire_energy
-	ingredient_water_label.text = "%s" % ingredient.water_energy
-
-
-func show_station(station: ProcessingStation, energy: Energy):
-	if not station:
-		return
+	if not entry.station:
+		station_name.text = "NONE"
+	else:
+		station_name.text = entry.station.station_name
 	
-	station_name.text = station.station_name
-	station_fire_label.text = "%s" % energy.fire
-	station_water_label.text = "%s" % energy.water
+	ingredient_name.text = entry.ingredient.ingredient_name
+	ingredient_fire_label.text = "%s" % entry.ingredient.fire_energy
+	ingredient_water_label.text = "%s" % entry.ingredient.water_energy
+	station_fire_label.text = "%s" % entry.get_energy().fire
+	station_water_label.text = "%s" % entry.get_energy().water
+
 
 func clear():
 	ingredient_name.text = "NONE"
@@ -47,6 +48,11 @@ func _ready() -> void:
 	undo_button.pressed.connect(func(): undo_pressed.emit())
 	add_button.pressed.connect(func(): add_pressed.emit())
 	discover_button.pressed.connect(func(): discover_pressed.emit())
+
+func disable_all():
+	disable_add_button()
+	disable_undo_button()
+	disable_discover_button()
 
 func enable_undo_button():
 	undo_button.disabled = false
