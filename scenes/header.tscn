@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://7s51ofo0cdos"]
 
 [ext_resource type="Script" uid="uid://sdiq8y6kun0" path="res://scripts/header.gd" id="1_sp3mi"]
-[ext_resource type="FontFile" uid="uid://bqocabvt1emib" path="res://assets/W95F.otf" id="2_uoemc"]
+[ext_resource type="FontFile" uid="uid://dlb4r4ugny8gi" path="res://assets/W95F.otf" id="2_uoemc"]
 [ext_resource type="Theme" uid="uid://c60agimh0yhha" path="res://themes/theme.tres" id="3_qhj4n"]
 
 [sub_resource type="Theme" id="Theme_jjpey"]
+default_font = ExtResource("2_uoemc")
 
 [sub_resource type="Theme" id="Theme_mxjp1"]
 default_font = ExtResource("2_uoemc")

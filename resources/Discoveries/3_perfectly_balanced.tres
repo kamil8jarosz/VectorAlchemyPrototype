@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://yaijimw35ppg"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_4nja4"]
+[ext_resource type="Resource" uid="uid://mjt5ie4e40ck" path="res://resources/Discoveries/fire_separation.tres" id="2_3gbnt"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="3_he2kc"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="4_sqj04"]
+[ext_resource type="Resource" uid="uid://u5ibd62c0xyr" path="res://resources/Stations/separation_water.tres" id="5_p8tuc"]
+
+[resource]
+script = ExtResource("1_4nja4")
+discovery_name = "Perfectly Balanced"
+description = "..as all things should be. Water separation station unlocked!"
+hint = "Crafting a mixture of perfect balance might unlock options for processing ingredients"
+min_position_x = -0.25
+max_position_x = 0.25
+min_position_y = -0.25
+max_position_y = 0.25
+unlocked_stations = Array[ExtResource("4_sqj04")]([ExtResource("5_p8tuc")])
+unlocked_discoveries = Array[ExtResource("1_4nja4")]([ExtResource("2_3gbnt")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

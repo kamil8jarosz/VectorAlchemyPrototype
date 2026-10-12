@@ -3,6 +3,9 @@ extends Control
 
 signal discovery_result_closed
 signal discovery_result_shown
+signal successful_discovery
+signal unsuccessful_discovery
+signal station_unlocked
 
 @onready var title: Label = $Panel/Margin/Content/Title
 @onready var discovery_name: Label = $Panel/Margin/Content/DiscoveryName
@@ -29,9 +32,10 @@ func show_discovery(discovery: Discovery):
 	
 	show()
 	discovery_result_shown.emit()
+	successful_discovery.emit()
 
 
-func show_failure(_position: float):
+func show_failure(_position: Vector2):
 	title.text = "NO DISCOVERY!"
 	discovery_name.text = ""
 	description.text = "The mixture revealed nothing new."
@@ -46,6 +50,7 @@ func show_failure(_position: float):
 	
 	show()
 	discovery_result_shown.emit()
+	unsuccessful_discovery.emit()
 
 
 func _add_rewards(discovery: Discovery):
@@ -54,6 +59,7 @@ func _add_rewards(discovery: Discovery):
 		
 	for station in discovery.unlocked_stations:
 		_add_reward("New station: %s" % station.station_name)
+		station_unlocked.emit()
 		
 	for new_discovery in discovery.unlocked_discoveries:
 		_add_reward("New discovery: %s" % new_discovery.discovery_name)

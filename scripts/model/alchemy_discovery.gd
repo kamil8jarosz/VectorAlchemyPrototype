@@ -14,7 +14,7 @@ func _init(
 
 
 
-func discover(position: float) -> Discovery:
+func discover(position: Vector2) -> Discovery:
 	var discovery := find_at_position(position)
 	
 	if discovery:
@@ -27,7 +27,7 @@ func discover(position: float) -> Discovery:
 	return discovery
 
 
-func find_at_position(position: float) -> Discovery:
+func find_at_position(position: Vector2) -> Discovery:
 	for discovery in discoveries:
 		if progress.is_discovered(discovery):
 			continue

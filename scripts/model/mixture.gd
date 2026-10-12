@@ -75,8 +75,8 @@ func get_preview_energy() -> Energy:
 func get_mixture_energy_with_preview() -> Energy:
 	return get_preview_energy().add(get_mixture_energy())
 
-func get_balance() -> float:
+func get_balance() -> Vector2:
 	return get_mixture_energy().get_balance()
 
-func get_balance_with_preview() -> float:	
+func get_balance_with_preview() -> Vector2:
 	return get_mixture_energy_with_preview().get_balance()

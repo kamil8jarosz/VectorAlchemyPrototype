@@ -3,9 +3,7 @@ extends Control
 
 signal tutorial_completed
 signal next_pressed
-signal something_discovered
 
-@onready var highlight: Panel = $Highlight
 @onready var message: PanelContainer = $Message
 @onready var text: Label = $Message/Margin/Container/Text
 @onready var next_button: Button = $Message/Margin/Container/Buttons/NextButton
@@ -188,7 +186,7 @@ func run_tutorial():
 	await next_pressed
 	
 	hide()
-	await something_discovered
+	await discovery_result.successful_discovery
 	
 	show()
 	_show_message(
@@ -209,6 +207,17 @@ func run_tutorial():
 		Happy experimenting!"
 	)
 	await next_pressed
+
+	#hide()
+	#await discovery_result.station_unlocked
+	#
+	#show()
+	#_show_message(
+		#"You have unlocked a station!"
+	#)
+	#next_button.show()
+	#await next_pressed
+	
 	
 	tutorial_completed.emit()
 	hide()
@@ -239,7 +248,6 @@ func _highlight_control(control: Control):
 
 
 func _hide_highlight():
-	highlight.hide()
 	stop_flashing()
 
 

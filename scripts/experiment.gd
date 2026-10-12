@@ -9,19 +9,20 @@ func _ready():
 
 
 func clear():
-	set_current_position(0.0)
-	set_preview_position(0.0)
+	set_current_position(Vector2(0.0, 0.0))
+	set_preview_position(Vector2(0.0, 0.0))
 	set_draw_preview(false)
 
 
 func set_draw_preview(value: bool):
 	alchemy_line.set_draw_preview(value)
 
-func set_current_position(new_position: float):
+
+func set_current_position(new_position: Vector2):
 	alchemy_line.set_current_position(new_position)
 
 
-func set_preview_position(new_position: float):
+func set_preview_position(new_position: Vector2):
 	alchemy_line.set_preview_position(new_position)
 	alchemy_line.set_draw_preview(true)
 

@@ -35,5 +35,8 @@ func sub(other_energy: Energy):
 	return self
 
 
-func get_balance() -> float:
-	return water - fire
+func get_balance() -> Vector2:
+	return Vector2(
+		water - fire,
+		earth - air
+	)

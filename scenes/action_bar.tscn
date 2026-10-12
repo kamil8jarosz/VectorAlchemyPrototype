@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://w1g3by3py3vv" path="res://scripts/action_bar.gd" id="1_twh5r"]
 [ext_resource type="Theme" uid="uid://c60agimh0yhha" path="res://themes/theme.tres" id="2_i47ia"]
-[ext_resource type="Texture2D" uid="uid://nc0adob41ca5" path="res://assets/water_icon.png" id="3_hlbnp"]
-[ext_resource type="Texture2D" uid="uid://d2bxfsitm3o8s" path="res://assets/fire_icon.png" id="4_40ryt"]
+[ext_resource type="Texture2D" uid="uid://duy6vf36s28s8" path="res://assets/water_icon.png" id="3_hlbnp"]
+[ext_resource type="Texture2D" uid="uid://b0t6l20eem6aq" path="res://assets/fire_icon.png" id="4_40ryt"]
 
 [node name="ActionBar" type="PanelContainer" unique_id=833468317]
 custom_minimum_size = Vector2(640, 44)

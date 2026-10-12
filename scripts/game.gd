@@ -159,7 +159,6 @@ func _on_discover_pressed():
 	
 	if discovery:
 		discovery_result.show_discovery(discovery)
-		tutorial.something_discovered.emit()
 		header.discoveries_start_flashing()
 	else:
 		discovery_result.show_failure(mixture.get_balance())
