@@ -1,7 +1,6 @@
 class_name AlchemyDiscovery
 extends RefCounted
 
-
 var discoveries: Array[Discovery]
 var progress: AlchemyProgress
 
@@ -11,7 +10,6 @@ func _init(
 ):
 	discoveries = _discoveries
 	progress = _progress
-
 
 
 func discover(position: Vector2) -> Discovery:

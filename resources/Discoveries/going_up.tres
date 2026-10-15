@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://drxfb0o4rup3l"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_khlv0"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_uhw04"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="3_nwkkl"]
+
+[resource]
+script = ExtResource("1_khlv0")
+discovery_name = "Going up"
+hint = "This shouldn't be possible."
+min_position_x = -2.75
+max_position_x = 2.25
+min_position_y = -2.25
+max_position_y = -1.75
+max_mixture_capacity = 3
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

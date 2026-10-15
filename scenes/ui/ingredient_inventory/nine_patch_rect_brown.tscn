@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://coykg8k6gj4mf"]
+
+[ext_resource type="Texture2D" uid="uid://ddkyx6wabf1ft" path="res://assets/9patch/brown_border.png" id="1_t8oy7"]
+
+[node name="NinePatchRectBrown" type="NinePatchRect" unique_id=1921554884]
+texture = ExtResource("1_t8oy7")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16

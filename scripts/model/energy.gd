@@ -35,6 +35,10 @@ func sub(other_energy: Energy):
 	return self
 
 
+func get_total() -> float:
+	return water+fire+air+earth
+
+
 func get_balance() -> Vector2:
 	return Vector2(
 		water - fire,

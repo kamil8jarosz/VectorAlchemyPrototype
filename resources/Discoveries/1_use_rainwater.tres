@@ -1,20 +1,20 @@
-[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://6p1ymdovdi3k"]
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://c6oe7l4ggimql"]
 
 [ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_kukyo"]
-[ext_resource type="Resource" uid="uid://d3686w003xq12" path="res://resources/Discoveries/2_making_of_steam.tres" id="2_eewhq"]
+[ext_resource type="Resource" uid="uid://10v2wmmsdwom" path="res://resources/Discoveries/2_half_empty.tres" id="2_kukyo"]
 [ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="3_77taf"]
 [ext_resource type="Resource" uid="uid://cf3xhttyu84" path="res://resources/Ingredients/pure_water.tres" id="4_qpha5"]
 [ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="5_hwy5c"]
 
 [resource]
 script = ExtResource("1_kukyo")
-discovery_name = "Use rainwater"
-description = "Created your first mixture using rainwater. Pure water unlocked! It's stronger than rainwater."
-hint = "One ingredient is not enough for this mixture. But three might be too much. "
+discovery_name = "The first experiment"
+description = "Pure water unlocked! It holds more water energy that Droplet."
+hint = "Create your first mixture with two droplets."
 min_position_x = 1.75
 max_position_x = 2.25
 min_position_y = -0.25
 max_position_y = 0.25
 unlocked_ingredients = Array[ExtResource("3_77taf")]([ExtResource("4_qpha5")])
-unlocked_discoveries = Array[ExtResource("1_kukyo")]([ExtResource("2_eewhq")])
+unlocked_discoveries = Array[ExtResource("1_kukyo")]([ExtResource("2_kukyo")])
 metadata/_custom_type_script = "uid://ddqogcgstrcqa"

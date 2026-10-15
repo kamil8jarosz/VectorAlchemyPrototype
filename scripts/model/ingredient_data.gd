@@ -5,7 +5,9 @@ class_name IngredientData
 @export var fire_energy: float = 0.0
 @export var water_energy: float = 0.0
 @export var air_energy: float = 0.0
-@export var earth_energy: float = 0.0 
+@export var earth_energy: float = 0.0
+@export_multiline var description: String = ""
+@export var texture: Texture2D
 
 func get_energy() -> Energy:
 	return Energy.new(

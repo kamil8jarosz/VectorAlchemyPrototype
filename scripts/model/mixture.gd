@@ -2,7 +2,7 @@ class_name Mixture
 extends RefCounted
 
 var ingredients: Array[MixtureEntry] = []
-var max_ingredients := 3
+var max_ingredients := 2
 
 var entry := MixtureEntry.new() 
 
@@ -12,12 +12,24 @@ func reset():
 	entry = MixtureEntry.new()
 
 
+func is_empty():
+	return ingredients.size() == 0
+
+
+func is_full():
+	return ingredients.size() == max_ingredients
+
+
 func set_ingredient(ingredient: IngredientData):
 	entry.ingredient = ingredient
 
 
 func set_station(station: ProcessingStation):
 	entry.station = station
+
+
+func get_current_ingredient():
+	return entry.ingredient
 
 
 func clear_ingredient():
@@ -61,13 +73,22 @@ func add_ingredient() -> bool:
 	return true
 
 
-func remove_last_ingredient() -> bool:
+func pop_last_ingredient() -> bool:
 	if ingredients.is_empty():
 		return false
 	
 	entry = ingredients.pop_back()
 	return true
 
+
+func remove_last_ingredient() -> bool:
+	if ingredients.is_empty():
+		return false
+	
+	ingredients.pop_back()
+	entry = MixtureEntry.new()
+	
+	return true
 
 func get_preview_energy() -> Energy:
 	return entry.get_energy()

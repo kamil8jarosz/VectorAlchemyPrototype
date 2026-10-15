@@ -1,0 +1,190 @@
+[gd_scene format=3 uid="uid://bu20yevj4ra63"]
+
+[ext_resource type="Theme" uid="uid://dl4h70bc23dgk" path="res://themes/ui_theme_dark.tres" id="1_j7ago"]
+[ext_resource type="Script" uid="uid://bwxujwhhqtdu7" path="res://scenes/ui/alchemy_map/alchemy_map.gd" id="2_j7ago"]
+[ext_resource type="Texture2D" uid="uid://ddkyx6wabf1ft" path="res://assets/9patch/brown_border.png" id="3_36xlq"]
+
+[node name="AlchemyMap" type="Control" unique_id=2139464113]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_j7ago")
+script = ExtResource("2_j7ago")
+
+[node name="Label" type="Label" parent="." unique_id=1488059]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 13.0
+offset_right = 148.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 26
+text = "Alchemy Map"
+
+[node name="FireLabel" type="Label" parent="." unique_id=1900383502]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = 40.0
+offset_bottom = 8.0
+grow_vertical = 2
+pivot_offset = Vector2(24, 8)
+theme = ExtResource("1_j7ago")
+theme_override_colors/font_color = Color(1, 0.49803922, 0.3137255, 1)
+text = "FIRE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WaterLabel" type="Label" parent="." unique_id=1767461611]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+pivot_offset = Vector2(28, 8)
+size_flags_horizontal = 4
+theme = ExtResource("1_j7ago")
+theme_override_colors/font_color = Color(0, 0.7490196, 1, 1)
+text = "WATER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BalanceLabel" type="Label" parent="." unique_id=884975603]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(400, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(32, 8)
+size_flags_horizontal = 4
+theme = ExtResource("1_j7ago")
+text = "BALANCE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AirLabel" type="Label" parent="." unique_id=1579370947]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(400, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.022000002
+anchor_right = 0.5
+anchor_bottom = 0.022000002
+offset_left = -15.0
+offset_top = -7.9200006
+offset_right = 15.0
+offset_bottom = 8.08
+grow_horizontal = 2
+pivot_offset = Vector2(32, 8)
+size_flags_horizontal = 4
+theme = ExtResource("1_j7ago")
+theme_override_colors/font_color = Color(0.54901963, 0.5882353, 0.19607843, 1)
+text = "AIR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EarthLabel" type="Label" parent="." unique_id=739190592]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(400, 100)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.97800004
+anchor_right = 0.5
+anchor_bottom = 0.97800004
+offset_left = -24.0
+offset_top = -8.080017
+offset_right = 24.0
+offset_bottom = 7.919983
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(32, 8)
+size_flags_horizontal = 4
+theme = ExtResource("1_j7ago")
+theme_override_colors/font_color = Color(0.73333335, 0.5019608, 0, 1)
+text = " EARTH"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="PanelContainer" parent="." unique_id=2080355186]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -117.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer" unique_id=461362178]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer" unique_id=1885497480]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=1384913744]
+layout_mode = 2
+text = "POSITION"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=757822748]
+layout_mode = 2
+text = "Current:"
+
+[node name="PositionLabel" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=1649465852]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=57958582]
+layout_mode = 2
+text = "Preview:"
+
+[node name="PreviewLabel" type="Label" parent="MarginContainer/MarginContainer/VBoxContainer" unique_id=450528889]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer" unique_id=1304778985]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+layout_mode = 2
+texture = ExtResource("3_36xlq")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16

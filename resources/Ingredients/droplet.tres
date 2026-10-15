@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://dcdl6ow47tlt"]
+
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="1_fy3of"]
+[ext_resource type="Texture2D" uid="uid://c58r5u4qfludl" path="res://assets/ingredients/droplet.png" id="2_71v65"]
+
+[resource]
+script = ExtResource("1_fy3of")
+ingredient_name = "Droplet"
+water_energy = 1.0
+description = "A single pure drop of water."
+texture = ExtResource("2_71v65")
+metadata/_custom_type_script = "uid://cidyaaakimrfs"

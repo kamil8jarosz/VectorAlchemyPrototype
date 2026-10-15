@@ -9,30 +9,18 @@ signal next_pressed
 @onready var next_button: Button = $Message/Margin/Container/Buttons/NextButton
 @onready var skip_button: Button = $Message/Margin/Container/Buttons/SkipButton
 
-var header: Control
-var experiment: Control
-var inventory: Control
-var action_bar: Control
-var discovery_result: Control
-var discovery_journal: Control
+var mixture_panel: MixturePanel
+var ingredient_inventory: IngredientInventory
 
 var currently_flashing: Control
 var flash_tween: Tween
 
 func setup(
-	_header: Control,
-	_experiment: Control,
-	_inventory: Control,
-	_action_bar: Control,
-	_discovery_result: Control,
-	_discovery_journal: Control
+	_mixture_panel: MixturePanel,
+	_ingredient_inventory: IngredientInventory,
 ):
-	header = _header
-	experiment = _experiment
-	inventory = _inventory
-	action_bar = _action_bar
-	discovery_result = _discovery_result
-	discovery_journal = _discovery_journal
+	mixture_panel = _mixture_panel
+	ingredient_inventory = _ingredient_inventory
 	
 	
 func _ready() -> void:
@@ -47,10 +35,7 @@ func start():
 func run_tutorial():
 	_hide_highlight()
 	
-	inventory.disable_ingredients()
-	inventory.disable_stations()
-	action_bar.disable_all()
-	header.disable_discoveries()
+	mixture_panel.disable_ui()
 	
 	_show_message(
 		"Welcome to my alchemical workshop. Ready for a guided tour?"
@@ -70,7 +55,7 @@ func run_tutorial():
 		+ "The mixture starts at Balance. Mixture marker is the white ball. "
 		+ "Adding ingredients moves the marker."
 	)
-	_highlight_control(experiment)
+	_highlight_control(mixture_panel.alchemy_map)
 	await next_pressed
 	
 	_show_message(
@@ -78,17 +63,16 @@ func run_tutorial():
 		+ "experiment in one, you will discover something! But it needs to be "
 		+ "unlocked in your Discovery Journal."
 	)
-	_highlight_control(experiment)
 	await next_pressed
 	
 	_show_message(
 		"Select an ingredient. The white outline is the preview of marker's "
 		+ "position when you press ADD."
 	)
-	inventory.enable_ingredients()
-	_highlight_control(inventory.ingredient_list)
+	mixture_panel.ingredient_panel.enable_select_ingredient_button()
+	_highlight_control(mixture_panel.ingredient_panel.select_ingredient_button)
 	next_button.hide()
-	await inventory.ingredient_selected
+	await mixture_panel.select_ingredient_pressed
 
 	_show_message(
 		"When you choose an ingredient, you can also choose how to process it. "
@@ -97,19 +81,19 @@ func run_tutorial():
 		+ "Right now you have no alchemical stations, but you will unlock more."
 		+ "For now, just select NONE."
 	)
-	action_bar.disable_add_button()
-	inventory.enable_stations()
-	_highlight_control(inventory.station_list)
-	await inventory.station_selected
+	#action_bar.disable_add_button()
+	#inventory.enable_stations()
+	#_highlight_control(inventory.station_list)
+	#await inventory.station_selected
 
 	_show_message(
 		"Check the Fire and Water energy of the ingredient. The top entry shows "
 		+ "base energy. The bottom row shows energy after processing in station. "
 		+ "Try to figure out how this energy corresponds to the preview's movement."
 	)
-	inventory.disable_stations()
-	action_bar.disable_add_button()
-	_highlight_control(action_bar.selection_info)
+	#inventory.disable_stations()
+	#action_bar.disable_add_button()
+	#_highlight_control(action_bar.selection_info)
 	next_button.show()
 	await next_pressed
 	
@@ -117,17 +101,17 @@ func run_tutorial():
 		"Click on ADD to add this ingredient to the mixture."
 	)
 	next_button.hide()
-	action_bar.enable_add_button()
-	_highlight_control(action_bar.add_button)
-	await action_bar.add_pressed
+	#action_bar.enable_add_button()
+	#_highlight_control(action_bar.add_button)
+	#await action_bar.add_pressed
 	
 	_show_message(
 		"You have started your first experiment! The ingredient counter is at "
 		+ "the top. Right now, the maximum capacity is 3."
 	)
-	inventory.disable_stations()
-	action_bar.disable_all()
-	_highlight_control(header.mixture_status)
+	#inventory.disable_stations()
+	#action_bar.disable_all()
+	#_highlight_control(header.mixture_status)
 	next_button.show()
 	await next_pressed
 	
@@ -138,29 +122,29 @@ func run_tutorial():
 		+ "button."
 	)
 	next_button.hide()
-	action_bar.enable_discover_button()
-	_highlight_control(action_bar.discover_button)
-	await action_bar.discover_pressed
+	#action_bar.enable_discover_button()
+	#_highlight_control(action_bar.discover_button)
+	#await action_bar.discover_pressed
 
 	self.hide()
-	await discovery_result.discovery_result_closed
+	#await discovery_result.discovery_result_closed
 	
 	self.show()
 	_show_message(
 		"Aww, that's too bad. We need a better approach. Open up discoveries."
 	)
-	inventory.disable_ingredients()
-	inventory.disable_stations()
-	header.enable_discoveries()
-	_highlight_control(header.button)
-	await header.discoveries_pressed
+	#inventory.disable_ingredients()
+	#inventory.disable_stations()
+	#header.enable_discoveries()
+	#_highlight_control(header.button)
+	#await header.discoveries_pressed
 	
 	_show_message(
 		"This journal contains possible discoveries. Right now there is only "
 		+ "one available, but I'm sure you'll find many more soon enough. "
 	)
-	_highlight_control(discovery_journal.panel)
-	discovery_journal.disable_close_button()
+	#_highlight_control(discovery_journal.panel)
+	#discovery_journal.disable_close_button()
 	next_button.show()
 	await next_pressed
 	
@@ -168,25 +152,25 @@ func run_tutorial():
 		"Look at this entry. It says one ingredient is not enough, but three "
 		+ "is too much. Let's go back to the experiment."
 	)
-	_highlight_control(discovery_journal.get_first_entry())
+	#_highlight_control(discovery_journal.get_first_entry())
 	await next_pressed
 	
-	discovery_journal.enable_close_button()
-	_highlight_control(discovery_journal.close_button)
+	#discovery_journal.enable_close_button()
+	#_highlight_control(discovery_journal.close_button)
 	hide()
-	await discovery_journal.discovery_journal_closed
+	#await discovery_journal.discovery_journal_closed
 	
 	_show_message(
 		"Can you figure it out? Go ahead and experiment!"
 	)
 	show()
 	_hide_highlight()
-	inventory.enable_ingredients()
-	inventory.enable_stations()
+	#inventory.enable_ingredients()
+	#inventory.enable_stations()
 	await next_pressed
 	
 	hide()
-	await discovery_result.successful_discovery
+	#await discovery_result.successful_discovery
 	
 	show()
 	_show_message(
@@ -198,7 +182,7 @@ func run_tutorial():
 	await next_pressed
 	
 	hide()
-	await discovery_result.discovery_result_closed
+	#await discovery_result.discovery_result_closed
 	
 	show()
 	_show_message(
@@ -262,5 +246,6 @@ func _on_skip_pressed():
 	next_button.text="OK"
 	skip_button.hide()
 	await next_pressed
+	mixture_panel.refresh_ui()
 	tutorial_completed.emit()
 	hide()

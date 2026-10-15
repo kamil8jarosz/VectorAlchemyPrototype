@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://lhcs8ya01suv"]
 
 [ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="1_uyryf"]
+[ext_resource type="Texture2D" uid="uid://b8ydsvt6v7a7j" path="res://assets/ingredients/ember.png" id="2_q6pb3"]
 
 [resource]
 script = ExtResource("1_uyryf")
 ingredient_name = "Ember"
-fire_energy = 2.0
-water_energy = 1.0
+fire_energy = 1.0
+description = "A tiny, glowing ember that holds a spark of heat."
+texture = ExtResource("2_q6pb3")
 metadata/_custom_type_script = "uid://cidyaaakimrfs"

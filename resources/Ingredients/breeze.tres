@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://7akj2oul1djd"]
+
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="1_oowav"]
+[ext_resource type="Texture2D" uid="uid://3l2134lwwulp" path="res://assets/ingredients/breeze.png" id="2_13o76"]
+
+[resource]
+script = ExtResource("1_oowav")
+ingredient_name = "Breeze"
+air_energy = 1.0
+description = "A faint wisp of moving air, barely visible until it disturbs its surroundings. "
+texture = ExtResource("2_13o76")
+metadata/_custom_type_script = "uid://cidyaaakimrfs"

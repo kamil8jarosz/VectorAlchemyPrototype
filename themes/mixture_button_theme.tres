@@ -1,0 +1,37 @@
+[gd_resource type="Theme" format=3 uid="uid://cdq6uj3bdaike"]
+
+[ext_resource type="FontFile" uid="uid://dlb4r4ugny8gi" path="res://assets/W95F.otf" id="1_21y2u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21y2u"]
+bg_color = Color(0.40392157, 0.33333334, 0.24705882, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsrx0"]
+bg_color = Color(1, 0.80784315, 0.5882353, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mh4gw"]
+bg_color = Color(0.827451, 0.67058825, 0.4862745, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7k531"]
+bg_color = Color(0.6313726, 0.50980395, 0.37254903, 1)
+
+[resource]
+default_font = ExtResource("1_21y2u")
+Button/styles/disabled = SubResource("StyleBoxFlat_21y2u")
+Button/styles/hover = SubResource("StyleBoxFlat_vsrx0")
+Button/styles/normal = SubResource("StyleBoxFlat_mh4gw")
+Button/styles/pressed = SubResource("StyleBoxFlat_7k531")

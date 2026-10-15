@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://l3820xqp3mn7"]
+
+[ext_resource type="Texture2D" uid="uid://dmgyikgjpk43o" path="res://assets/ingredients/placeholder.png" id="1_4xea8"]
+[ext_resource type="Script" uid="uid://ce6nkkp7reaea" path="res://scenes/ui/ingredient_inventory/ingredient_button.gd" id="2_4xea8"]
+
+[node name="IngredientButton" type="TextureButton" unique_id=1553637624]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = -1
+anchor_right = 0.1
+anchor_bottom = 0.178
+offset_bottom = -0.08000183
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_4xea8")
+stretch_mode = 5
+script = ExtResource("2_4xea8")

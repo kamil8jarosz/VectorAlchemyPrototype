@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://flqwbgj76547"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_lijgl"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_87igo"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="3_g6js5"]
+
+[resource]
+script = ExtResource("1_lijgl")
+discovery_name = "Going down"
+hint = "???"
+min_position_x = -3.0
+max_position_x = 3.0
+min_position_y = 3.0
+max_position_y = 3.0
+max_mixture_capacity = 4
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

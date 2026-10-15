@@ -1,10 +1,12 @@
 class_name AlchemyProgress
 extends RefCounted
 
+signal raise_max_mixture_capacity(new_capacity: int)
+
 var discovered: Array[Discovery] = []
 var unlocked_ingredients: Array[IngredientData] = []
 var unlocked_stations: Array[ProcessingStation] = []
-var max_mixture_capacity: int = 3
+var max_mixture_capacity: int = 2
 
 func initialize(ingredients: Array[IngredientData], stations: Array[ProcessingStation]):
 	for ingredient in ingredients:
@@ -42,3 +44,4 @@ func complete(discovery: Discovery):
 	
 	if discovery.max_mixture_capacity > 0:
 		max_mixture_capacity = max(max_mixture_capacity, discovery.max_mixture_capacity)
+		raise_max_mixture_capacity.emit(max_mixture_capacity)

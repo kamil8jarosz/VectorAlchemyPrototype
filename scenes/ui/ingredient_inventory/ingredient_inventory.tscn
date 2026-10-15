@@ -1,0 +1,288 @@
+[gd_scene format=3 uid="uid://lywj707cxos5"]
+
+[ext_resource type="Script" uid="uid://bscsjemkusnvq" path="res://scenes/ui/ingredient_inventory/ingredient_inventory.gd" id="2_7wgtl"]
+[ext_resource type="Theme" uid="uid://dl4h70bc23dgk" path="res://themes/ui_theme_dark.tres" id="3_djkin"]
+[ext_resource type="Texture2D" uid="uid://ddkyx6wabf1ft" path="res://assets/9patch/brown_border.png" id="5_d1mjj"]
+[ext_resource type="PackedScene" uid="uid://l3820xqp3mn7" path="res://scenes/ui/ingredient_inventory/ingredient_button.tscn" id="6_djkin"]
+[ext_resource type="Texture2D" uid="uid://jfm4oxqmpps2" path="res://assets/ingredients/add.png" id="8_7wgtl"]
+
+[node name="IngredientInventory" type="Control" unique_id=1390976855]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_djkin")
+script = ExtResource("2_7wgtl")
+
+[node name="Dimmer" type="ColorRect" parent="." unique_id=1627008944]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_djkin")
+color = Color(0.19215687, 0.14509805, 0.30588236, 0.5019608)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=263091980]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -152.5
+offset_right = 78.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=1072610439]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=92574802]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 14
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=491451624]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1032712661]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Ingredients"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=408473355]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1533376643]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=634250757]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1626299444]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer" unique_id=1423284090]
+custom_minimum_size = Vector2(168, 0)
+layout_mode = 2
+
+[node name="IngredientsGrid" type="GridContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/ScrollContainer" unique_id=1500492221]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 5
+
+[node name="IngredientButton6" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/ScrollContainer/IngredientsGrid" unique_id=583564603 instance=ExtResource("6_djkin")]
+layout_mode = 2
+stretch_mode = 4
+
+[node name="IngredientButton" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/ScrollContainer/IngredientsGrid" unique_id=995777388 instance=ExtResource("6_djkin")]
+layout_mode = 2
+
+[node name="IngredientButton2" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/ScrollContainer/IngredientsGrid" unique_id=1330624042 instance=ExtResource("6_djkin")]
+layout_mode = 2
+
+[node name="IngredientButton3" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/ScrollContainer/IngredientsGrid" unique_id=582590264 instance=ExtResource("6_djkin")]
+layout_mode = 2
+
+[node name="IngredientButton4" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/ScrollContainer/IngredientsGrid" unique_id=1987671477 instance=ExtResource("6_djkin")]
+layout_mode = 2
+
+[node name="IngredientButton5" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/ScrollContainer/IngredientsGrid" unique_id=1553637624 instance=ExtResource("6_djkin")]
+layout_mode = 2
+
+[node name="IngredientButton7" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/ScrollContainer/IngredientsGrid" unique_id=1476936324 instance=ExtResource("6_djkin")]
+layout_mode = 2
+
+[node name="IngredientButton8" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/ScrollContainer/IngredientsGrid" unique_id=230304713 instance=ExtResource("6_djkin")]
+layout_mode = 2
+
+[node name="IngredientButton9" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/ScrollContainer/IngredientsGrid" unique_id=673278343 instance=ExtResource("6_djkin")]
+layout_mode = 2
+
+[node name="IngredientButton10" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/ScrollContainer/IngredientsGrid" unique_id=136193137 instance=ExtResource("6_djkin")]
+layout_mode = 2
+
+[node name="IngredientButton11" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/ScrollContainer/IngredientsGrid" unique_id=685345328 instance=ExtResource("6_djkin")]
+layout_mode = 2
+
+[node name="IngredientButton12" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/ScrollContainer/IngredientsGrid" unique_id=279300018 instance=ExtResource("6_djkin")]
+layout_mode = 2
+
+[node name="IngredientButton13" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/ScrollContainer/IngredientsGrid" unique_id=1253875067 instance=ExtResource("6_djkin")]
+layout_mode = 2
+
+[node name="IngredientButton14" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/ScrollContainer/IngredientsGrid" unique_id=1881700243 instance=ExtResource("6_djkin")]
+layout_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=899367379]
+layout_mode = 2
+texture = ExtResource("5_d1mjj")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+
+[node name="IngredientPreview" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1910936279]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview" unique_id=2087945153]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="IngredientNameLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer" unique_id=5535051]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Ingredient"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer" unique_id=253083979]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer/PanelContainer" unique_id=474373099]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer/PanelContainer/VBoxContainer2" unique_id=251477790]
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 2
+alignment = 1
+
+[node name="AirLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer/PanelContainer/VBoxContainer2/VBoxContainer" unique_id=717752093]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54901963, 0.5882353, 0.19607843, 1)
+text = "Air"
+horizontal_alignment = 1
+
+[node name="AirEnergyLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer/PanelContainer/VBoxContainer2/VBoxContainer" unique_id=1873003648]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54901963, 0.5882353, 0.19607843, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "0.0"
+horizontal_alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer/PanelContainer/VBoxContainer2" unique_id=1195424551]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2" unique_id=662966298]
+custom_minimum_size = Vector2(46, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="FireLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2/VBoxContainer" unique_id=491459615]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.49803922, 0.3137255, 1)
+text = "  Fire  "
+horizontal_alignment = 1
+
+[node name="FireEnergyLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2/VBoxContainer" unique_id=736044467]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.49803922, 0.3137255, 1)
+text = "0.0"
+horizontal_alignment = 1
+
+[node name="IngredientTexture" type="TextureRect" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2" unique_id=614292647]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("8_7wgtl")
+stretch_mode = 4
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2" unique_id=703953176]
+custom_minimum_size = Vector2(46, 0)
+layout_mode = 2
+alignment = 1
+
+[node name="WaterLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2/VBoxContainer2" unique_id=189460400]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.7490196, 1, 1)
+text = "Water "
+
+[node name="WaterEnergyLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer2/VBoxContainer2" unique_id=517256920]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.7490196, 1, 1)
+text = "0.0"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer/PanelContainer/VBoxContainer2" unique_id=1290035420]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="EarthLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer" unique_id=1900399375]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.73333335, 0.5019608, 0, 1)
+text = "Earth"
+horizontal_alignment = 1
+
+[node name="EarthEnergyLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer/PanelContainer/VBoxContainer2/HBoxContainer" unique_id=1994881637]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.73333335, 0.5019608, 0, 1)
+text = "0.0"
+horizontal_alignment = 1
+
+[node name="IngredientDescriptionLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/IngredientPreview/VBoxContainer" unique_id=858906811]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "A single pure drop of water. "
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=47622701]
+layout_mode = 2
+alignment = 1
+
+[node name="CloseButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2020161872]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_djkin")
+text = " CLOSE "
+
+[node name="SelectButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=403695115]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_djkin")
+text = " SELECT "
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CenterContainer/PanelContainer" unique_id=1520457998]
+layout_mode = 2
+texture = ExtResource("5_d1mjj")
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16

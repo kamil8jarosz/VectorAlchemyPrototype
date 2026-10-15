@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://ni23me2nbaq5"]
+
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="1_l2bjc"]
+[ext_resource type="Texture2D" uid="uid://jfm4oxqmpps2" path="res://assets/ingredients/add.png" id="2_jmbfp"]
+
+[resource]
+script = ExtResource("1_l2bjc")
+ingredient_name = "Omniessence"
+fire_energy = 1.0
+water_energy = 1.0
+air_energy = 1.0
+earth_energy = 1.0
+description = "Contains all elemental energies in small quantity."
+texture = ExtResource("2_jmbfp")
+metadata/_custom_type_script = "uid://cidyaaakimrfs"

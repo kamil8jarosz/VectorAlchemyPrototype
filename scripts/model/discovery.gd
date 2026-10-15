@@ -21,5 +21,5 @@ func contains_position(position: Vector2) -> bool:
 		position.x >= min_position_x 
 		and position.x <= max_position_x
 		and position.y >= min_position_y
-		and max_position_y <= max_position_y
+		and position.y <= max_position_y
 	)

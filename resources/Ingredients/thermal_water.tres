@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://bmh677uh1ts6e"]
+
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="1_0rnby"]
+[ext_resource type="Texture2D" uid="uid://bjwuurlkc426o" path="res://assets/ingredients/thermal_water.png" id="2_oqy11"]
+
+[resource]
+script = ExtResource("1_0rnby")
+ingredient_name = "Thermal water"
+fire_energy = 1.0
+water_energy = 3.0
+description = "Water carrying a faint trace of fire. Warm to the touch, it holds a quiet heat beneath its calm surface."
+texture = ExtResource("2_oqy11")
+metadata/_custom_type_script = "uid://cidyaaakimrfs"

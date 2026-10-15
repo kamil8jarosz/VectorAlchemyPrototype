@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://10v2wmmsdwom"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_753pb"]
+[ext_resource type="Resource" uid="uid://d1csabwnmje6g" path="res://resources/Discoveries/3_too_small.tres" id="2_jke24"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_plmrn"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="3_jke24"]
+[ext_resource type="Resource" uid="uid://bmh677uh1ts6e" path="res://resources/Ingredients/thermal_water.tres" id="3_plmrn"]
+
+[resource]
+script = ExtResource("1_753pb")
+discovery_name = "Half empty"
+description = "Thermal water unlocked! It contains traces of fire energy."
+hint = "Fill your flask with pure water, but not all the way to the brim."
+min_position_x = 2.75
+max_position_x = 3.25
+unlocked_ingredients = Array[ExtResource("2_plmrn")]([ExtResource("3_plmrn")])
+unlocked_discoveries = Array[ExtResource("1_753pb")]([ExtResource("2_jke24")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

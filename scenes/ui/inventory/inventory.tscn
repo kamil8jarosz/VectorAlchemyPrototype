@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bp1qctya331lv"]
+
+[ext_resource type="Script" uid="uid://cll46m3vstiv3" path="res://scenes/ui/inventory/inventory.gd" id="1_ty45s"]
+[ext_resource type="FontFile" uid="uid://dlb4r4ugny8gi" path="res://assets/W95F.otf" id="2_53g1v"]
+[ext_resource type="FontFile" uid="uid://dj7ygglx8ftqn" path="res://assets/rainyhearts.ttf" id="3_yyk2a"]
+
+[sub_resource type="Theme" id="Theme_q2fyk"]
+default_font = ExtResource("2_53g1v")
+default_font_size = 18
+
+[sub_resource type="Theme" id="Theme_rrscn"]
+default_font = ExtResource("3_yyk2a")
+
+[sub_resource type="Theme" id="Theme_1rxpj"]
+default_font = ExtResource("2_53g1v")
+default_font_size = 18
+
+[node name="Inventory" type="PanelContainer" unique_id=954051571]
+custom_minimum_size = Vector2(160, 0)
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 95.0
+grow_vertical = 2
+script = ExtResource("1_ty45s")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="." unique_id=155634903]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer3" unique_id=2004276003]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Ingredients" type="Label" parent="VBoxContainer3/VBoxContainer" unique_id=1330076346]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = SubResource("Theme_q2fyk")
+text = "INGREDIENTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IngredientScroll" type="ScrollContainer" parent="VBoxContainer3/VBoxContainer" unique_id=670474603]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_rrscn")
+
+[node name="IngredientList" type="VBoxContainer" parent="VBoxContainer3/VBoxContainer/IngredientScroll" unique_id=1912351525]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer3" unique_id=2099463303]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Stations" type="Label" parent="VBoxContainer3/VBoxContainer2" unique_id=1697560493]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = SubResource("Theme_1rxpj")
+text = "STATIONS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StationScroll" type="ScrollContainer" parent="VBoxContainer3/VBoxContainer2" unique_id=1627570142]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StationList" type="VBoxContainer" parent="VBoxContainer3/VBoxContainer2/StationScroll" unique_id=1812255067]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
