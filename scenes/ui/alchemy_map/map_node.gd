@@ -73,15 +73,13 @@ func _set_current_position(new_position: Vector2):
 	):
 		maximum_value_x += 1
 		maximum_value_y += 1
-		
-		
 	
 	_update_position_label()
 	queue_redraw()
 
 
-func set_discoveries(_discoveries: Array[Discovery]):
-	discoveries = _discoveries
+func add_discovery(discovery: Discovery):
+	discoveries.append(discovery)
 	queue_redraw()
 
 
@@ -100,7 +98,8 @@ func set_current_position(new_position):
 		new_position,
 		0.12
 	)
-	
+
+
 func _update_position_label():
 	if draw_y:
 		position_label.text = "(%d, %d)" % [current_position.x, -current_position.y]
@@ -352,7 +351,7 @@ func draw_discovery_zones():
 			y2-y1
 		)
 		
-		draw_rect(rect, Color(1.0,0.0,1.0,0.5))
+		draw_rect(rect, Color(1.0,0.0,1.0,1.0))
 
 
 func draw_current_position():
@@ -440,6 +439,13 @@ func value_to_y(value: float) -> float:
 		bottom
 	)
 
+
+func value_to_vector(value: Vector2) -> Vector2:
+	return Vector2(
+		value_to_x(value.x),
+		value_to_y(value.y)
+	)
+	
 
 func get_gradient_color(t: float) -> Color:
 	if t < 0.5:

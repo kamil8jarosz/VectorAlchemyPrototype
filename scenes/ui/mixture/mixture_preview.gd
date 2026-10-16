@@ -5,7 +5,7 @@ signal add_ingredient_pressed
 signal undo_button_pressed
 signal reset_button_pressed
 
-@onready var mixture_visuals: VBoxContainer = $VBoxContainer/HBoxContainer/MixtureVisuals
+@onready var mixture_visuals: MixtureVisuals = %MixtureVisuals
 @onready var mixture_texture: TextureRect = %MixtureTexture
 @onready var fluid_texture: TextureRect = %FluidTexture
 @onready var mixture_counter_label: Label = %MixtureCounterLabel
@@ -83,6 +83,7 @@ func _ready():
 func update(mixture: Mixture):
 	update_contents(mixture)
 	update_texture(mixture)
+	mixture_visuals.set_mixture_energy(mixture.get_mixture_energy())
 
 func update_contents(mixture: Mixture):
 	pass

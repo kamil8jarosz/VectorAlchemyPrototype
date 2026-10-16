@@ -2,14 +2,17 @@
 
 [ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_cnvka"]
 [ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_exvmq"]
+[ext_resource type="Resource" uid="uid://lhcs8ya01suv" path="res://resources/Ingredients/ember.tres" id="3_exvmq"]
 [ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="3_klvrw"]
-[ext_resource type="Resource" uid="uid://cnrq6jkphy1iv" path="res://resources/Stations/separation_fire.tres" id="4_exvmq"]
 
 [resource]
 script = ExtResource("1_cnvka")
-discovery_name = "Too small?"
+discovery_name = "Too small"
+description = "Ember unlocked!"
 hint = "One measure of Pure Water, two Droplets. The recipe is simple enough -but our flask cannot hold them all. Perhaps there is another way to achieve the same result?"
 min_position_x = 4.75
 max_position_x = 5.25
-unlocked_stations = Array[ExtResource("3_klvrw")]([ExtResource("4_exvmq")])
+min_position_y = -0.25
+max_position_y = 0.25
+unlocked_ingredients = Array[ExtResource("2_exvmq")]([ExtResource("3_exvmq")])
 metadata/_custom_type_script = "uid://ddqogcgstrcqa"

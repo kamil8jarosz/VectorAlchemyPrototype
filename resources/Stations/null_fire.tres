@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NullFStation" format=3 uid="uid://u5ibd62c0xyr"]
+
+[ext_resource type="Script" uid="uid://ccsexjhyj737k" path="res://scripts/model/processing_stations/separation_w_station.gd" id="1_oukjr"]
+[ext_resource type="Texture2D" uid="uid://b206ixggcq446" path="res://assets/stations/null_fire.png" id="2_v8bck"]
+
+[resource]
+script = ExtResource("1_oukjr")
+station_name = "Null Fire"
+texture = ExtResource("2_v8bck")
+metadata/_custom_type_script = "uid://ccsexjhyj737k"

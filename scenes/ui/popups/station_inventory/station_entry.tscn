@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://h0cgkyyx8407"]
+
+[ext_resource type="Script" uid="uid://c0uvdg0puvecm" path="res://scenes/ui/popups/station_inventory/station_entry.gd" id="1_klwyw"]
+[ext_resource type="Theme" uid="uid://dl4h70bc23dgk" path="res://themes/ui_theme_dark.tres" id="1_r3pnp"]
+[ext_resource type="Texture2D" uid="uid://cgvhnietp1qoc" path="res://assets/stations/dont_process.png" id="2_klwyw"]
+
+[node name="StationEntry" type="Button" unique_id=249655689]
+custom_minimum_size = Vector2(0, 64)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -340.0
+offset_bottom = -296.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_r3pnp")
+text = "Station Name"
+icon = ExtResource("2_klwyw")
+expand_icon = true
+script = ExtResource("1_klwyw")

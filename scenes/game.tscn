@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://xmsgnv7sjg2s" path="res://scenes/ui/popups/discovery_result/discovery_result.tscn" id="6_trtic"]
 [ext_resource type="PackedScene" uid="uid://cvtmblww8xecy" path="res://scenes/ui/popups/discovery_journal/discovery_journal.tscn" id="7_ir15t"]
 [ext_resource type="Script" uid="uid://bp5djhwbcxuky" path="res://scripts/tutorial.gd" id="8_ca42v"]
-[ext_resource type="PackedScene" uid="uid://lywj707cxos5" path="res://scenes/ui/popups/ingredient_inventory/ingredient_inventory.tscn" id="9_kvpfn"]
 [ext_resource type="Theme" uid="uid://c60agimh0yhha" path="res://themes/theme.tres" id="9_rysoc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edy5p"]
@@ -52,9 +51,6 @@ visible = false
 
 [node name="DiscoveryJournal" parent="." unique_id=2066464238 instance=ExtResource("7_ir15t")]
 unique_name_in_owner = true
-visible = false
-
-[node name="IngredientInventory" parent="." unique_id=1390976855 instance=ExtResource("9_kvpfn")]
 visible = false
 
 [node name="Tutorial" type="Control" parent="." unique_id=565215730]

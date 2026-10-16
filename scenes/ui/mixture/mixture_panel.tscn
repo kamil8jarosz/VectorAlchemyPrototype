@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://d1mxdqnyxwtly" path="res://scenes/ui/mixture/mixture_preview.gd" id="4_a4iii"]
 [ext_resource type="Theme" uid="uid://dl4h70bc23dgk" path="res://themes/ui_theme_dark.tres" id="4_qta8p"]
 [ext_resource type="PackedScene" uid="uid://bu20yevj4ra63" path="res://scenes/ui/alchemy_map/alchemy_map.tscn" id="5_4xx1f"]
+[ext_resource type="Script" uid="uid://brjx3a71l0sul" path="res://scenes/ui/mixture/station_panel.gd" id="6_ojxo6"]
 [ext_resource type="Theme" uid="uid://cdq6uj3bdaike" path="res://themes/mixture_button_theme.tres" id="7_0tdh7"]
 [ext_resource type="Texture2D" uid="uid://ct6jh2uqc7ovv" path="res://assets/icons/reset.png" id="7_xrpp0"]
 [ext_resource type="Script" uid="uid://dcsnhnc8nuqer" path="res://scenes/ui/mixture/discover_panel.gd" id="7_yhpb4"]
@@ -15,12 +16,15 @@
 [ext_resource type="Texture2D" uid="uid://c6pchcx7pr4s8" path="res://assets/icons/add.png" id="8_qdtl2"]
 [ext_resource type="Texture2D" uid="uid://cnwt1vo3m6e4g" path="res://assets/icons/undo.png" id="9_i246y"]
 [ext_resource type="Texture2D" uid="uid://bid7gk57j560n" path="res://assets/icons/trash.png" id="10_0tdh7"]
+[ext_resource type="Script" uid="uid://bwrca0agv0biw" path="res://scenes/ui/mixture/mixture_visuals.gd" id="10_ah6hj"]
 [ext_resource type="Texture2D" uid="uid://cjsl7rsg386xa" path="res://assets/mixture/background.png" id="13_fqipc"]
 [ext_resource type="PackedScene" uid="uid://l3820xqp3mn7" path="res://scenes/ui/popups/ingredient_inventory/ingredient_button.tscn" id="14_oy635"]
 [ext_resource type="Texture2D" uid="uid://bx38wha5yyd6e" path="res://assets/mixture/mixture1_2.png" id="16_q6c4k"]
 [ext_resource type="Texture2D" uid="uid://ddkyx6wabf1ft" path="res://assets/9patch/brown_border.png" id="19_qta8p"]
 [ext_resource type="Texture2D" uid="uid://bnklcy8bhp7h1" path="res://assets/icons/compass.png" id="20_dcx1p"]
 [ext_resource type="Texture2D" uid="uid://dwu3pw53a3nto" path="res://assets/icons/scroll.png" id="20_ojxo6"]
+[ext_resource type="PackedScene" uid="uid://lywj707cxos5" path="res://scenes/ui/popups/ingredient_inventory/ingredient_inventory.tscn" id="23_wjdbn"]
+[ext_resource type="PackedScene" uid="uid://dr2x480q7bc0" path="res://scenes/ui/popups/station_inventory/station_inventory.tscn" id="24_60b8i"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5uryt"]
 emission_shape = 1
@@ -106,27 +110,29 @@ theme = ExtResource("4_qta8p")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/IngredientSelectionPanel" unique_id=738219829]
 layout_mode = 2
-size_flags_vertical = 0
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="IngredientPanel" type="PanelContainer" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer" unique_id=192856930]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer" unique_id=1288873170]
+layout_mode = 2
+
+[node name="IngredientPanel" type="PanelContainer" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer" unique_id=192856930]
 unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("3_gusvl")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/IngredientPanel" unique_id=143680799]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/IngredientPanel" unique_id=143680799]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/IngredientPanel/VBoxContainer" unique_id=571127570]
+[node name="Title" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/IngredientPanel/VBoxContainer" unique_id=571127570]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Ingredient"
 horizontal_alignment = 1
 
-[node name="IngredientAirValue" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/IngredientPanel/VBoxContainer" unique_id=621968978]
+[node name="IngredientAirValue" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/IngredientPanel/VBoxContainer" unique_id=621968978]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(20, 13)
 layout_mode = 2
@@ -136,12 +142,12 @@ theme_override_font_sizes/font_size = 14
 text = "1"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/IngredientPanel/VBoxContainer" unique_id=736718661]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/IngredientPanel/VBoxContainer" unique_id=736718661]
 layout_mode = 2
 theme_override_constants/separation = 6
 alignment = 1
 
-[node name="IngredientFireValue" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/IngredientPanel/VBoxContainer/HBoxContainer" unique_id=971476476]
+[node name="IngredientFireValue" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/IngredientPanel/VBoxContainer/HBoxContainer" unique_id=971476476]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(20, 13)
 layout_mode = 2
@@ -152,7 +158,7 @@ text = "1"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="SelectIngredientButton" type="TextureButton" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/IngredientPanel/VBoxContainer/HBoxContainer" unique_id=1620204771]
+[node name="SelectIngredientButton" type="TextureButton" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/IngredientPanel/VBoxContainer/HBoxContainer" unique_id=1620204771]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
@@ -162,7 +168,7 @@ theme = ExtResource("7_0tdh7")
 texture_normal = ExtResource("2_x6cuq")
 stretch_mode = 0
 
-[node name="IngredientWaterValue" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/IngredientPanel/VBoxContainer/HBoxContainer" unique_id=24903786]
+[node name="IngredientWaterValue" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/IngredientPanel/VBoxContainer/HBoxContainer" unique_id=24903786]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(20, 13)
 layout_mode = 2
@@ -171,7 +177,7 @@ theme_override_colors/font_color = Color(0, 0.7490196, 1, 1)
 theme_override_font_sizes/font_size = 14
 text = "1"
 
-[node name="IngredientEarthValue" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/IngredientPanel/VBoxContainer" unique_id=662716450]
+[node name="IngredientEarthValue" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/IngredientPanel/VBoxContainer" unique_id=662716450]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(20, 13)
 layout_mode = 2
@@ -181,11 +187,93 @@ theme_override_font_sizes/font_size = 14
 text = "1"
 horizontal_alignment = 1
 
-[node name="IngredientLabel" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/IngredientPanel/VBoxContainer" unique_id=741254058]
+[node name="IngredientLabel" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/IngredientPanel/VBoxContainer" unique_id=741254058]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Select 
 ingredient"
+horizontal_alignment = 1
+
+[node name="StationPanel" type="PanelContainer" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer" unique_id=840037204]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 10
+script = ExtResource("6_ojxo6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel" unique_id=217647284]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel/VBoxContainer" unique_id=365045629]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Station"
+horizontal_alignment = 1
+
+[node name="SelectStationButton" type="TextureButton" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel/VBoxContainer" unique_id=1206965852]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("2_x6cuq")
+stretch_mode = 5
+
+[node name="StationLabel" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel/VBoxContainer" unique_id=1669214504]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Select 
+station"
+horizontal_alignment = 1
+
+[node name="StationAirValue" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel/VBoxContainer" unique_id=874047870]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 13)
+layout_mode = 2
+theme = ExtResource("4_qta8p")
+theme_override_colors/font_color = Color(0.54901963, 0.5882353, 0.19607843, 1)
+theme_override_font_sizes/font_size = 14
+text = "1"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel/VBoxContainer" unique_id=153030894]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="StationFireValue" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel/VBoxContainer/HBoxContainer" unique_id=554617457]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 13)
+layout_mode = 2
+theme = ExtResource("4_qta8p")
+theme_override_colors/font_color = Color(1, 0.49803922, 0.3137255, 1)
+theme_override_font_sizes/font_size = 14
+text = "1"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="StationIngredientTexture" type="TextureRect" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel/VBoxContainer/HBoxContainer" unique_id=1116584342]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("7_0tdh7")
+
+[node name="StationWaterValue" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel/VBoxContainer/HBoxContainer" unique_id=943486370]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 13)
+layout_mode = 2
+theme = ExtResource("4_qta8p")
+theme_override_colors/font_color = Color(0, 0.7490196, 1, 1)
+theme_override_font_sizes/font_size = 14
+text = "1"
+
+[node name="StationEarthValue" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel/VBoxContainer" unique_id=1714128858]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(20, 13)
+layout_mode = 2
+theme = ExtResource("4_qta8p")
+theme_override_colors/font_color = Color(0.73333335, 0.5019608, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "1"
 horizontal_alignment = 1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/IngredientSelectionPanel" unique_id=880360498]
@@ -232,18 +320,20 @@ custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
 size_flags_vertical = 6
 
-[node name="MixtureVisuals" type="VBoxContainer" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer" unique_id=1153975634]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer" unique_id=1153975634]
 layout_mode = 2
 theme = ExtResource("1_qta8p")
 
-[node name="Panel" type="PanelContainer" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/MixtureVisuals" unique_id=1757279351]
+[node name="MixtureVisuals" type="PanelContainer" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1757279351]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(130, 130)
 custom_maximum_size = Vector2(130, 130)
 layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_qta8p")
+script = ExtResource("10_ah6hj")
 
-[node name="MixtureCounterLabel" type="Label" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/MixtureVisuals/Panel" unique_id=880757815]
+[node name="MixtureCounterLabel" type="Label" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/VBoxContainer/MixtureVisuals" unique_id=880757815]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
@@ -251,7 +341,7 @@ size_flags_vertical = 0
 theme_override_font_sizes/font_size = 16
 text = "0/2"
 
-[node name="BackgroundTexture" type="TextureRect" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/MixtureVisuals/Panel" unique_id=2142614004]
+[node name="BackgroundTexture" type="TextureRect" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/VBoxContainer/MixtureVisuals" unique_id=2142614004]
 custom_minimum_size = Vector2(50, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -259,7 +349,7 @@ size_flags_vertical = 4
 texture = ExtResource("13_fqipc")
 expand_mode = 3
 
-[node name="FluidTexture" type="TextureRect" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/MixtureVisuals/Panel" unique_id=1954707511]
+[node name="FluidTexture" type="TextureRect" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/VBoxContainer/MixtureVisuals" unique_id=1954707511]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 100)
 layout_mode = 2
@@ -268,10 +358,10 @@ size_flags_vertical = 4
 texture = ExtResource("3_l3ke8")
 expand_mode = 5
 
-[node name="Node2D2" type="Node2D" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/MixtureVisuals/Panel" unique_id=848742110]
+[node name="Node2D2" type="Node2D" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/VBoxContainer/MixtureVisuals" unique_id=848742110]
 position = Vector2(65, 92)
 
-[node name="BubbleParticles" type="GPUParticles2D" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/MixtureVisuals/Panel/Node2D2" unique_id=113716167]
+[node name="BubbleParticles" type="GPUParticles2D" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/VBoxContainer/MixtureVisuals/Node2D2" unique_id=113716167]
 unique_name_in_owner = true
 visible = false
 position = Vector2(0, -1)
@@ -279,7 +369,7 @@ amount = 3
 texture = ExtResource("8_glld0")
 process_material = SubResource("ParticleProcessMaterial_5uryt")
 
-[node name="MixtureTexture" type="TextureRect" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/MixtureVisuals/Panel" unique_id=1217862764]
+[node name="MixtureTexture" type="TextureRect" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/VBoxContainer/MixtureVisuals" unique_id=1217862764]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(50, 100)
 layout_mode = 2
@@ -288,31 +378,31 @@ size_flags_vertical = 4
 texture = ExtResource("16_q6c4k")
 expand_mode = 5
 
-[node name="Node2D" type="Node2D" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/MixtureVisuals/Panel" unique_id=1729362614]
+[node name="Node2D" type="Node2D" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/VBoxContainer/MixtureVisuals" unique_id=1729362614]
 position = Vector2(65, 41)
 
-[node name="FireParticles" type="GPUParticles2D" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/MixtureVisuals/Panel/Node2D" unique_id=713392184]
+[node name="FireParticles" type="GPUParticles2D" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/VBoxContainer/MixtureVisuals/Node2D" unique_id=713392184]
 unique_name_in_owner = true
 visible = false
 texture = ExtResource("8_glld0")
 lifetime = 1.57
 process_material = SubResource("ParticleProcessMaterial_qdtl2")
 
-[node name="WaterParticles" type="GPUParticles2D" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/MixtureVisuals/Panel/Node2D" unique_id=721926846]
+[node name="WaterParticles" type="GPUParticles2D" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/VBoxContainer/MixtureVisuals/Node2D" unique_id=721926846]
 unique_name_in_owner = true
 visible = false
 texture = ExtResource("8_glld0")
 lifetime = 1.57
 process_material = SubResource("ParticleProcessMaterial_ej57x")
 
-[node name="AirParticles" type="GPUParticles2D" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/MixtureVisuals/Panel/Node2D" unique_id=2052772081]
+[node name="AirParticles" type="GPUParticles2D" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/VBoxContainer/MixtureVisuals/Node2D" unique_id=2052772081]
 unique_name_in_owner = true
 visible = false
 texture = ExtResource("8_glld0")
 lifetime = 1.57
 process_material = SubResource("ParticleProcessMaterial_glld0")
 
-[node name="EarthParticles" type="GPUParticles2D" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/MixtureVisuals/Panel/Node2D" unique_id=1878314111]
+[node name="EarthParticles" type="GPUParticles2D" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/VBoxContainer/MixtureVisuals/Node2D" unique_id=1878314111]
 unique_name_in_owner = true
 visible = false
 texture = ExtResource("8_glld0")
@@ -503,3 +593,13 @@ custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 size_flags_horizontal = 1
 size_flags_vertical = 1
+
+[node name="IngredientInventory" parent="." unique_id=1390976855 instance=ExtResource("23_wjdbn")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="StationInventory" parent="." unique_id=799522626 instance=ExtResource("24_60b8i")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2

@@ -7,21 +7,27 @@ signal alamanac_pressed
 
 
 @onready var ingredient_panel: IngredientsPanel = %IngredientPanel
+@onready var station_panel: StationPanel = %StationPanel
+
 @onready var mixture_preview: MixturePreview = %MixturePreview
 @onready var discover_panel: DiscoverPanel = %DiscoverPanel
 @onready var alchemy_map: AlchemyMap = %AlchemyMap
 
+@onready var ingredient_inventory: IngredientInventory = %IngredientInventory
+@onready var station_inventory: StationInventory = %StationInventory
+
 
 @onready var almanac_button: Button = %AlmanacButton
+@onready var discover_button: Button = %DiscoverButton
 
 @onready var select_ingredient_button: TextureButton = %SelectIngredientButton
+@onready var select_station_button: TextureButton = %SelectStationButton
 
 @onready var reset_mixture_button: Button = %ResetMixtureButton
 @onready var add_ingredient_button: Button = %AddIngredientButton
 @onready var undo_button: Button = %UndoButton
 @onready var remove_button: Button = %RemoveButton
 
-@onready var discover_button: Button = %DiscoverButton
 
 
 
@@ -31,6 +37,19 @@ var selected_station: ProcessingStation
 
 
 func _ready():
+	station_panel.hide()
+	
+	select_ingredient_button.pressed.connect(
+		func(): ingredient_inventory.show()
+	)
+	select_station_button.pressed.connect(
+		func(): station_inventory.show()
+	)
+	
+	ingredient_inventory.ingredient_selected.connect(display_ingredient)
+	station_inventory.station_selected.connect(display_station)
+	station_inventory.station_unlocked.connect(show_stations)
+	
 	almanac_button.pressed.connect(func():
 		alamanac_pressed.emit()
 	)
@@ -54,8 +73,12 @@ func refresh_ui():
 	select_ingredient_button.disabled = false
 	almanac_button.disabled = false
 	
-	ingredient_panel.display_ingredient(mixture.get_current_ingredient())
 	selected_ingredient = mixture.get_current_ingredient()
+	selected_station = mixture.get_current_station()
+	
+	ingredient_panel.display_ingredient(selected_ingredient)
+	station_panel.display_station(selected_station, selected_ingredient)
+	
 	
 	alchemy_map.set_current_position(mixture.get_balance())
 	alchemy_map.set_preview_position(mixture.get_balance_with_preview())
@@ -119,6 +142,13 @@ func display_ingredient(ingredient: IngredientData):
 	refresh_ui()
 
 
+func display_station(station: ProcessingStation):
+	selected_station = station
+	mixture.set_station(station)
+
+	refresh_ui()
+
+
 func _on_add_pressed():
 	mixture.add_ingredient()
 	update_mixture_preview()
@@ -134,18 +164,26 @@ func _on_undo_pressed():
 func _on_remove_pressed():
 	mixture.remove_last_ingredient()
 	mixture.set_ingredient(selected_ingredient)
+	mixture.set_station(selected_station)
 	refresh_ui()
 
 func _on_reset_pressed():
 	mixture.reset()
 	mixture.set_ingredient(selected_ingredient)
+	mixture.set_station(selected_station)
 	refresh_ui()
 
 
 func update_mixture_preview():
 	mixture_preview.update(mixture)
-	
+
 
 func set_max_mixture_capacity(new_capacity: int):
 	mixture.max_ingredients = new_capacity
 	update_mixture_preview()
+
+func add_discovery(discovery: Discovery):
+	alchemy_map.add_discovery(discovery)
+
+func show_stations():
+	station_panel.show()

@@ -1,7 +1,10 @@
 [gd_resource type="Resource" script_class="NoProcessing" format=3 uid="uid://bm3uhs44p5hc5"]
 
 [ext_resource type="Script" uid="uid://cj5gg7qmkjha0" path="res://scripts/model/processing_stations/no_processing.gd" id="1_cyox2"]
+[ext_resource type="Texture2D" uid="uid://cgvhnietp1qoc" path="res://assets/stations/dont_process.png" id="2_mh35p"]
 
 [resource]
 script = ExtResource("1_cyox2")
+station_name = "Don't process"
+texture = ExtResource("2_mh35p")
 metadata/_custom_type_script = "uid://cj5gg7qmkjha0"

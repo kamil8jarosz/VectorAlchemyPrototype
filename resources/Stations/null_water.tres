@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NullWStation" format=3 uid="uid://cnrq6jkphy1iv"]
+
+[ext_resource type="Script" uid="uid://cggnw6kreyy0e" path="res://scripts/model/processing_stations/separation_f_station.gd" id="1_wkl5o"]
+[ext_resource type="Texture2D" uid="uid://cdxqf6k8ocpi4" path="res://assets/stations/null_water.png" id="2_wg4cx"]
+
+[resource]
+script = ExtResource("1_wkl5o")
+station_name = "Null Water"
+texture = ExtResource("2_wg4cx")
+metadata/_custom_type_script = "uid://cggnw6kreyy0e"

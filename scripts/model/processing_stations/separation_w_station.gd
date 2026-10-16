@@ -1,8 +1,13 @@
-class_name SeparationWStation
+class_name NullFStation
 extends ProcessingStation
 
 func _init():
-	super("Separate Water")
+	super("Null Fire")
 	
 func process(energy: Energy):
-	return Energy.new(energy.water, 0.0)
+	return Energy.new(
+		energy.water, 
+		0.0,
+		energy.earth,
+		energy.air
+	)

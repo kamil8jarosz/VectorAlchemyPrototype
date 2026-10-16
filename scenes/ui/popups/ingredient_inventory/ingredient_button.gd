@@ -8,7 +8,7 @@ const PLACEHOLDER = preload("uid://dmgyikgjpk43o")
 func _ready():
 	pass
 
-func setup(data: IngredientData):	
-	ingredient_data = data
-	if data and data.texture:
-		texture_normal = data.texture
+func setup(ingredient: IngredientData):
+	ingredient_data = ingredient
+	if ingredient and ingredient.texture:
+		texture_normal = ingredient.texture

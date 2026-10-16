@@ -6,14 +6,11 @@ var discovery_system: AlchemyDiscovery
 
 @onready var mixture_panel: MixturePanel = %MixturePanel
 
-@onready var ingredient_inventory: IngredientInventory = $IngredientInventory
 @onready var discovery_result: DiscoveryResult = %DiscoveryResult
 @onready var discovery_journal: DiscoveryJournal = %DiscoveryJournal
 @onready var tutorial: Tutorial = %Tutorial
 
-const _1_USE_RAINWATER = preload("uid://c6oe7l4ggimql")
-const GOING_UP = preload("uid://drxfb0o4rup3l")
-const GOING_DOWN = preload("uid://flqwbgj76547")
+
 
 const DROPLET = preload("uid://dcdl6ow47tlt")
 const EMBER = preload("uid://lhcs8ya01suv")
@@ -24,10 +21,23 @@ var ingredients: Array[IngredientData] = [
 	DROPLET
 ]
 
+const _1_USE_RAINWATER = preload("uid://c6oe7l4ggimql")
+const GOING_UP = preload("uid://drxfb0o4rup3l")
+const GOING_DOWN = preload("uid://flqwbgj76547")
 
 var discoveries: Array[Discovery] = [
 	_1_USE_RAINWATER
 ]
+
+const NO_PROCESSING = preload("uid://bm3uhs44p5hc5")
+const SEPARATION_FIRE = preload("uid://cnrq6jkphy1iv")
+const SEPARATION_WATER = preload("uid://u5ibd62c0xyr")
+
+
+var stations: Array[ProcessingStation] = [
+	NO_PROCESSING
+]
+
 
 
 func _ready():
@@ -35,8 +45,9 @@ func _ready():
 	if debug:
 		ingredients.append_array([EMBER, BREEZE, PEBBLE])
 		discoveries.append_array([GOING_UP, GOING_DOWN])
+		stations.append_array([SEPARATION_FIRE, SEPARATION_WATER])
 	
-	progress.initialize(ingredients, [])
+	progress.initialize(ingredients, stations)
 	progress.raise_max_mixture_capacity.connect(
 		mixture_panel.set_max_mixture_capacity
 	)
@@ -44,12 +55,8 @@ func _ready():
 		discoveries,
 		progress
 	)
-	ingredient_inventory.update(progress)
-	
-	mixture_panel.select_ingredient_pressed.connect(
-		func():
-			ingredient_inventory.show()
-	)
+	mixture_panel.ingredient_inventory.update(progress)
+	mixture_panel.station_inventory.update(progress)
 	
 	mixture_panel.discover_pressed.connect(discover)
 	
@@ -58,13 +65,9 @@ func _ready():
 			discovery_journal.show_journal(discoveries, progress)
 	)
 	
-	ingredient_inventory.ingredient_selected.connect(
-		mixture_panel.display_ingredient
-	)
-	
 	tutorial.setup(
 		mixture_panel, 
-		ingredient_inventory,
+		mixture_panel.ingredient_inventory,
 		discovery_result,
 		discovery_journal
 	)
@@ -77,8 +80,11 @@ func discover(mixture: Mixture):
 	
 	if discovery:
 		progress.complete(discovery)
+		mixture_panel.add_discovery(discovery)
 		discovery_result.show_discovery(discovery)
 	else:
 		discovery_result.show_failure(position)
 		
-	ingredient_inventory.update(progress)
+	mixture_panel.ingredient_inventory.update(progress)
+	mixture_panel.station_inventory.update(progress)
+	

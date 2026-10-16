@@ -31,6 +31,8 @@ func set_station(station: ProcessingStation):
 func get_current_ingredient():
 	return entry.ingredient
 
+func get_current_station():
+	return entry.station
 
 func clear_ingredient():
 	entry.ingredient = null

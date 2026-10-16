@@ -21,6 +21,15 @@ func show_journal(
 ):
 	_clear_entries()
 	
+	discoveries.sort_custom(
+		func(a: Discovery, b:Discovery):
+			if progress.is_discovered(a):
+				return false
+			if progress.is_discovered(b):
+				return true
+			return true
+	)
+	
 	for discovery in discoveries:
 		var entry: DiscoveryEntry = DISCOVERY_ENTRY.instantiate()
 		var discovered := progress.is_discovered(discovery)

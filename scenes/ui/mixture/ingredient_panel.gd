@@ -16,8 +16,7 @@ const ADD = preload("uid://jfm4oxqmpps2")
 
 func _ready():
 	select_ingredient_button.pressed.connect(
-		func():
-			select_ingredient_pressed.emit()
+		func(): select_ingredient_pressed.emit()
 	)
 	
 	clear()
