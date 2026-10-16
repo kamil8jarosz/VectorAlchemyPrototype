@@ -74,18 +74,16 @@ mouse_filter = 2
 script = ExtResource("8_ca42v")
 
 [node name="Message" type="PanelContainer" parent="Tutorial" unique_id=1838489095]
-custom_minimum_size = Vector2(100, 100)
-custom_maximum_size = Vector2(300, 300)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -155.0
+offset_left = -110.0
 offset_top = -60.0
-offset_right = 155.0
-offset_bottom = 60.0
+offset_right = 110.0
+offset_bottom = 34.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("9_rysoc")
@@ -102,16 +100,18 @@ theme_override_constants/margin_bottom = 8
 layout_mode = 2
 
 [node name="Text" type="Label" parent="Tutorial/Message/Margin/Container" unique_id=1616266995]
+custom_minimum_size = Vector2(100, 30)
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_vertical = 3
 theme = ExtResource("9_rysoc")
 text = "Tutorial text"
 horizontal_alignment = 1
-autowrap_mode = 3
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Buttons" type="HBoxContainer" parent="Tutorial/Message/Margin/Container" unique_id=1044163640]
 layout_mode = 2
-size_flags_vertical = 10
+size_flags_vertical = 8
 alignment = 1
 
 [node name="NextButton" type="Button" parent="Tutorial/Message/Margin/Container/Buttons" unique_id=861938232]

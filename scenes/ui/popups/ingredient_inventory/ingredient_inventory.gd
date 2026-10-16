@@ -90,3 +90,11 @@ func setup_label(label: Label, value_label: Label, text: String, value: float):
 		label.hide()
 		value_label.hide()
 		value_label.text = ""
+
+func disable_select_button():
+	select_button.disabled = true
+
+
+func enable_select_button():
+	select_button.disabled = false
+	

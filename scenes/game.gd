@@ -31,7 +31,7 @@ var discoveries: Array[Discovery] = [
 
 
 func _ready():
-	var debug := true
+	var debug := false
 	if debug:
 		ingredients.append_array([EMBER, BREEZE, PEBBLE])
 		discoveries.append_array([GOING_UP, GOING_DOWN])
@@ -64,9 +64,11 @@ func _ready():
 	
 	tutorial.setup(
 		mixture_panel, 
-		ingredient_inventory
+		ingredient_inventory,
+		discovery_result,
+		discovery_journal
 	)
-	#tutorial.start()
+	tutorial.start()
 
 
 func discover(mixture: Mixture):

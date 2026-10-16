@@ -5,6 +5,7 @@ signal add_ingredient_pressed
 signal undo_button_pressed
 signal reset_button_pressed
 
+@onready var mixture_visuals: VBoxContainer = $VBoxContainer/HBoxContainer/MixtureVisuals
 @onready var mixture_texture: TextureRect = %MixtureTexture
 @onready var fluid_texture: TextureRect = %FluidTexture
 @onready var mixture_counter_label: Label = %MixtureCounterLabel
