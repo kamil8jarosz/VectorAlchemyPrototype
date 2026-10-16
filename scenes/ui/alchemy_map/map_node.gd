@@ -187,7 +187,7 @@ func play_discovery_animation():
 
 
 func _draw():
-	draw_discovery_zones()
+	#draw_discovery_zones()
 	draw_axes()
 	position_labels()
 	draw_current_position()

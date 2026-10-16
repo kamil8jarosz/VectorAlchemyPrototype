@@ -41,7 +41,7 @@ var stations: Array[ProcessingStation] = [
 
 
 func _ready():
-	var debug := false
+	var debug := true
 	if debug:
 		ingredients.append_array([EMBER, BREEZE, PEBBLE])
 		discoveries.append_array([GOING_UP, GOING_DOWN])

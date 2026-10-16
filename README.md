@@ -1,5 +1,7 @@
 # Alchemy — Game Prototype
 
+!(doc/screenshots/main.png)
+
 A 2D alchemy experimentation game built with **Godot 4**. Explore the relationship between Fire and Water energies, process ingredients, create mixtures, and discover new alchemical properties.
 
 > **Project status:** Prototype  
@@ -7,7 +9,7 @@ A 2D alchemy experimentation game built with **Godot 4**. Explore the relationsh
 
 ## Overview
 
-The player experiments with ingredients whose Fire and Water energies determine their position on an alchemical number line.
+The player experiments with ingredients whose elemental energies determine mixture's position on an alchemical number line.
 
 - **Balance** is the center point, at position `0`.
 - **Fire** pulls the mixture toward the left.
@@ -23,7 +25,7 @@ The central gameplay loop is:
 
 ## Core Mechanics
 
-### 1. Fire and Water energy
+### 1. Energies
 
 Each ingredient has four energy values:
 
@@ -32,7 +34,7 @@ Each ingredient has four energy values:
 - `air`
 - `earth`
 
-The ingredient's movement is calculated as:
+The ingredient's movement is calculated as 2D vector (positive values up and right):
 
 `(water - fire, air - earth)`
 
@@ -46,13 +48,16 @@ The prototype starts with a mixture capacity of **two ingredients**. Discoveries
 
 ### 3. Processing stations
 
-Processing stations are not currently implemented in 0.4.0 version. Playtesting revealed that they were confusing players.
+Processing stations provide possibility to manipulate ingredient's elemental energy. An ingredient can be processed by at most one station.
 
-I believe they would be a good addition later in the game, when the players are familiar with elemental energy and cancellation. 
+Currently implemented stations:
+- Null Fire - removes fire energy from ingredient
+- Null Water - removes water energy from ingredient 
+
 
 ### 4. Discovery zones
 
-Discoveries are associated with rectangles on the alchemical map. When second dimension is hidden, they becomes intervals on number line.
+Discoveries are associated with rectangles on the alchemical map.
 
 When the mixture reaches a discovery zone, the player can attempt to discover the corresponding result.
 
@@ -65,7 +70,7 @@ Discoveries can reward the player with:
 
 Some discoveries unlock other discoveries, gradually expanding the set of available experiments.
 
-The code separates gameplay rules, progression data, and UI responsibilities.
+The code separates gameplay rules (modelated as classes), progression data (Resources), and UI responsibilities (scenes).
 
 ### Main systems
 
@@ -79,6 +84,7 @@ The code separates gameplay rules, progression data, and UI responsibilities.
 | `Discovery` | Resource containing discovery conditions, descriptions, rewards, and unlock relationships. |
 | `Energy` | Represents Fire, Water, Air, and Earth energy values. |
 | `IngredientData` | Defines an ingredient and its energy composition. |
+| `ProcessingStation` | Implements station with `process(IngredientData)` method. |
 | `AlchemyMap` | Renders the number line/space, positions, markers, and discovery zones. |
 | `Tutorial` | Guides the player through the first experiment using UI interactions and signals. |
 
@@ -87,6 +93,7 @@ The code separates gameplay rules, progression data, and UI responsibilities.
 The prototype uses custom Godot Resources to define game content:
 - Ingredients
 - Discoveries
+- Processing Stations
 
 ## Tutorial
 
@@ -109,10 +116,10 @@ The project is a prototype, so scene setup, resource definitions, and input beha
 
 The prototype focuses on validating the central experimentation loop:
 
-- [x] Elemental energy model
+- [x] 4-Elemental energy model
 - [x] Ingredient composition and mixture calculations
 - [x] Two-dimensional elemental space 
-- [x] Preview and committed mixture positions
+- [x] Current and preview mixture positions
 - [x] Discovery rewards and progression
 - [x] Mixture capacity progression
 - [x] Guided first-experiment tutorial
@@ -122,7 +129,6 @@ The prototype focuses on validating the central experimentation loop:
 
 Potential areas for further development include:
 
-- Processing stations
 - More complex discovery chains
 - Additional discovery conditions and rewards
 - Improved feedback for unsuccessful experiments
