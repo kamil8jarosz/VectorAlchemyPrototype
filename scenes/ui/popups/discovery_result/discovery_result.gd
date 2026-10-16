@@ -27,6 +27,8 @@ func show_discovery(discovery: Discovery):
 	discovery_name.text = discovery.discovery_name
 	description.text = discovery.description
 	
+	rewards_label.text = "Unlocked"
+	
 	_clear_rewards()
 	_add_rewards(discovery)
 	
@@ -41,10 +43,6 @@ func show_failure(_position: Vector2):
 	description.text = "The mixture revealed nothing new."
 	
 	_clear_rewards()
-	
-	var position_label := REWARD_LABEL.instantiate()
-	position_label.text = "Position: %s" % _position
-	rewards.add_child(position_label)
 	
 	rewards_label.text = ""
 	

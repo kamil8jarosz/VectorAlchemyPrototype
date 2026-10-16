@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cvtmblww8xecy"]
 
-[ext_resource type="Script" uid="uid://bvatqbpa3gpxv" path="res://scenes/ui/discovery_journal/discovery_journal.gd" id="1_0lrn5"]
+[ext_resource type="Script" uid="uid://bvatqbpa3gpxv" path="res://scenes/ui/popups/discovery_journal/discovery_journal.gd" id="1_0lrn5"]
 [ext_resource type="Theme" uid="uid://dl4h70bc23dgk" path="res://themes/ui_theme_dark.tres" id="1_3w22u"]
 [ext_resource type="Theme" uid="uid://c60agimh0yhha" path="res://themes/theme.tres" id="3_sibag"]
 [ext_resource type="Texture2D" uid="uid://ddkyx6wabf1ft" path="res://assets/9patch/brown_border.png" id="4_dwt68"]
@@ -82,7 +82,6 @@ theme = ExtResource("3_sibag")
 text = "CLOSE"
 
 [node name="NinePatchRect" type="NinePatchRect" parent="Panel" unique_id=890818251]
-self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
 layout_mode = 2
 texture = ExtResource("4_dwt68")
 patch_margin_left = 16

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bufdo4gxrxkvb"]
 
-[ext_resource type="Script" uid="uid://cl4p16ldqrmce" path="res://scenes/ui/discovery_journal/discovery_entry.gd" id="1_yjofp"]
+[ext_resource type="Script" uid="uid://cl4p16ldqrmce" path="res://scenes/ui/popups/discovery_journal/discovery_entry.gd" id="1_yjofp"]
 [ext_resource type="Theme" uid="uid://c60agimh0yhha" path="res://themes/theme.tres" id="2_f62tu"]
 
 [node name="DiscoveryEntry" type="PanelContainer" unique_id=1736342705]

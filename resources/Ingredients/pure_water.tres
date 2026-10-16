@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_b61re")
 ingredient_name = "Pure water"
-water_energy = 5.0
+water_energy = 3.0
 texture = ExtResource("2_jf34d")
 metadata/_custom_type_script = "uid://cidyaaakimrfs"

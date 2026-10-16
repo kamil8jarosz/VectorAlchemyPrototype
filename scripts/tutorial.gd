@@ -15,6 +15,28 @@ var ingredient_inventory: IngredientInventory
 var currently_flashing: Control
 var flash_tween: Tween
 
+enum ALIGN_H {
+	LEFT,
+	MID_LEFT,
+	CENTER,
+	MID_RIGHT,
+	RIGHT
+}
+
+enum ALIGN_V {
+	TOP,
+	MID_TOP,
+	CENTER,
+	MID_BOTTOM,
+	BOTTOM
+}
+
+var top := 50
+var bottom := 340
+var left := 20
+var right := 620
+	
+
 func setup(
 	_mixture_panel: MixturePanel,
 	_ingredient_inventory: IngredientInventory,
@@ -38,177 +60,99 @@ func run_tutorial():
 	mixture_panel.disable_ui()
 	
 	_show_message(
-		"Welcome to my alchemical workshop. Ready for a guided tour?"
+		"Welcome to my alchemical workshop!
+		Ready for a guided tour?"
+	)
+	_align_message(
+		ALIGN_H.CENTER,
+		ALIGN_V.CENTER
 	)
 	next_button.text = "Start"
 	await next_pressed
 	
 	_show_message(
-		"We'll be discovering new things through alchemy, by creating mixtures."
+		"We'll be discovering new things through alchemy, by creating mixtures
+		and exploring alchemy map."
 	)
 	skip_button.hide()
 	next_button.text = "Next"
 	await next_pressed
 	
 	_show_message(
-		"This is your alchemy line. Fire to the left. Water to the right. "
+		"This is your mixture. As you add ingredients, its elemental energy 
+		will change, which moves the marker on the alchemy map. 
+		Speaking of which..."
+	)
+	_highlight_control(mixture_panel.mixture_preview)
+	_align_message(
+		ALIGN_H.CENTER, 
+		ALIGN_V.BOTTOM
+	)
+	await next_pressed
+	
+	_show_message(
+		"This is your alchemy map. Fire to the left. Water to the right. "
 		+ "The mixture starts at Balance. Mixture marker is the white ball. "
 		+ "Adding ingredients moves the marker."
 	)
 	_highlight_control(mixture_panel.alchemy_map)
-	await next_pressed
-	
-	_show_message(
-		"Hidden on this line, there are discovery zones. If you land your "
-		+ "experiment in one, you will discover something! But it needs to be "
-		+ "unlocked in your Discovery Journal."
+	_align_message(
+		ALIGN_H.LEFT, 
+		ALIGN_V.CENTER
 	)
 	await next_pressed
 	
-	_show_message(
-		"Select an ingredient. The white outline is the preview of marker's "
-		+ "position when you press ADD."
-	)
-	mixture_panel.ingredient_panel.enable_select_ingredient_button()
-	_highlight_control(mixture_panel.ingredient_panel.select_ingredient_button)
-	next_button.hide()
-	await mixture_panel.select_ingredient_pressed
-
-	_show_message(
-		"When you choose an ingredient, you can also choose how to process it. "
-		+ "Processing ingredient alters its elemental energy in various ways. "
-		+ "You can only choose one station at a time (or skip processing). "
-		+ "Right now you have no alchemical stations, but you will unlock more."
-		+ "For now, just select NONE."
-	)
-	#action_bar.disable_add_button()
-	#inventory.enable_stations()
-	#_highlight_control(inventory.station_list)
-	#await inventory.station_selected
-
-	_show_message(
-		"Check the Fire and Water energy of the ingredient. The top entry shows "
-		+ "base energy. The bottom row shows energy after processing in station. "
-		+ "Try to figure out how this energy corresponds to the preview's movement."
-	)
-	#inventory.disable_stations()
-	#action_bar.disable_add_button()
-	#_highlight_control(action_bar.selection_info)
-	next_button.show()
-	await next_pressed
-	
-	_show_message(
-		"Click on ADD to add this ingredient to the mixture."
-	)
-	next_button.hide()
-	#action_bar.enable_add_button()
-	#_highlight_control(action_bar.add_button)
-	#await action_bar.add_pressed
-	
-	_show_message(
-		"You have started your first experiment! The ingredient counter is at "
-		+ "the top. Right now, the maximum capacity is 3."
-	)
-	#inventory.disable_stations()
-	#action_bar.disable_all()
-	#_highlight_control(header.mixture_status)
-	next_button.show()
-	await next_pressed
-	
-	_show_message(
-		"Now that the mixture contains some ingredients, we can use the "
-		+ "current position to try to discover something new! Discoveries are "
-		+ "tied to a position on the alchemy line. Try pressing the DISCOVER "
-		+ "button."
-	)
-	next_button.hide()
-	#action_bar.enable_discover_button()
-	#_highlight_control(action_bar.discover_button)
-	#await action_bar.discover_pressed
-
-	self.hide()
-	#await discovery_result.discovery_result_closed
-	
-	self.show()
-	_show_message(
-		"Aww, that's too bad. We need a better approach. Open up discoveries."
-	)
-	#inventory.disable_ingredients()
-	#inventory.disable_stations()
-	#header.enable_discoveries()
-	#_highlight_control(header.button)
-	#await header.discoveries_pressed
-	
-	_show_message(
-		"This journal contains possible discoveries. Right now there is only "
-		+ "one available, but I'm sure you'll find many more soon enough. "
-	)
-	#_highlight_control(discovery_journal.panel)
-	#discovery_journal.disable_close_button()
-	next_button.show()
-	await next_pressed
-	
-	_show_message(
-		"Look at this entry. It says one ingredient is not enough, but three "
-		+ "is too much. Let's go back to the experiment."
-	)
-	#_highlight_control(discovery_journal.get_first_entry())
-	await next_pressed
-	
-	#discovery_journal.enable_close_button()
-	#_highlight_control(discovery_journal.close_button)
-	hide()
-	#await discovery_journal.discovery_journal_closed
-	
-	_show_message(
-		"Can you figure it out? Go ahead and experiment!"
-	)
-	show()
-	_hide_highlight()
-	#inventory.enable_ingredients()
-	#inventory.enable_stations()
-	await next_pressed
-	
-	hide()
-	#await discovery_result.successful_discovery
-	
-	show()
-	_show_message(
-		"Good work! You unlocked a new ingredient and a new thing to discover. "
-		+ "Discoveries can also unlock processing stations and increase your "
-		+ " mixture capacity."
-	)
-	next_button.show()
-	await next_pressed
-	
-	hide()
-	#await discovery_result.discovery_result_closed
-	
-	show()
 	_show_message(
 		"You did great. The workshop is yours. 
 		Make sure to check out the new discovery. 
 		Happy experimenting!"
 	)
+	_align_message(
+		ALIGN_H.CENTER,
+		ALIGN_V.CENTER
+	)
+	_hide_highlight()
 	await next_pressed
-
-	#hide()
-	#await discovery_result.station_unlocked
-	#
-	#show()
-	#_show_message(
-		#"You have unlocked a station!"
-	#)
-	#next_button.show()
-	#await next_pressed
 	
-	
+	mixture_panel.refresh_ui()
 	tutorial_completed.emit()
 	hide()
 
-func _show_message(message_text: String):
-	text.text = message_text
 
+func _align_message(align_h :ALIGN_H, align_v: ALIGN_V):
+	var new_position = Vector2()
+	match align_v:
+		ALIGN_V.TOP:
+			new_position.y = top
+		ALIGN_V.MID_TOP:
+			new_position.y = (2*top + bottom) / 3.0
+		ALIGN_V.CENTER:
+			new_position.y = (top + bottom) / 2.0 - message.size.y / 2.0
+		ALIGN_V.MID_BOTTOM:
+			new_position.y = (top + 2*bottom) / 3.0
+		ALIGN_V.BOTTOM:
+			new_position.y = bottom - message.size.y
+	
+	match align_h:
+		ALIGN_H.LEFT:
+			new_position.x = left
+		ALIGN_H.CENTER:
+			new_position.x = (left + right) / 2.0 - message.size.x / 2.0
+		ALIGN_H.RIGHT:
+			new_position.x = right - message.size.x
+			
+	_reposition_message(new_position)
+
+
+func _reposition_message(new_position: Vector2):
+	message.global_position = new_position
+
+
+func _show_message(message_text: String):
+	hide()
+	text.text = message_text
+	show()
+	
 
 func stop_flashing():
 	if currently_flashing:
@@ -216,13 +160,12 @@ func stop_flashing():
 		
 	if flash_tween:
 		flash_tween.kill()
-		
 
 
 func start_flashing(control: Control):
 	currently_flashing = control
 	flash_tween = create_tween().set_loops()
-	flash_tween.tween_property(control, "modulate:a", 0.5, 0.5)
+	flash_tween.tween_property(control, "modulate:a", 0.6, 0.5)
 	flash_tween.tween_property(control, "modulate:a", 1.0, 0.5)
 
 
