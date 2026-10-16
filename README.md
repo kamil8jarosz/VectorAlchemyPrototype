@@ -1,6 +1,6 @@
 # Alchemy — Game Prototype
 
-!(doc/screenshots/main.png)
+![Screenshot](doc/screenshots/main.png)
 
 A 2D alchemy experimentation game built with **Godot 4**. Explore the relationship between Fire and Water energies, process ingredients, create mixtures, and discover new alchemical properties.
 
