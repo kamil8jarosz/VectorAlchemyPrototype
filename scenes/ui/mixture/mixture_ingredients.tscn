@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://ban716vuavx6s"]
+
+[ext_resource type="Script" uid="uid://cdw62q5pt5rb3" path="res://scenes/ui/mixture/mixture_contents_panel.gd" id="1_mirvh"]
+[ext_resource type="Script" uid="uid://ct3blfa5xwerb" path="res://scenes/ui/mixture/mixture_contents.gd" id="2_biks1"]
+[ext_resource type="PackedScene" uid="uid://l3820xqp3mn7" path="res://scenes/ui/popups/ingredient_inventory/ingredient_button.tscn" id="3_iift1"]
+
+[node name="MixtureIngredients" type="MarginContainer" unique_id=1048560101]
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+script = ExtResource("1_mirvh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1470910310]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=967429277]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 16
+text = "Ingredients"
+horizontal_alignment = 1
+
+[node name="MixtureContents" type="GridContainer" parent="VBoxContainer" unique_id=239677119]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 2
+script = ExtResource("2_biks1")
+
+[node name="IngredientButton" parent="VBoxContainer/MixtureContents" unique_id=1553637624 instance=ExtResource("3_iift1")]
+layout_mode = 2
+
+[node name="IngredientButton2" parent="VBoxContainer/MixtureContents" unique_id=2007294058 instance=ExtResource("3_iift1")]
+layout_mode = 2

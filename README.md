@@ -1,31 +1,43 @@
 # Alchemy — Game Prototype
 
-![Screenshot](doc/screenshots/main.png)
+![Screenshot - start](doc/screenshots/start.png)
 
-A 2D alchemy experimentation game built with **Godot 4**. Explore the relationship between Fire and Water energies, process ingredients, create mixtures, and discover new alchemical properties.
+A 2D alchemy experimentation game built with **Godot 4**. Explore the relationships between
+ elemental energies, create mixtures, and discover new alchemical wonders.
 
 > **Project status:** Prototype  
 > This repository contains an early gameplay implementation focused on experimentation, discovery, and core systems.
 
 ## Overview
 
-The player experiments with ingredients whose elemental energies determine mixture's position on an alchemical number line.
+The player explores the Map of Alchemy by crafting mixtures. Player's position on the alchemy map
+ is determined by mixture's elemental energy.
 
-- **Balance** is the center point, at position `0`.
-- **Fire** pulls the mixture toward the left.
-- **Water** pulls the mixture toward the right.
-- **Air** pulls the mixture upwards.
-- **Earth** pulls the mixture downwards.
-
-By combining ingredients and applying processing stations, the player attempts to reach discovery zones and unlock new ingredients, processing stations, and experimentation possibilities.
+By combining ingredients and applying ingredient processing, the player attempts to reach
+ discoveries and unlock new discoveries, ingredients, processing stations, and raise the mixture capacity.
 
 The central gameplay loop is:
 
-**Observe → Hypothesize → Process → Combine → Discover → Experiment again**
+**Check Almanac for Discoveries → Create Mixture → Discover → Experiment again**
 
 ## Core Mechanics
 
-### 1. Energies
+### 1. The Map of Alchemy
+
+The Map of Alchemy is first presented to the player as a number line with Fire to the left and Water
+ to the right. The maximum shown value is 6 on each side.
+
+![Alchemy map - Line](doc/screenshots/alchemy_map_line.png)
+
+As the game progresses, another axis is revealed - Air/Earth.
+
+![Alchemy map - coordinate space](doc/screenshots/alchemy_map_2d.png)
+
+When the player unlocks stronger ingredients and bigger flasks, the map expands in four directions.
+
+!![Alchemy map - expanded](doc/screenshots/alchemy_map_expanded.png)
+
+### 1. Ingredients
 
 Each ingredient has four energy values:
 
@@ -38,55 +50,56 @@ The ingredient's movement is calculated as 2D vector (positive values up and rig
 
 `(water - fire, air - earth)`
 
-The player can inspect an ingredient's composition and use the preview marker to understand how adding it will affect the mixture.
+The player can inspect an ingredient's composition and see the preview marker to understand how
+ adding an ingredient will affect the mixture.
 
-### 2. Mixtures
+![Ingredient inventory](doc/screenshots/ingredients.png)
 
-Ingredients can be combined into a mixture. The mixture's total energies are the sums of the energies contributed by its entries.
 
-The prototype starts with a mixture capacity of **two ingredients**. Discoveries can increase this limit.
+### 2. Processing stations
 
-### 3. Processing stations
-
-Processing stations provide possibility to manipulate ingredient's elemental energy. An ingredient can be processed by at most one station.
+Processing stations provide a way to manipulate ingredient's elemental energy. An ingredient can be
+ processed by at most one station.
 
 Currently implemented stations:
+- No processing - retains the original energies of the ingredient
 - Null Fire - removes fire energy from ingredient
 - Null Water - removes water energy from ingredient 
 
 
-### 4. Discovery zones
+### 3. Mixtures
 
-Discoveries are associated with rectangles on the alchemical map.
+![Mixture](doc/screenshots/mixture.png)
 
-When the mixture reaches a discovery zone, the player can attempt to discover the corresponding result.
+
+Ingredients can be combined into a mixture.
+
+The prototype starts with a mixture capacity of **two ingredients**. Discoveries can raise mixture capacity.
+
+The mixture's total energies are the sums of the energies contributed by its entries.
+
+
+### 4. Discoveries
+
+![Discovery result](doc/screenshots/discovery.png)
+
+Discoveries are the primary progression system. They can thought of as quests.
+
+Each discovery is associated with a rectangular area on the alchemy map and an energy requirement.
+When the mixture contains at least one ingredient, the player can attempt to discover something.
+If the mixure's position is contained by the rectangular area and the energy requirement is 
+satisfied, the Discovery is unlocked.
 
 Discoveries can reward the player with:
-
 - New ingredients
 - New processing stations
-- Additional mixture capacity
-- Access to further discoveries
+- Higher mixture capacity
+- Further discoveries
 
-Some discoveries unlock other discoveries, gradually expanding the set of available experiments.
+The player can see both discovered and undiscovered entries in Discovery Journal.
 
-The code separates gameplay rules (modelated as classes), progression data (Resources), and UI responsibilities (scenes).
-
-### Main systems
-
-| Component | Responsibility |
-|---|---|
-| `Game` | Coordinates gameplay actions and connects the main systems. |
-| `Mixture` | Stores mixture entries and calculates total energy and balance. |
-| `MixtureEntry` | Associates an ingredient with its selected processing station. |
-| `AlchemyDiscovery` | Manages available discoveries and resolves discovery attempts. |
-| `AlchemyProgress` | Tracks completed discoveries, unlocked ingredients, unlocked stations, and mixture capacity. |
-| `Discovery` | Resource containing discovery conditions, descriptions, rewards, and unlock relationships. |
-| `Energy` | Represents Fire, Water, Air, and Earth energy values. |
-| `IngredientData` | Defines an ingredient and its energy composition. |
-| `ProcessingStation` | Implements station with `process(IngredientData)` method. |
-| `AlchemyMap` | Renders the number line/space, positions, markers, and discovery zones. |
-| `Tutorial` | Guides the player through the first experiment using UI interactions and signals. |
+![Discovery Journal](doc/screenshots/discoveries.png)
+ 
 
 ## Resource Model
 
@@ -97,11 +110,15 @@ The prototype uses custom Godot Resources to define game content:
 
 ## Tutorial
 
-The tutorial is implemented as a sequence of interactions rather than a passive text introduction.
+The tutorial is implemented as a sequence of interactions, teaching the player basics of mixture crafting.
 
 It uses signals and `await` to pause until the player performs an action, such as selecting an ingredient, adding it to the mixture, or attempting a discovery.
 
 This keeps the tutorial aligned with actual gameplay and allows UI components to retain ownership of their own controls.
+
+## Running the game
+
+The executable for 0.4.0 is available on my [Google Drive](https://drive.google.com/file/d/12rZnfpSfA-6b8YVssQACLsm9uhMzIRxl/view?usp=drive_link).
 
 ## Building the Project
 
@@ -129,9 +146,17 @@ The prototype focuses on validating the central experimentation loop:
 
 Potential areas for further development include:
 
-- More complex discovery chains
-- Additional discovery conditions and rewards
-- Improved feedback for unsuccessful experiments
+UX:
+- Instead of selecting an ingredient and adding it with a separate button, individual mixture slots should be clickable
+- Better UI for Discovery Journal - ideally graph with Discoveries as nodes and edges representing the hierarchy 
+- Pinning Discoveries to main screen 
+- Better feedback for failed experiments
+
+Architecture:
+- Alchemy Map implementation with nodes - currently it is drawn directly on canvas, which limits customization options
+
+Content:
+- More discoveries
 - Further balancing and playtesting
 
 These are possible directions rather than commitments for the current prototype.
