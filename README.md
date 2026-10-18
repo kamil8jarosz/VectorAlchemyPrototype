@@ -35,7 +35,7 @@ As the game progresses, another axis is revealed - Air/Earth.
 
 When the player unlocks stronger ingredients and bigger flasks, the map expands in four directions.
 
-!![Alchemy map - expanded](doc/screenshots/alchemy_map_expanded.png)
+!![Alchemy map - expanded](doc/screenshots/alchemy_map_2d_expanded.png)
 
 ### 1. Ingredients
 
@@ -66,6 +66,9 @@ Currently implemented stations:
 - Null Fire - removes fire energy from ingredient
 - Null Water - removes water energy from ingredient 
 
+
+![Station](doc/screenshots/station.png)
+Null Fire removes fire energy from Thermal Water.
 
 ### 3. Mixtures
 
