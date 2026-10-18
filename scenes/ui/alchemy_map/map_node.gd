@@ -69,7 +69,9 @@ func _set_current_position(new_position: Vector2):
 		
 	while (
 		current_position.x >= maximum_value_x
-		or current_position.y >= maximum_value_y 
+		or current_position.x <= -maximum_value_x
+		or current_position.y >= maximum_value_y
+		or current_position.y <= -maximum_value_y 
 	):
 		maximum_value_x += 1
 		maximum_value_y += 1
@@ -111,7 +113,8 @@ func _update_position_label():
 			preview_label.text = "(%d, %d)" % [preview_position.x, -preview_position.y]
 		else:
 			preview_label.text = "%d" % preview_position.x
-		
+	else:
+		preview_label.text = "Unavailable"
 
 func clear():
 	current_position = Vector2(0.0, 0.0)

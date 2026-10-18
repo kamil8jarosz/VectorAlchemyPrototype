@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://byb3rdkajacv1"]
+
+[ext_resource type="Script" uid="uid://bjoxbxoabnqs3" path="res://scripts/model/energy.gd" id="1_6bpan"]
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_p4t3s"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_c4w6w"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="3_6bpan"]
+[ext_resource type="Resource" uid="uid://b0xhokcajsxfg" path="res://resources/Discoveries/2c_breezy_clue.tres" id="3_pc8ce"]
+[ext_resource type="Resource" uid="uid://bmh677uh1ts6e" path="res://resources/Ingredients/thermal_water.tres" id="4_pc8ce"]
+
+[sub_resource type="Resource" id="Resource_pc8ce"]
+script = ExtResource("1_6bpan")
+fire = 1.0
+metadata/_custom_type_script = "uid://bjoxbxoabnqs3"
+
+[resource]
+script = ExtResource("1_p4t3s")
+discovery_name = "Thermal waters"
+description = "Thermal water unlocked! It has both fire and water energy."
+hint = "The hot springs are one unit to the east, but their fire energy has run out. Try adding some fire to the mixture. Ember might not be powerful enough, though..."
+min_position_x = 1.0
+max_position_x = 1.0
+min_energy = SubResource("Resource_pc8ce")
+unlocked_ingredients = Array[ExtResource("2_c4w6w")]([ExtResource("4_pc8ce")])
+unlocked_discoveries = Array[ExtResource("1_p4t3s")]([ExtResource("3_pc8ce")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

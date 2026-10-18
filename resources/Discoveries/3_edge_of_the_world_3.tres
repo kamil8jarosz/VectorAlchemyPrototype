@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://chi1gy5gw025a"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_topp8"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_6xmxs"]
+[ext_resource type="Resource" uid="uid://d54i8yfy3ycw" path="res://resources/Discoveries/4_the_end.tres" id="2_y75op"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="3_y75op"]
+
+[resource]
+script = ExtResource("1_topp8")
+discovery_name = "Beyond the edge"
+description = "Wow, how big is the world, really?"
+hint = "Go to the edge of the water axis and keep going."
+min_position_x = 9.0
+max_position_x = 9.0
+unlocked_discoveries = Array[ExtResource("1_topp8")]([ExtResource("2_y75op")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

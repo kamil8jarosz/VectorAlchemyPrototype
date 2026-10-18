@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://beqhuy6512cnj"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_1loh2"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_u73li"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="3_com0a"]
+[ext_resource type="Resource" uid="uid://clsujj8kmvhh4" path="res://resources/Ingredients/fire_crystal.tres" id="3_u73li"]
+
+[resource]
+script = ExtResource("1_1loh2")
+discovery_name = "Fire crystal"
+description = "Fire Crystal unlocked!"
+hint = "With Ember, the fire territory is now open. Try exploring it, there's a new ingredient to be found somewhere nearby. "
+min_position_x = -2.0
+max_position_x = -2.0
+unlocked_ingredients = Array[ExtResource("2_u73li")]([ExtResource("3_u73li")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

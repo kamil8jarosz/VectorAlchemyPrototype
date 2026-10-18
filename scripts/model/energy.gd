@@ -1,10 +1,10 @@
 class_name Energy
-extends RefCounted
+extends Resource
 
-var water: float
-var fire: float
-var earth: float
-var air: float
+@export var water: float = 0.0
+@export var fire: float =  0.0
+@export var earth: float = 0.0
+@export var air: float = 0.0
 
 
 func _init(

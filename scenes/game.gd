@@ -41,7 +41,7 @@ var stations: Array[ProcessingStation] = [
 
 
 func _ready():
-	var debug := true
+	var debug := false
 	if debug:
 		ingredients.append_array([EMBER, BREEZE, PEBBLE])
 		discoveries.append_array([GOING_UP, GOING_DOWN])
@@ -76,7 +76,8 @@ func _ready():
 
 func discover(mixture: Mixture):
 	var position := mixture.get_balance()
-	var discovery := discovery_system.discover(position)
+	var energy := mixture.get_mixture_energy()
+	var discovery := discovery_system.discover(position, energy)
 	
 	if discovery:
 		progress.complete(discovery)

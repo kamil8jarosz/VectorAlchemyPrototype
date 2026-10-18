@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://d54i8yfy3ycw"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_qeax0"]
+[ext_resource type="Script" uid="uid://bjoxbxoabnqs3" path="res://scripts/model/energy.gd" id="1_vlufa"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_jqmnb"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="3_5vg3n"]
+[ext_resource type="Resource" uid="uid://cpu232bg4cxyx" path="res://resources/Ingredients/gust.tres" id="3_w55so"]
+[ext_resource type="Resource" uid="uid://bsopso7xkijjj" path="res://resources/Ingredients/pebble.tres" id="4_tu0rd"]
+[ext_resource type="Resource" uid="uid://7h0xx71a6rga" path="res://resources/Ingredients/boulder.tres" id="5_w55so"]
+[ext_resource type="Resource" uid="uid://bm3uhs44p5hc5" path="res://resources/Stations/no_processing.tres" id="7_vnjl0"]
+[ext_resource type="Resource" uid="uid://cnrq6jkphy1iv" path="res://resources/Stations/null_water.tres" id="8_vlufa"]
+[ext_resource type="Resource" uid="uid://u5ibd62c0xyr" path="res://resources/Stations/null_fire.tres" id="9_6ofd6"]
+
+[sub_resource type="Resource" id="Resource_vnjl0"]
+script = ExtResource("1_vlufa")
+water = 3.0
+fire = 3.0
+air = 1.0
+metadata/_custom_type_script = "uid://bjoxbxoabnqs3"
+
+[resource]
+script = ExtResource("1_qeax0")
+discovery_name = "The end?"
+description = "There's no more story, but I hope you find these features interesting to play with."
+hint = "This is the end of the prototype. Thanks for playing! I hope you enjoyed it.
+...There's still some content left, so if you're curious just ask me :)"
+min_position_y = -1.0
+max_position_y = -1.0
+min_energy = SubResource("Resource_vnjl0")
+unlocked_ingredients = Array[ExtResource("2_jqmnb")]([ExtResource("3_w55so"), ExtResource("4_tu0rd"), ExtResource("5_w55so")])
+unlocked_stations = Array[ExtResource("3_5vg3n")]([ExtResource("7_vnjl0"), ExtResource("8_vlufa"), ExtResource("9_6ofd6")])
+max_mixture_capacity = 4
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

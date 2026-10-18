@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://ddo053nl3526v"]
+
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="1_4pkxm"]
+[ext_resource type="Texture2D" uid="uid://crkvf7tm52yvu" path="res://assets/ingredients/holy_fire.png" id="2_k38qm"]
+
+[resource]
+script = ExtResource("1_4pkxm")
+ingredient_name = "Holy fire"
+fire_energy = 3.0
+description = "A holy fire, ascended from the earth."
+texture = ExtResource("2_k38qm")
+metadata/_custom_type_script = "uid://cidyaaakimrfs"

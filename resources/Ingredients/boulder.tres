@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://7h0xx71a6rga"]
+
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="1_7271f"]
+[ext_resource type="Texture2D" uid="uid://bj6pgx6v8iuo" path="res://assets/ingredients/boulder.png" id="2_yyutu"]
+
+[resource]
+script = ExtResource("1_7271f")
+ingredient_name = "Boulder"
+earth_energy = 3.0
+description = "A bif boulder with a lot of earth energy."
+texture = ExtResource("2_yyutu")
+metadata/_custom_type_script = "uid://cidyaaakimrfs"

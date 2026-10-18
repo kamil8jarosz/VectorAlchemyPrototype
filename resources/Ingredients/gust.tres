@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://cpu232bg4cxyx"]
+
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="1_5o6jb"]
+[ext_resource type="Texture2D" uid="uid://duab77ypru3ha" path="res://assets/ingredients/gust.png" id="2_3qhap"]
+
+[resource]
+script = ExtResource("1_5o6jb")
+ingredient_name = "Gust"
+air_energy = 3.0
+description = "A strong gust of wind"
+texture = ExtResource("2_3qhap")
+metadata/_custom_type_script = "uid://cidyaaakimrfs"

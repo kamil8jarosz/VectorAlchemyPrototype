@@ -52,6 +52,30 @@ func _ready():
 
 func update(alchemy_progress: AlchemyProgress):
 	ingredients = alchemy_progress.unlocked_ingredients
+	ingredients.sort_custom(
+		func(a: IngredientData, b: IngredientData):
+			if a.water_energy < b.water_energy:
+				return true
+			if a.water_energy > b.water_energy:
+				return false
+			
+			if a.fire_energy < b.fire_energy:
+				return true
+			if a.fire_energy > b.fire_energy:
+				return false
+			
+			if a.air_energy < b.air_energy:
+				return true
+			if a.air_energy > b.air_energy:
+				return false
+			
+			if a.earth_energy < b.earth_energy:
+				return true
+			if a.earth_energy > b.earth_energy:
+				return false
+			
+			return true
+	)
 	refresh()
 
 

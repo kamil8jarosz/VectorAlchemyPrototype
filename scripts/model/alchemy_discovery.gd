@@ -12,8 +12,8 @@ func _init(
 	progress = _progress
 
 
-func discover(position: Vector2) -> Discovery:
-	var discovery := find_at_position(position)
+func discover(position: Vector2, energy: Energy) -> Discovery:
+	var discovery := find_at_position(position, energy)
 	
 	if discovery:
 		progress.complete(discovery)
@@ -25,12 +25,15 @@ func discover(position: Vector2) -> Discovery:
 	return discovery
 
 
-func find_at_position(position: Vector2) -> Discovery:
+func find_at_position(position: Vector2, energy: Energy) -> Discovery:
 	for discovery in discoveries:
 		if progress.is_discovered(discovery):
 			continue
 		
-		if discovery.contains_position(position):
+		if(
+			discovery.contains_position(position) 
+			and discovery.fulfills_energy_req(energy)
+		):
 			return discovery
 		
 	return null

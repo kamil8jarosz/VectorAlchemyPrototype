@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://nbgl0o2txtkp"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_c6n35"]
+[ext_resource type="Resource" uid="uid://c1jkpnhbnciqf" path="res://resources/Discoveries/3_edge_of_the_world_2.tres" id="2_3bos8"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="3_3oci3"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="4_1jr0i"]
+
+[resource]
+script = ExtResource("1_c6n35")
+discovery_name = "Edge of the world part 1"
+description = "A new discovery awaits..."
+hint = "Visit the very end of fire axis. It should lead you to a way to make your flask bigger."
+min_position_x = -6.0
+max_position_x = -6.0
+unlocked_discoveries = Array[ExtResource("1_c6n35")]([ExtResource("2_3bos8")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

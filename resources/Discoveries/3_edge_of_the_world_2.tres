@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://c1jkpnhbnciqf"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_5ljqf"]
+[ext_resource type="Resource" uid="uid://l0d5cj217gyt" path="res://resources/Discoveries/3_bigger_flask.tres" id="2_tim03"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="3_h5ylr"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="4_7ct3q"]
+
+[resource]
+script = ExtResource("1_5ljqf")
+discovery_name = "Edge of the world part 2"
+description = "A new discovery awaits..."
+hint = "The quest for a bigger flask continues. Visit the end of water axis to search for clues."
+min_position_x = 6.0
+max_position_x = 6.0
+unlocked_discoveries = Array[ExtResource("1_5ljqf")]([ExtResource("2_tim03")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

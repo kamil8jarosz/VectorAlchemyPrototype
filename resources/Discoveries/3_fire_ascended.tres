@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://61us4oy8y6e6"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_282k6"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_w6kc4"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="3_e8gje"]
+[ext_resource type="Resource" uid="uid://ddo053nl3526v" path="res://resources/Ingredients/holy_fire.tres" id="3_w6kc4"]
+
+[resource]
+script = ExtResource("1_282k6")
+discovery_name = "Fire Ascended"
+description = "Holy fire unlocked!"
+hint = "The legends tell a story of a fire that ascended into the skies. We might be able to capture some of it and use it as an ingredient."
+min_position_x = -2.0
+max_position_x = -2.0
+min_position_y = -1.0
+max_position_y = -1.0
+unlocked_ingredients = Array[ExtResource("2_w6kc4")]([ExtResource("3_w6kc4")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

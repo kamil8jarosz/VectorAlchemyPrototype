@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://d1csabwnmje6g"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_km2jt"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_52irk"]
+[ext_resource type="Resource" uid="uid://b701e2ok5otad" path="res://resources/Discoveries/1d_fiery_ingredient.tres" id="2_km2jt"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="4_o8onb"]
+
+[resource]
+script = ExtResource("1_km2jt")
+discovery_name = "A drop of each"
+description = "Fiery Ingredient Discovery unlocked."
+hint = "We are getting closer to a fire ingredient. This ingredient calls for a drop of regular and pure water each."
+min_position_x = 3.75
+max_position_x = 4.25
+min_position_y = -0.25
+max_position_y = 0.25
+unlocked_discoveries = Array[ExtResource("1_km2jt")]([ExtResource("2_km2jt")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

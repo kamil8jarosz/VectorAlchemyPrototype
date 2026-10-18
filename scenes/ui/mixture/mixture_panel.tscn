@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://jfm4oxqmpps2" path="res://assets/ingredients/add.png" id="2_x6cuq"]
 [ext_resource type="Script" uid="uid://cansjoa5ja3ap" path="res://scenes/ui/mixture/ingredient_panel.gd" id="3_gusvl"]
 [ext_resource type="Texture2D" uid="uid://bl71y45w4v2ve" path="res://assets/mixture/mixture0_2.png" id="3_l3ke8"]
+[ext_resource type="Texture2D" uid="uid://df3yo40h504bl" path="res://assets/backgrounds/ingredients_background.png" id="3_mg6vd"]
 [ext_resource type="Script" uid="uid://d1mxdqnyxwtly" path="res://scenes/ui/mixture/mixture_preview.gd" id="4_a4iii"]
 [ext_resource type="Theme" uid="uid://dl4h70bc23dgk" path="res://themes/ui_theme_dark.tres" id="4_qta8p"]
 [ext_resource type="PackedScene" uid="uid://bu20yevj4ra63" path="res://scenes/ui/alchemy_map/alchemy_map.tscn" id="5_4xx1f"]
@@ -25,6 +26,12 @@
 [ext_resource type="Texture2D" uid="uid://dwu3pw53a3nto" path="res://assets/icons/scroll.png" id="20_ojxo6"]
 [ext_resource type="PackedScene" uid="uid://lywj707cxos5" path="res://scenes/ui/popups/ingredient_inventory/ingredient_inventory.tscn" id="23_wjdbn"]
 [ext_resource type="PackedScene" uid="uid://dr2x480q7bc0" path="res://scenes/ui/popups/station_inventory/station_inventory.tscn" id="24_60b8i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4it4n"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tna2j"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5uryt"]
 emission_shape = 1
@@ -108,6 +115,12 @@ theme_override_constants/separation = -1
 layout_mode = 2
 theme = ExtResource("4_qta8p")
 
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/IngredientSelectionPanel" unique_id=75847475]
+layout_mode = 2
+texture = ExtResource("3_mg6vd")
+expand_mode = 5
+stretch_mode = 1
+
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/IngredientSelectionPanel" unique_id=738219829]
 layout_mode = 2
 theme_override_constants/margin_left = 5
@@ -121,6 +134,7 @@ layout_mode = 2
 [node name="IngredientPanel" type="PanelContainer" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer" unique_id=192856930]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4it4n")
 script = ExtResource("3_gusvl")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/IngredientPanel" unique_id=143680799]
@@ -198,6 +212,7 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 10
+theme_override_styles/panel = SubResource("StyleBoxFlat_tna2j")
 script = ExtResource("6_ojxo6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel" unique_id=217647284]
@@ -344,8 +359,6 @@ text = "0/2"
 [node name="BackgroundTexture" type="TextureRect" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/VBoxContainer/MixtureVisuals" unique_id=2142614004]
 custom_minimum_size = Vector2(50, 100)
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 texture = ExtResource("13_fqipc")
 expand_mode = 3
 
@@ -440,18 +453,6 @@ columns = 2
 layout_mode = 2
 
 [node name="IngredientButton2" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/MixtureContentsPanel/VBoxContainer/MixtureContents" unique_id=1232790833 instance=ExtResource("14_oy635")]
-layout_mode = 2
-
-[node name="IngredientButton3" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/MixtureContentsPanel/VBoxContainer/MixtureContents" unique_id=754536039 instance=ExtResource("14_oy635")]
-layout_mode = 2
-
-[node name="IngredientButton4" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/MixtureContentsPanel/VBoxContainer/MixtureContents" unique_id=147317320 instance=ExtResource("14_oy635")]
-layout_mode = 2
-
-[node name="IngredientButton5" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/MixtureContentsPanel/VBoxContainer/MixtureContents" unique_id=2084700632 instance=ExtResource("14_oy635")]
-layout_mode = 2
-
-[node name="IngredientButton6" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer/HBoxContainer/MixtureContentsPanel/VBoxContainer/MixtureContents" unique_id=688022076 instance=ExtResource("14_oy635")]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer" unique_id=946269857]

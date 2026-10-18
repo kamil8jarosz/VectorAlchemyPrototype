@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://b701e2ok5otad"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="2_roe6w"]
+[ext_resource type="Resource" uid="uid://beqhuy6512cnj" path="res://resources/Discoveries/2a_fire_crystal.tres" id="2_tamoo"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="3_6jv3r"]
+[ext_resource type="Resource" uid="uid://lhcs8ya01suv" path="res://resources/Ingredients/ember.tres" id="3_dlmd0"]
+[ext_resource type="Resource" uid="uid://byb3rdkajacv1" path="res://resources/Discoveries/2b_thermal_water.tres" id="3_roe6w"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="4_wcrxc"]
+
+[resource]
+script = ExtResource("2_roe6w")
+discovery_name = "Fiery Ingredient"
+description = "Ember unlocked!"
+hint = "Go all the way to the end of Water axis, that's where the first fire ingredient is hiding."
+min_position_x = 6.0
+max_position_x = 6.0
+unlocked_ingredients = Array[ExtResource("3_6jv3r")]([ExtResource("3_dlmd0")])
+unlocked_discoveries = Array[ExtResource("2_roe6w")]([ExtResource("2_tamoo"), ExtResource("3_roe6w")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

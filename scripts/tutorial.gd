@@ -193,7 +193,7 @@ func run_tutorial():
 	await mixture_panel.alamanac_pressed
 	
 	_show_message(
-		"Here you can available discoveries with hints on how to unlock them."
+		"Here you can view available discoveries with hints on how to unlock them."
 	)
 	discovery_journal.disable_close_button()
 	next_button.show()
@@ -312,7 +312,7 @@ func _on_next_pressed():
 
 func _on_skip_pressed():
 	_show_message(
-		"Understood. I won't get in your way.\n Have fun!"
+		"I hope you know what you're doing.\n The workshop is yours!"
 	)
 	next_button.text="OK"
 	skip_button.hide()

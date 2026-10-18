@@ -118,12 +118,9 @@ func update_texture(mixture: Mixture):
 	
 	var balance := mixture.get_balance()
 	mixture_animation = create_tween().set_loops()
-	#mixture_animation.tween_property(
-		#fluid_texture, "modulate", Color("00000050"), 0.2
-	#)
 	var tween_color: Color
 	if balance.x == 0:
-		tween_color = Color("#42244a")
+		tween_color = Color("#FFFFFF")
 	elif balance.x > 0:
 		tween_color = Color("#1699f0")
 	else:
@@ -132,7 +129,7 @@ func update_texture(mixture: Mixture):
 		fluid_texture, "modulate", tween_color, 0.5
 	)
 	if balance.y == 0:
-		tween_color = Color("#42244a")
+		tween_color = Color("#FFFFFF")
 	elif balance.y > 0:
 		tween_color = Color("#bb8000")
 	else:

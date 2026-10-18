@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://dlb4r4ugny8gi" path="res://assets/W95F.otf" id="1_iq1ih"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h4fw4"]
-bg_color = Color(0.0361, 0.15921995, 0.19, 1)
+bg_color = Color(0, 0.08627451, 0.14117648, 1)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -31,8 +31,8 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhunq"]
-bg_color = Color(0.03529412, 0.105882354, 0.15686275, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iq1ih"]
+bg_color = Color(0.015686275, 0.07058824, 0.1254902, 1)
 
 [resource]
 default_font = ExtResource("1_iq1ih")
@@ -46,4 +46,4 @@ MarginContainer/constants/margin_bottom = 4
 MarginContainer/constants/margin_left = 4
 MarginContainer/constants/margin_right = 4
 MarginContainer/constants/margin_top = 4
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_bhunq")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_iq1ih")
