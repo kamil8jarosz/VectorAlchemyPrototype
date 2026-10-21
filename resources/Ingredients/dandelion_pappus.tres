@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://byxavsgfi8g7u"]
+
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="1_w2axr"]
+[ext_resource type="Texture2D" uid="uid://ci7lnu58bm8lc" path="res://assets/ingredients/dandelion_pappus.png" id="2_dxyhe"]
+
+[resource]
+script = ExtResource("1_w2axr")
+ingredient_name = "Dandelion pappus"
+water_energy = 1.0
+air_energy = 3.0
+earth_energy = 1.0
+description = "Fluffy, white seed of dandelion, carried by the wind."
+texture = ExtResource("2_dxyhe")
+metadata/_custom_type_script = "uid://cidyaaakimrfs"

@@ -35,7 +35,7 @@ As the game progresses, another axis is revealed - Air/Earth.
 
 When the player unlocks stronger ingredients and bigger flasks, the map expands in four directions.
 
-!![Alchemy map - expanded](doc/screenshots/alchemy_map_2d_expanded.png)
+![Alchemy map - expanded](doc/screenshots/alchemy_map_2d_expanded.png)
 
 ### 1. Ingredients
 

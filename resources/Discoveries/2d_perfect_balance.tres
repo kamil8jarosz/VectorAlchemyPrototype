@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://dof6oyavhu2i4"]
 
 [ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_4xwv3"]
-[ext_resource type="Resource" uid="uid://nbgl0o2txtkp" path="res://resources/Discoveries/3_edge_of_the_world_1.tres" id="2_psuhw"]
+[ext_resource type="Resource" uid="uid://nbgl0o2txtkp" path="res://resources/Discoveries/3b_edge_of_the_world_1.tres" id="2_psuhw"]
 [ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="3_8haqo"]
-[ext_resource type="Resource" uid="uid://61us4oy8y6e6" path="res://resources/Discoveries/3_fire_ascended.tres" id="3_psuhw"]
+[ext_resource type="Resource" uid="uid://61us4oy8y6e6" path="res://resources/Discoveries/3a_fire_ascended.tres" id="3_psuhw"]
 [ext_resource type="Resource" uid="uid://7akj2oul1djd" path="res://resources/Ingredients/breeze.tres" id="4_0kh8r"]
 [ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="5_w1mr4"]
 

@@ -7,5 +7,6 @@
 script = ExtResource("1_b61re")
 ingredient_name = "Pure water"
 water_energy = 3.0
+description = "A large drop of the purest of waters. Contains a lot of water energy."
 texture = ExtResource("2_jf34d")
 metadata/_custom_type_script = "uid://cidyaaakimrfs"

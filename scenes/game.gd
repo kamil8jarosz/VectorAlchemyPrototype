@@ -16,6 +16,7 @@ const DROPLET = preload("uid://dcdl6ow47tlt")
 const EMBER = preload("uid://lhcs8ya01suv")
 const BREEZE = preload("uid://7akj2oul1djd")
 const PEBBLE = preload("uid://bsopso7xkijjj")
+const DANDELION_PAPPUS = preload("uid://byxavsgfi8g7u")
 
 var ingredients: Array[IngredientData] = [
 	DROPLET
@@ -24,6 +25,7 @@ var ingredients: Array[IngredientData] = [
 const _1_USE_RAINWATER = preload("uid://c6oe7l4ggimql")
 const GOING_UP = preload("uid://drxfb0o4rup3l")
 const GOING_DOWN = preload("uid://flqwbgj76547")
+
 
 var discoveries: Array[Discovery] = [
 	_1_USE_RAINWATER
@@ -43,7 +45,7 @@ var stations: Array[ProcessingStation] = [
 func _ready():
 	var debug := false
 	if debug:
-		ingredients.append_array([EMBER, BREEZE, PEBBLE])
+		ingredients.append_array([EMBER, BREEZE, PEBBLE, DANDELION_PAPPUS])
 		discoveries.append_array([GOING_UP, GOING_DOWN])
 		stations.append_array([SEPARATION_FIRE, SEPARATION_WATER])
 	
