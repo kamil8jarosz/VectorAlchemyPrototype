@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://do5jo5iik72km"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_1jffk"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_4qnpl"]
+[ext_resource type="Resource" uid="uid://lhbalcccmmw5" path="res://resources/Discoveries/Chapter 5/52_underground_water_tank.tres" id="2_krc1c"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="3_krc1c"]
+[ext_resource type="Resource" uid="uid://cnrq6jkphy1iv" path="res://resources/Stations/null_water.tres" id="4_4qnpl"]
+
+[resource]
+script = ExtResource("1_1jffk")
+discovery_name = "A City Carved in Stone"
+description = "Water Nullification station unlocked! Take your time to figure out how it works."
+hint = "Directly below the starting point, the ruins of the city carved in stone guard some ancient alchemical tools. Try neutralizing Water in Petrichor."
+min_position_y = 1.0
+max_position_y = 3.0
+unlocked_stations = Array[ExtResource("3_krc1c")]([ExtResource("4_4qnpl")])
+unlocked_discoveries = Array[ExtResource("1_1jffk")]([ExtResource("2_krc1c")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://c1jkpnhbnciqf"]
 
 [ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_5ljqf"]
-[ext_resource type="Resource" uid="uid://l0d5cj217gyt" path="res://resources/Discoveries/3d_bigger_flask.tres" id="2_tim03"]
+[ext_resource type="Resource" uid="uid://l0d5cj217gyt" path="res://resources/Discoveries/Chapter 3/34_greater_vessel.tres" id="2_tim03"]
 [ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="3_h5ylr"]
 [ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="4_7ct3q"]
 

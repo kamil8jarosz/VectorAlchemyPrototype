@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://lhbalcccmmw5"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_8yhm0"]
+[ext_resource type="Resource" uid="uid://8e837n52pg6g" path="res://resources/Discoveries/Chapter 5/53_three_lightnings.tres" id="2_2w824"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_erhki"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="3_2w824"]
+[ext_resource type="Resource" uid="uid://u5ibd62c0xyr" path="res://resources/Stations/null_fire.tres" id="4_erhki"]
+
+[resource]
+script = ExtResource("1_8yhm0")
+discovery_name = "Underground Water Tank"
+description = "Fire Nullifier unlocked!"
+hint = "The Dwarves built an underground water tank in order to conduct research on Water and Earth. It is hidden 6 miles underground, 2 miles towards Water. They must have used Water Nullifier to reach it."
+min_position_x = 2.0
+max_position_x = 2.0
+min_position_y = 6.0
+max_position_y = 6.0
+unlocked_stations = Array[ExtResource("3_2w824")]([ExtResource("4_erhki")])
+unlocked_discoveries = Array[ExtResource("1_8yhm0")]([ExtResource("2_2w824")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

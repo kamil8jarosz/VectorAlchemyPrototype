@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://cen5afbe2tdj5"]
+
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="1_25xwu"]
+[ext_resource type="Texture2D" uid="uid://3krsoe2csoax" path="res://assets/ingredients/petrichor.png" id="2_d0xsc"]
+
+[resource]
+script = ExtResource("1_25xwu")
+ingredient_name = "Petrichor"
+water_energy = 2.0
+earth_energy = 3.0
+description = "The scent of wet soil after rain."
+texture = ExtResource("2_d0xsc")
+metadata/_custom_type_script = "uid://cidyaaakimrfs"

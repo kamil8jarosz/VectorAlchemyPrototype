@@ -2,7 +2,7 @@ class_name NullWStation
 extends ProcessingStation
 
 func _init():
-	super("Null Water")
+	super("Water Nullifier")
 	
 func process(energy: Energy):
 	return Energy.new(

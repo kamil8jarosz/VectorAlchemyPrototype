@@ -131,6 +131,7 @@ func _on_discover_pressed():
 	discover_pressed.emit(mixture)
 	mixture.reset()
 	mixture.set_ingredient(selected_ingredient)
+	mixture.set_station(selected_station)
 	
 	refresh_ui()
 

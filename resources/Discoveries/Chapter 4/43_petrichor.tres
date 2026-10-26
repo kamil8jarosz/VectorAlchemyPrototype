@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://6bxrjs7v6r5x"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_knufj"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_e1e4s"]
+[ext_resource type="Resource" uid="uid://do5jo5iik72km" path="res://resources/Discoveries/Chapter 5/51_city_carved_in_stone.tres" id="2_y8qyb"]
+[ext_resource type="Resource" uid="uid://cen5afbe2tdj5" path="res://resources/Ingredients/petrichor.tres" id="3_e1e4s"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="3_y8qyb"]
+
+[resource]
+script = ExtResource("1_knufj")
+discovery_name = "Petrichor"
+description = "Petrichor unlocked! "
+hint = "The scent of wet earth might reveal a new direction to you. First, there was a Mist. Then a Lightning. Finally, hot water fell straight from the sky."
+min_position_x = 2.0
+max_position_x = 2.0
+min_position_y = -5.0
+max_position_y = -5.0
+unlocked_ingredients = Array[ExtResource("2_e1e4s")]([ExtResource("3_e1e4s")])
+unlocked_discoveries = Array[ExtResource("1_knufj")]([ExtResource("2_y8qyb")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

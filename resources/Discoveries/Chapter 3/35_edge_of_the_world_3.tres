@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://chi1gy5gw025a"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_bluni"]
+[ext_resource type="Resource" uid="uid://dijamfaeds5o4" path="res://resources/Discoveries/Chapter 4/41_hidden_in_mist.tres" id="2_p2vsu"]
+[ext_resource type="Resource" uid="uid://c4c7q6ixiphd" path="res://resources/Discoveries/Chapter 4/42_great_storm.tres" id="3_xwsm2"]
+[ext_resource type="Resource" uid="uid://6bxrjs7v6r5x" path="res://resources/Discoveries/Chapter 4/43_petrichor.tres" id="4_bw6f1"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="5_lnbdl"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="6_h51g0"]
+
+[resource]
+script = ExtResource("1_bluni")
+discovery_name = "Beyond the edge"
+description = "Wow, how big is the world, really?"
+hint = "Go to the edge of the water axis and keep going."
+min_position_x = 9.0
+max_position_x = 9.0
+unlocked_discoveries = Array[ExtResource("1_bluni")]([ExtResource("2_p2vsu"), ExtResource("3_xwsm2"), ExtResource("4_bw6f1")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

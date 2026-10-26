@@ -37,7 +37,7 @@ func show_discovery(discovery: Discovery):
 	successful_discovery.emit()
 
 
-func show_failure(_position: Vector2):
+func show_failure():
 	title.text = "NO DISCOVERY!"
 	discovery_name.text = ""
 	description.text = "The mixture revealed nothing new."

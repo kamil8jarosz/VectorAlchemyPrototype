@@ -39,7 +39,7 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(640, 30)
 layout_mode = 2
 
-[node name="MixturePanel" parent="UI/VBoxContainer" unique_id=2136986957 instance=ExtResource("5_vtaks")]
+[node name="Experiment" parent="UI/VBoxContainer" unique_id=2136986957 instance=ExtResource("5_vtaks")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3

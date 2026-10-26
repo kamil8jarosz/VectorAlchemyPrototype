@@ -12,12 +12,13 @@ func _init(
 	progress = _progress
 
 
-func discover(position: Vector2, energy: Energy) -> Discovery:
+func discover_at_position(position: Vector2, energy: Energy) -> Discovery:
 	var discovery := find_at_position(position, energy)
+	discover_discovery(discovery)
+	return discovery
 	
-	if discovery:
-		progress.complete(discovery)
-	
+
+func discover_discovery(discovery: Discovery):
 	if discovery and discovery.unlocked_discoveries:
 		for new_discovery in discovery.unlocked_discoveries:
 			discoveries.append(new_discovery)
@@ -39,7 +40,17 @@ func find_at_position(position: Vector2, energy: Energy) -> Discovery:
 	return null
 
 
-# DEBUG FUNCTION
+# DEBUG FUNCTIONS
+
+func get_next() -> Discovery:
+	for discovery in discoveries:
+		if progress.is_discovered(discovery):
+			continue
+		return discovery
+	
+	return null
+		
+
 func unlock_all():
 	for discovery in discoveries:
 		progress.complete(discovery)

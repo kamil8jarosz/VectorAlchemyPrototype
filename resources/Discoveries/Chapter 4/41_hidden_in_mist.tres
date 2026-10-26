@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://dijamfaeds5o4"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_gh8a1"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="3_f514y"]
+[ext_resource type="Resource" uid="uid://bvt3ep8alioip" path="res://resources/Ingredients/mist.tres" id="4_t5jqv"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="5_vkkgu"]
+
+[resource]
+script = ExtResource("1_gh8a1")
+discovery_name = "Hidden in the Mist"
+description = "Good job! So the hidden ingredient is the Mist itself, who would have thought?"
+hint = "The next ingredient is hidden in the mist, perfectly balanced between Water and Air. Can you find it?"
+min_position_x = 2.0
+max_position_x = 2.0
+min_position_y = -2.0
+max_position_y = -2.0
+unlocked_ingredients = Array[ExtResource("3_f514y")]([ExtResource("4_t5jqv")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

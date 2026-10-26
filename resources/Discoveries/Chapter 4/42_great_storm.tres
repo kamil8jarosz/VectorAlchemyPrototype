@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://c4c7q6ixiphd"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_r0thg"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_vkrn8"]
+[ext_resource type="Resource" uid="uid://dsrdgk126vpy1" path="res://resources/Ingredients/lightning.tres" id="3_1nlpc"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="4_st8sw"]
+
+[resource]
+script = ExtResource("1_r0thg")
+discovery_name = "A Great Storm"
+description = "Lightning unlocked! It combines three elements."
+hint = "A great storm is gathering far away, seven miles to the east, three miles above the ground. Travel there and you might find a new ingredient."
+min_position_x = 7.0
+max_position_x = 7.0
+min_position_y = -3.0
+max_position_y = -3.0
+unlocked_ingredients = Array[ExtResource("2_vkrn8")]([ExtResource("3_1nlpc")])
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://cawki1ee0e4w4"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_3t766"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_ovtlu"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="3_8r1b8"]
+
+[resource]
+script = ExtResource("1_3t766")
+discovery_name = "The End"
+description = "Good job! This is the end of the demo. I hope you enjoyed it!"
+hint = "For a final challenge, try reaching (-1, -1) with ingredients you have unlocked."
+min_position_x = -1.0
+max_position_x = -1.0
+min_position_y = 1.0
+max_position_y = 1.0
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

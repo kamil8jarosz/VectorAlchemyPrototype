@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_km2jt"]
 [ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_52irk"]
-[ext_resource type="Resource" uid="uid://b701e2ok5otad" path="res://resources/Discoveries/1d_fiery_ingredient.tres" id="2_km2jt"]
+[ext_resource type="Resource" uid="uid://b701e2ok5otad" path="res://resources/Discoveries/Chapter 1/14_fiery_ingredient.tres" id="2_km2jt"]
 [ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="4_o8onb"]
 
 [resource]

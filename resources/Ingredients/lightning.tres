@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="IngredientData" format=3 uid="uid://dsrdgk126vpy1"]
+
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="1_uyprk"]
+[ext_resource type="Texture2D" uid="uid://ccexlse8oxoaq" path="res://assets/ingredients/lightning.png" id="2_xyh6w"]
+
+[resource]
+script = ExtResource("1_uyprk")
+ingredient_name = "Lightning"
+fire_energy = 4.0
+water_energy = 1.0
+air_energy = 2.0
+description = "A piece of storm captured in a bottle."
+texture = ExtResource("2_xyh6w")
+metadata/_custom_type_script = "uid://cidyaaakimrfs"

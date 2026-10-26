@@ -2,7 +2,7 @@ class_name NullFStation
 extends ProcessingStation
 
 func _init():
-	super("Null Fire")
+	super("Fire Nullifier")
 	
 func process(energy: Energy):
 	return Energy.new(

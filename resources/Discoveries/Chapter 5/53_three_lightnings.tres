@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://8e837n52pg6g"]
+
+[ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_47pwt"]
+[ext_resource type="Resource" uid="uid://cawki1ee0e4w4" path="res://resources/Discoveries/Chapter 6/61_the_end.tres" id="2_pvruk"]
+[ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_uxplq"]
+[ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="3_pvruk"]
+
+[resource]
+script = ExtResource("1_47pwt")
+discovery_name = "Three Lightnings"
+description = "A bigger flask uncloked! Now you can experiment with four ingredients. Think of all the possibilities."
+hint = "All the elements were in balance. Then a lightning stuck. A second lightning, without Fire. And a third, devoid of Water. Together, they revealed a reward."
+min_position_x = -6.0
+max_position_x = -6.0
+min_position_y = -6.0
+max_position_y = -6.0
+unlocked_discoveries = Array[ExtResource("1_47pwt")]([ExtResource("2_pvruk")])
+max_mixture_capacity = 4
+metadata/_custom_type_script = "uid://ddqogcgstrcqa"

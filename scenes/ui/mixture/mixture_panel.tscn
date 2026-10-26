@@ -146,6 +146,9 @@ theme_override_font_sizes/font_size = 20
 text = "Ingredient"
 horizontal_alignment = 1
 
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/IngredientPanel/VBoxContainer" unique_id=1413500044]
+layout_mode = 2
+
 [node name="IngredientAirValue" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/IngredientPanel/VBoxContainer" unique_id=621968978]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(20, 13)
@@ -329,6 +332,9 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Mixture"
 horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer" unique_id=2126969387]
+layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/MixturePanel/MarginContainer/VBoxContainer/MixturePreview/VBoxContainer" unique_id=2007026596]
 custom_minimum_size = Vector2(0, 150)

@@ -38,6 +38,7 @@ theme_override_constants/separation = 0
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Alchemy Map"
+horizontal_alignment = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1336429376]
 layout_mode = 2

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="WaterToEarth" format=3 uid="uid://cdbtqo1dblbwy"]
+
+[ext_resource type="Script" uid="uid://desjjmcvalth3" path="res://scripts/model/processing_stations/water_to_earth.gd" id="1_luvhu"]
+
+[resource]
+script = ExtResource("1_luvhu")
+metadata/_custom_type_script = "uid://desjjmcvalth3"

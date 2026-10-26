@@ -4,7 +4,7 @@ var progress := AlchemyProgress.new()
 var discovery_system: AlchemyDiscovery
 
 
-@onready var mixture_panel: MixturePanel = %MixturePanel
+@onready var mixture_panel: MixturePanel = %Experiment
 
 @onready var discovery_result: DiscoveryResult = %DiscoveryResult
 @onready var discovery_journal: DiscoveryJournal = %DiscoveryJournal
@@ -60,7 +60,7 @@ func _ready():
 	mixture_panel.ingredient_inventory.update(progress)
 	mixture_panel.station_inventory.update(progress)
 	
-	mixture_panel.discover_pressed.connect(discover)
+	mixture_panel.discover_pressed.connect(discover_mixture)
 	
 	mixture_panel.alamanac_pressed.connect(
 		func():
@@ -76,18 +76,30 @@ func _ready():
 	tutorial.start()
 
 
-func discover(mixture: Mixture):
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Discover"):
+		discover_next()
+
+
+func discover_mixture(mixture: Mixture):
 	var position := mixture.get_balance()
 	var energy := mixture.get_mixture_energy()
-	var discovery := discovery_system.discover(position, energy)
-	
+	var discovery := discovery_system.discover_at_position(position, energy)
+	discover_discovery(discovery)
+
+
+func discover_discovery(discovery: Discovery):
 	if discovery:
 		progress.complete(discovery)
 		mixture_panel.add_discovery(discovery)
 		discovery_result.show_discovery(discovery)
 	else:
-		discovery_result.show_failure(position)
-		
+		discovery_result.show_failure()
+	
 	mixture_panel.ingredient_inventory.update(progress)
 	mixture_panel.station_inventory.update(progress)
-	
+
+func discover_next():
+	var discovery = discovery_system.get_next()
+	discovery_system.discover_discovery(discovery)
+	discover_discovery(discovery)

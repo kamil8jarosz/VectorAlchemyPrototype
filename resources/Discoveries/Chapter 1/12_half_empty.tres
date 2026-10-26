@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Discovery" format=3 uid="uid://10v2wmmsdwom"]
 
 [ext_resource type="Script" uid="uid://ddqogcgstrcqa" path="res://scripts/model/discovery.gd" id="1_753pb"]
-[ext_resource type="Resource" uid="uid://d1csabwnmje6g" path="res://resources/Discoveries/1c_a drop_of_each.tres" id="2_jke24"]
+[ext_resource type="Resource" uid="uid://d1csabwnmje6g" path="res://resources/Discoveries/Chapter 1/13_a drop_of_each.tres" id="2_jke24"]
 [ext_resource type="Script" uid="uid://cidyaaakimrfs" path="res://scripts/model/ingredient_data.gd" id="2_plmrn"]
 [ext_resource type="Script" uid="uid://pr6kbfhc26rm" path="res://scripts/model/processing_stations/processing_station.gd" id="3_jke24"]
 

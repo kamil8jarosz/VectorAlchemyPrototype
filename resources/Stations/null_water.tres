@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_wkl5o")
-station_name = "Null Water"
+station_name = "Nullify Water"
 texture = ExtResource("2_wg4cx")
 metadata/_custom_type_script = "uid://cggnw6kreyy0e"

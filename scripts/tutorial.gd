@@ -63,8 +63,7 @@ func run_tutorial():
 	mixture_panel.disable_ui()
 	
 	_show_message(
-		"Welcome to my alchemical workshop!
-		Ready for a guided tour?"
+		"Welcome to my alchemical workshop! Ready for a guided tour?"
 	)
 	_align_message(
 		ALIGN_H.CENTER,
