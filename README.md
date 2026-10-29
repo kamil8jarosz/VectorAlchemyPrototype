@@ -20,6 +20,8 @@ The central gameplay loop is:
 
 **Check Almanac for Discoveries → Create Mixture → Discover → Experiment again**
 
+Implementation based on design document: [Github](https://github.com/kamil8jarosz/game-design-portfolio/blob/main/Wizard_Yans_Diary_Remembrance_Alchemy/Alchemy_system_design.pdf)
+
 ## Core Mechanics
 
 ### 1. The Map of Alchemy
@@ -63,12 +65,14 @@ Processing stations provide a way to manipulate ingredient's elemental energy. A
 
 Currently implemented stations:
 - No processing - retains the original energies of the ingredient
-- Null Fire - removes fire energy from ingredient
-- Null Water - removes water energy from ingredient 
+- Nullify Fire - removes fire energy from ingredient
+- Nullify Water - removes water energy from ingredient 
 
 
-![Station](doc/screenshots/station.png)
-Null Fire removes fire energy from Thermal Water.
+![Station](doc/screenshots/station_no_processing.png)
+![Station Fire](doc/screenshots/station_nullify_fire.png)
+![Station Water](doc/screenshots/station_nullify_water.png)
+
 
 ### 3. Mixtures
 
@@ -88,7 +92,7 @@ The mixture's total energies are the sums of the energies contributed by its ent
 
 Discoveries are the primary progression system. They can thought of as quests.
 
-Each discovery is associated with a rectangular area on the alchemy map and an energy requirement.
+Each discovery is associated with a rectangular area on the alchemy map.
 When the mixture contains at least one ingredient, the player can attempt to discover something.
 If the mixure's position is contained by the rectangular area and the energy requirement is 
 satisfied, the Discovery is unlocked.
