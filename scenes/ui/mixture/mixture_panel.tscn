@@ -211,10 +211,15 @@ text = "Select
 ingredient"
 horizontal_alignment = 1
 
+[node name="HSeparator" type="HSeparator" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer" unique_id=1141315674]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 8
+
 [node name="StationPanel" type="PanelContainer" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer" unique_id=840037204]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_vertical = 10
+size_flags_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tna2j")
 script = ExtResource("6_ojxo6")
 
@@ -226,6 +231,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Station"
 horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel/VBoxContainer" unique_id=1544032586]
+layout_mode = 2
+theme_override_constants/separation = 4
 
 [node name="SelectStationButton" type="TextureButton" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel/VBoxContainer" unique_id=1206965852]
 unique_name_in_owner = true
@@ -239,59 +248,6 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Select 
 station"
-horizontal_alignment = 1
-
-[node name="StationAirValue" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel/VBoxContainer" unique_id=874047870]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(20, 13)
-layout_mode = 2
-theme = ExtResource("4_qta8p")
-theme_override_colors/font_color = Color(0.54901963, 0.5882353, 0.19607843, 1)
-theme_override_font_sizes/font_size = 14
-text = "1"
-horizontal_alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel/VBoxContainer" unique_id=153030894]
-layout_mode = 2
-theme_override_constants/separation = 6
-alignment = 1
-
-[node name="StationFireValue" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel/VBoxContainer/HBoxContainer" unique_id=554617457]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(20, 13)
-layout_mode = 2
-theme = ExtResource("4_qta8p")
-theme_override_colors/font_color = Color(1, 0.49803922, 0.3137255, 1)
-theme_override_font_sizes/font_size = 14
-text = "1"
-horizontal_alignment = 2
-vertical_alignment = 1
-
-[node name="StationIngredientTexture" type="TextureRect" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel/VBoxContainer/HBoxContainer" unique_id=1116584342]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme = ExtResource("7_0tdh7")
-
-[node name="StationWaterValue" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel/VBoxContainer/HBoxContainer" unique_id=943486370]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(20, 13)
-layout_mode = 2
-theme = ExtResource("4_qta8p")
-theme_override_colors/font_color = Color(0, 0.7490196, 1, 1)
-theme_override_font_sizes/font_size = 14
-text = "1"
-
-[node name="StationEarthValue" type="Label" parent="HBoxContainer/IngredientSelectionPanel/MarginContainer/VBoxContainer/StationPanel/VBoxContainer" unique_id=1714128858]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(20, 13)
-layout_mode = 2
-theme = ExtResource("4_qta8p")
-theme_override_colors/font_color = Color(0.73333335, 0.5019608, 0, 1)
-theme_override_font_sizes/font_size = 14
-text = "1"
 horizontal_alignment = 1
 
 [node name="NinePatchRect" type="NinePatchRect" parent="HBoxContainer/IngredientSelectionPanel" unique_id=880360498]

@@ -29,7 +29,7 @@ func clear():
 	select_ingredient_button.texture_normal = ADD
 	
 
-func display_ingredient(ingredient: IngredientData):
+func display_ingredient(ingredient: IngredientData, station: ProcessingStation):
 	if ingredient == null:
 		clear()
 		return
@@ -37,10 +37,16 @@ func display_ingredient(ingredient: IngredientData):
 	select_ingredient_button.texture_normal = ingredient.texture
 	ingredient_label.text = ingredient.ingredient_name
 	
-	setup_energy_label(ingredient_fire_value, ingredient.fire_energy)
-	setup_energy_label(ingredient_water_value, ingredient.water_energy)
-	setup_energy_label(ingredient_earth_value, ingredient.earth_energy)
-	setup_energy_label(ingredient_air_value, ingredient.air_energy)
+	var energy : Energy
+	if station:
+		energy = station.process(ingredient.get_energy()) 
+	else:
+		energy = ingredient.get_energy()
+	
+	setup_energy_label(ingredient_fire_value, energy.fire)
+	setup_energy_label(ingredient_water_value, energy.water)
+	setup_energy_label(ingredient_earth_value, energy.earth)
+	setup_energy_label(ingredient_air_value, energy.air)
 	
 
 func setup_energy_label(label: Label, value: float):

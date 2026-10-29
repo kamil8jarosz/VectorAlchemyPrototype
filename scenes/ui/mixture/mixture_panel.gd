@@ -76,13 +76,11 @@ func refresh_ui():
 	selected_ingredient = mixture.get_current_ingredient()
 	selected_station = mixture.get_current_station()
 	
-	ingredient_panel.display_ingredient(selected_ingredient)
-	station_panel.display_station(selected_station, selected_ingredient)
-	
+	ingredient_panel.display_ingredient(selected_ingredient, selected_station)
+	station_panel.display_station(selected_station)
 	
 	alchemy_map.set_current_position(mixture.get_balance())
 	alchemy_map.set_preview_position(mixture.get_balance_with_preview())
-	
 	alchemy_map.set_draw_preview(true)
 	
 	if mixture.is_full() or selected_ingredient == null:
